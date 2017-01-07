@@ -485,57 +485,57 @@ See [Cases](#terms-cases).
 
 <a name="2.2"></a>
 <a name="structure-top-level"><a>
-### 2.2 Use A Top Level Folder For Project Specific Assets ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 2.2 プロジェクト固有アセットのためにトップレベルフォルダを使用 ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-All of a project's assets should exist in a folder named after the project. For example, if your project is named 'Generic Shooter', _all_ of it's content should exist in `Content/GenericShooter`.
+すべてのプロジェクトのアセットは、プロジェクトの名前を付けたフォルダに存在する必要があります。 たとえば、プロジェクトの名前が「Generic Shooter」の場合、そのコンテンツの _全て_ は `Content/GenericShooter` 以下に存在する必要があります。
 
-> The `Developers` folder is not for assets that your project relies on and therefore is not project specific. See [2.2](#2.2) for details about this.
+> `Developers` フォルダはあなたのプロジェクトが依存している資産のためではなく、したがってプロジェクト特有のものではありません。 これに関する詳細については、 [2.2](#2.2) を参照してください。
 
-There are multiple reasons for this approach.
+このアプローチには複数の理由があります。
 
 <a name="2.2.1"></a>
-#### 2.2.1 No Global Assets
+#### 2.2.1 グローバルアセットなし
 
-Often in code style guides it is written that you should not pollute the global namespace and this follows the same principle. When assets are allowed to exist outside of a project folder it often becomes much harder to enforce a strict structure layout as assets not in a folder encourages the bad behavior of not having to organize assets.
+多くの場合、コードスタイルガイドでは、グローバル名前空間を汚染しないように書かれています。これは同じ原則に従います。 資産がプロジェクトフォルダの外に存在することが許される場合、フォルダ内にない資産が資産を整理する必要がないという悪い行為を促すため、厳密な構造レイアウトを強制するのはずっと困難になります。
 
-Every asset should have a purpose, otherwise it does not belong in a project. If an asset is an experimental test and shouldn't be used by the project it should be put in a [`Developer`](#2.3) folder.
+すべての資産は目的を持っている必要があります。そうでなければ、プロジェクトに属していません。 アセットが実験的なテストであり、プロジェクトで使用すべきでない場合は、 [`Developer`](#2.3) フォルダーに置く必要があります。 
 
 <a name="2.2.2"></a>
-#### 2.2.2 Reduce Migration Conflicts
+#### 2.2.2 移行での衝突の削減
 
-When working on multiple projects it is common for a team to copy assets from one project to another if they have made something useful for both. When this occurs, the easiest way to perform the copy is to use the Content Browser's Migrate functionality as it will copy over not just the selected asset but all of its dependencies.
+複数のプロジェクトに取り組んでいるときに、チームが両方のプロジェクトに役立つものを作っていれば、あるプロジェクトから別のプロジェクトに資産をコピーするのが一般的です。これが発生すると、コピーを実行する最も簡単な方法は、コンテンツブラウザの移行機能を使用して、選択したアセットだけでなくそのすべての依存関係をコピーするためです。
 
-These dependencies are what can easily get you into trouble. If two project's assets do not have a top level folder and they happen to have similarly named or already previously migrated assets, a new migration can accidentally wipe any changes to the existing assets.
+これらの依存関係は、簡単に問題を引き起こす可能性があります。 2つのプロジェクトの資産にトップレベルのフォルダがなく、すでに名前が付けられている、または以前に移行されたアセットがある場合、新しい移行によって誤って既存のアセットの変更が消去される可能性があります。
 
-This is also the primary reason why Epic's Marketplace staff enforces the same policy for submitted assets.
+これはまた、EpicのMarketplaceスタッフが提出された資産に対して同じポリシーを強制する主な理由です。
 
-After a migration, safe merging of assets can be done using the 'Replace References' tool in the content browser with the added clarity of assets not belonging to a project's top level folder are clearly pending a merge. Once assets are merged and fully migrated, there shouldn't be another top level folder in your Content tree. This method is _100%_ guaranteed to make any migrations that occur completely safe.
+移行後、コンテンツブラウザの 'Replace References' ツールを使用して資産の安全なマージを行うことができ、プロジェクトの最上位フォルダに属していない資産の明確な明示が併合を保留しています。アセットがマージされ、完全に移行されると、コンテンツツリーに別のトップレベルのフォルダは存在しないはずです。この方法は、完全に安全に実行される移行を保証するために _100％_ 保証されています。
 
 <a name="2.2.2e1"></a>
-##### 2.2.2e1 Master Material Example
+##### 2.2.2e1 マスターマテリアルの例
 
-For example, say you created a master material in one project that you would like to use in another project so you migrated that asset over. If this asset is not in a top level folder, it may have a name like `Content/MaterialLibrary/M_Master`. If the target project doesn't have a master material already, this should work without issue.
+たとえば、あるプロジェクトに別のプロジェクトで使用したいマスター素材を作成し、その資産を移行したとします。このアセットがトップレベルのフォルダにない場合、 `Content/MaterialLibrary/M_Master` のような名前を持つ可能性があります。ターゲットプロジェクトにすでにマスタマテリアルがない場合、これは問題なく動作するはずです。
 
-As work on one or both projects progress their respective master materials may change to be tailored for their specific projects due to the course of normal development.
+一方または両方のプロジェクトの作業が進行するにつれて、それぞれのマスター資料は、通常の開発過程のために、特定のプロジェクトに合わせて変更される可能性があります。
 
-The issue comes when, for example, an artist for one project created a nice generic modular set of static meshes and someone wants to include that set of static meshes in the second project. If the artist who created the assets used material instances based on `Content/MaterialLibrary/M_Master` as they're instructed to, when a migration is performed there is a great chance of conflict for the previously migrated `Content/MaterialLibrary/M_Master` asset.
+たとえば、あるプロジェクトのアーティストが静的メッシュの包括的なモジュラーセットを作成し、誰かがその静的メッシュのセットを2番目のプロジェクトに含める場合など、問題が発生します。アセットを作成したアーティストが、指示されているとおりに `Content/MaterialLibrary/M_Master` に基づいて素材インスタンスを使用した場合、移行が実行されると、以前に移行された `Content/MaterialLibrary/M_Master` アセット。
 
-This issue can be hard to predict and hard to account for. The person migrating the static meshes may not be the same person who is familiar with the development of both project's master material, and they may not be even aware that the static meshes in question rely on material instances which then rely on the master material. The Migrate tool requires the entire chain of dependencies to work however, and so it will be forced to grab `Content/MaterialLibrary/M_Master` when it copies these assets to the other project and it will overwrite the existing asset.
+この問題は、予測するのが難しく、説明するのが難しい場合があります。静的メッシュを移動する人は、プロジェクトのマスターマテリアルの開発に精通している人と同じ人ではないかもしれませんし、問題の静的メッシュがマスターマテリアルに依存しているマテリアルインスタンスに依存していることに気づいていないかもしれません。しかし、Migrateツールでは、依存関係のチェーン全体が機能する必要があるため、これらのアセットを他のプロジェクトにコピーするときに `Content/MaterialLibrary/M_Master`を強制的に取得し、既存のアセットを上書きします。
 
-It is at this point where if the master materials for both projects are incompatible in _any way_, you risk breaking possibly the entire material library for a project as well as any other dependencies that may have already been migrated, simply because assets were not stored in a top level folder. The simple migration of static meshes now becomes a very ugly task.
+この時点で、両方のプロジェクトのマスタマテリアルが互換性がない場合は、プロジェクトのマテリアルライブラリ全体が破損する危険性があります。アセットが保存されていないため、すでに移行されている可能性のあるその他の依存関係トップレベルのフォルダ。静的メッシュの単純な移行は、現在非常に醜い作業になります。
 
 <a name="2.2.3"></a>
-#### 2.2.3 Samples, Templates, and Marketplace Content Are Risk-Free
+#### 2.2.3 サンプル、テンプレート、マーケットプレイスのコンテンツはリスクフリーです
 
-An extension to [2.2.2](#2.2.2), if a team member decides to add sample content, template files, or assets they bought from the marketplace, it is guaranteed that these new assets will not interfere with the project in any way unless your project's top level folder is not uniquely named.
+[2.2.2](#2.2.2) の拡張版では、チームメンバーがサンプルコンテンツ、テンプレートファイル、または市場から購入した資産を追加することを決定した場合、これらの新しい資産がプロジェクトの妨げにならないことが保証されます プロジェクトの最上位のフォルダに一意の名前が付けられていない限り、
 
-You can not trust marketplace content to fully conform to the [top level folder rule](#2.2). There exist many assets that have the majority of their content in a top level folder but also have possibly modified Epic sample content as well as level files polluting the global `Content` folder.
+マーケットプレイスのコンテンツを [トップレベルのフォルダルール](#2.2) に完全に準拠させることはできません。 トップレベルのフォルダに大部分のコンテンツを持つ多くのアセットが存在しますが、Epicのサンプルコンテンツやグローバルな `Content` フォルダを汚染するレベルファイルも変更されている可能性があります。
 
-When adhering to [2.2](#2.2), the worst marketplace conflict you can have is if two marketplace assets both have the same Epic sample content. If all your assets are in a project specific folder, including sample content you may have moved into your folder, your project will never break.
+[2.2](#2.2) を遵守する場合、マーケットプレイスの競合は、2つのマーケットプレイス資産のEpicサンプルコンテンツが同じである場合に起こります。 すべての資産がプロジェクト固有のフォルダに含まれている場合、フォルダに移動した可能性があるサンプルコンテンツが含まれていれば、プロジェクトは中断しません。
 
-#### 2.2.4 DLC, Sub-Projects, and Patches Are Easily Maintained
+#### 2.2.4 DLC、サブプロジェクト、およびパッチは容易に維持されます
 
-If your project plans to release DLC or has multiple sub-projects associated with it that may either be migrated out or simply not cooked in a build, assets relating to these projects should have their own separate top level content folder. This make cooking DLC separate from main project content far easier. Sub-projects can also be migrated in and out with minimal effort. If you need to change a material of an asset or add some very specific asset override behavior in a patch, you can easily put these changes in a patch folder and work safely without the chance of breaking the core project.
+DLCをリリースする予定のプロジェクト、または複数のサブプロジェクトが関連付けられている場合、これらのプロジェクトは移行されるか、単にビルドされないことがあります。これらのプロジェクトに関連するアセットには、独自のトップレベルコンテンツフォルダが必要です。 これにより、DLCはメインプロジェクトのコンテンツとは別に料理がはるかに簡単になります。 サブプロジェクトは、最小限の労力で入退出することもできます。 アセットの素材を変更したり、パッチで非常に特殊なアセットオーバーライド動作を追加する必要がある場合は、これらの変更をパッチフォルダに簡単に入れて、コアプロジェクトを壊すことなく安全に作業できます。
 
 <a name="2.3"></a>
 <a name="structure-developers"></a>
