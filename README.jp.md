@@ -74,7 +74,7 @@
 
 スタイルガイドまたはスタイルガイドなしのいずれかで作業している人がいる場合は、修正するようにしてください。
 
-チーム内で働いたり、[Unreal Slackers](http://join.unrealslackers.org/) などのコミュニティで議論するときは、一貫性があるときに助けて助けを求めるのがはるかに簡単です。 誰も、誰かの青写真スパゲッティを解くのを手伝ったり、理解できない名前の資産を扱ったりするのを好む人はいません。
+チーム内で働いたり、[Unreal Slackers](http://join.unrealslackers.org/) などのコミュニティで議論するときは、一貫性があるときに助けて助けを求めるのがはるかに簡単です。 誰も、誰かのblueprintsスパゲッティを解くのを手伝ったり、理解できない名前の資産を扱ったりするのを好む人はいません。
 
 あなたの仕事の人が異なるが、一貫性があり、正真正銘のスタイルガイドに従うのを手助けしているなら、あなたはそれに適応できるはずです。 スタイルガイドに準拠していない場合は、ここで指示してください。
 
@@ -561,67 +561,67 @@ Map ファイルは信じられないほど特殊で、特にサブレベルや�
 
 <a name="2.5"></a>
 <a name="structure-core"></a>
-### 2.5 Use A `Core` Folder For Critical Blueprints And Other Assets ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.5 重要なBlueprintsやその他の資産のための `Core`フォルダを使用してください ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-Use `/Content/Project/Core` folder for assets that are absolutely fundamental to a project's workings. For example, base `GameMode`, `Character`, `PlayerController`, `GameState`, `PlayerState`, and related Blueprints should live here.
+プロジェクトの動作に不可欠な資産に `/Content/Project/Core`フォルダを使用してください。たとえば、 `GameMode`、` Character`、 `PlayerController`、` GameState`、 `PlayerState`、および関連するBlueprintsはここに住んでいなければなりません。
 
-This creates a very clear "don't touch these" message for other team members. Non-engineers should have very little reason to enter the `Core` folder. Following good code structure style, designers should be making their gameplay tweaks in child classes that expose functionality. World builders should be using prefab Blueprints in designated folders instead of potentially abusing base classes.
+これにより、他のチームメンバーにとって非常に明確な「これらに触れないでください」というメッセージが作成されます。非エンジニアは `Core`フォルダに入る理由はほとんどありません。優れたコード構造スタイルに従えば、デザイナーは、機能を公開する子クラスでゲームプレイを調整する必要があります。世界の建築家は、潜在的に悪用されるベースクラスではなく、指定されたフォルダでプレハブブループリントを使用する必要があります。
 
-For example if your project requires pickups that can be placed in a level, there should exist a base Pickup class in `Core/Pickups` that defines base behavior for a pickup. Specific pickups such as a Health or Ammo should exist in a folder such as `/Content/Project/Placeables/Pickups/`. Game designers can define and tweak pickups in this folder however they please, but they should not touch `Core/Pickups` as they may unintentionally break pickups project-wide.
+たとえば、プロジェクトがレベルに配置できるピックアップを必要とする場合、ピックアップの基本動作を定義する基本ピックアップクラスが `Core/Pickups` に存在するはずです。 Health または Ammoなどの特定のピックアップは、`/Content/Project/Placeables/Pickups/`のようなフォルダに存在するはずです。ゲームデザイナーはこのフォルダ内のピックアップを定義し調整することができますが、プロジェクト全体のピックアップを意図せず破損する可能性があるため、`Core/Pickups` に触れてはいけません。
 
 <a name="2.6"></a>
 <a name="structure-assettypes"></a>
-### 2.6 Do Not Create Folders Called `Assets` or `AssetTypes` ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 2.6 `Assets`または` AssetTypes`と呼ばれるフォルダを作成しないでください ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 <a name="2.6.1"></a>
-#### 2.6.1 Creating a folder named `Assets` is redundant. ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.6.1 `Assets`という名前のフォルダを作成することは冗長です ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-All assets are assets.
+全てのアセットはアセットです。   
 
 <a name="2.6.2"></a>
-#### 2.6.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant. ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.6.2 `Meshes`、` Textures`、または `Materials`という名前のフォルダを作成することは冗長です ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-All asset names are named with their asset type in mind. These folders offer only redundant information and the use of these folders can easily be replaced with the robust and easy to use filtering system the Content Browser provides.
+すべてのアセット名は、そのアセットタイプを念頭に置いて命名されます。これらのフォルダは冗長な情報のみを提供し、これらのフォルダの使用は、コンテンツブラウザが提供する堅牢で使いやすいフィルタリングシステムで簡単に置き換えることができます。
 
-Want to view only static mesh in `Environment/Rocks/`? Simply turn on the Static Mesh filter. If all assets are named correctly, they will also be sorted in alphabetical order regardless of prefixes. Want to view both static meshes and skeletal meshes? Simply turn on both filters. this eliminates the need to potentially have to `Control-Click` select two folders in the Content Browser's tree view.
+ `Environment/Rocks/` に静的メッシュだけを表示したいですか？静的メッシュフィルターをオンにするだけです。すべてのアセットの名前が正しく指定されている場合は、接頭辞に関係なくアルファベット順にソートされます。静的メッシュとスケルトンメッシュの両方を表示したいですか？両方のフィルターをオンにするだけです。これにより、コンテンツブラウザのツリービューで2つのフォルダを `Control-Click` する必要がなくなります。
 
-> This also extends the full path name of an asset for very little benefit. The `S_` prefix for a static mesh is only two characters, whereas `Meshes/` is seven characters.
+> これはまた、資産の完全なパス名をほとんど利益のために拡張します。静的メッシュの `S_` 接頭辞は2文字だけですが、` Meshes/`は7文字です。
 
-Not doing this also prevents the inevitability of someone putting a static mesh or a texture in a `Materials` folder.
+これをしないと、誰かが静的メッシュやテクスチャを `Materials`フォルダに置くことを避けることができなくなります。
 
 <a name="2.7"></a>
 <a name="structure-large-sets"></a>
-### 2.7 Very Large Asset Sets Get Their Own Folder Layout ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.7 非常に大きなアセットのセットは、それら独自のフォルダレイアウトを取ります ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-This can be seen as a pseudo-exception to [2.6](#2.6).
+これは、 [2.6](#2.6) の擬似例外として見ることができます。
 
-There are certain asset types that have a huge volume of related files where each asset has a unique purpose. The two most common are Animation and Audio assets. If you find yourself having 15+ of these assets that belong together, they should be together.
+各資産に独自の目的がある膨大な量の関連ファイルを持つ特定の資産タイプがあります。 最も一般的な2つは、アニメーションとオーディオのアセットです。 一緒に属しているこれらの資産が15以上あることが判明した場合、それらは一緒になっている必要があります。
 
-For example, animations that are shared across multiple characters should lay in `Characters/Common/Animations` and may have sub-folders such as `Locomotion` or `Cinematic`.
+たとえば、複数の文字にまたがって共有されるアニメーションは、`Characters/Common/Animations` にあり、`Locomotion` や `Cinematic` などのサブフォルダを持つことがあります。
 
-> This does not apply to assets like textures and materials. It is common for a `Rocks` folder to have a large amount of textures if there are a large amount of rocks, however these textures are generally only related to a few specific rocks and should be named appropriately. Even if these textures are part of a [Material Library](#2.8).
+> テクスチャや素材などのアセットには適用されません。 大量の岩石がある場合、 `Rocks` フォルダーは大量のテクスチャーを持つのが一般的ですが、これらのテクスチャーは一般的には特定の岩石にしか関連しておらず、適切に名前を付ける必要があります。 これらのテクスチャが [Material Library](#2.8) の一部であっても
 
 <a name="2.8"></a>
 <a name="structure-material-library"></a>
 ### 2.8 `MaterialLibrary` ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-If your project makes use of master materials, layered materials, or any form of reusable materials or textures that do not belong to any subset of assets, these assets should be located in `Content/Project/MaterialLibrary`.
+プロジェクトでマスター素材、レイヤード素材、または資産のサブセットに属しない再利用可能な素材やテクスチャを使用する場合、これらの資産は `Content/Project/MaterialLibrary` に配置する必要があります。
 
-This way all 'global' materials have a place to live and are easily located.
+このようにして、すべての「グローバル」マテリアルは生きる場所を持ち、簡単に見つけられます。
 
-> This also makes it incredibly easy to enforce a 'use material instances only' policy within a project. If all artists and assets should be using material instances, then the only regular material assets that should exist are within this folder. You can easily verify this by searching for base materials in any folder that isn't the `MaterialLibrary`.
+> これにより、プロジェクト内で「材料インスタンスのみ使用」ポリシーを実行することも非常に簡単になります。すべてのアーティストとアセットがマテリアルインスタンスを使用する必要がある場合は、存在するはずの正規のアセットのみがこのフォルダ内にあります。 `MaterialLibrary` 以外のフォルダ内のベースマテリアルを検索することで、これを簡単に確認できます。
 
-The `MaterialLibrary` doesn't have to consist of purely materials. Shared utility textures, material functions, and other things of this nature should be stored here as well within folders that designate their intended purpose. For example, generic noise textures should be located in `MaterialLibrary/Utility`.
+`MaterialLibrary` は、純粋にマテリアルである必要はありません。共有ユーティリティテクスチャ、マテリアル関数、およびこのようなその他のものは、意図した目的を指定するフォルダ内にここに格納する必要があります。例えば、一般的なノイズテクスチャは `MaterialLibrary/Utility` に置かなければなりません。
 
-Any testing or debug materials should be within `MaterialLibrary/Debug`. This allows debug materials to be easily stripped from a project before shipping and makes it incredibly apparent if production assets are using them if reference errors are shown.
+テストやデバッグのためのマテリアルは `MaterialLibrary/Debug` の中になければなりません。これにより、出荷前にデバッグマテリアルをプロジェクトから簡単に取り除くことができ、参照エラーが表示されている場合に生産アセットがそれらを使用している場合、信じられないほど明らかになります。
 
 <a name="3"></a>
 <a name="bp"></a>
 ## 3. Blueprints ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-This section will focus on Blueprint classes and their internals. When possible, style rules conform to [Epic's Coding Standard](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard).
+このセクションでは、Blueprintのクラスとその内部について説明します。 可能であれば、スタイルルールは [Epic's Coding Standard](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard) に準拠しています。
 
-### Sections
+### 章
 
 > 3.1 [Compiling](#bp-compiling)
 
@@ -631,11 +631,11 @@ This section will focus on Blueprint classes and their internals. When possible,
 <a name="bp-compiling"></a>
 ### 3.1 Compiling ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-All blueprints should compile with zero warnings and zero errors. You should fix blueprint warnings and errors immediately as they can quickly cascade into very scary unexpected behavior.
+すべてのblueprintsは、ゼロの警告とゼロのエラーでコンパイルする必要があります。 非常に恐ろしい予期しない動作に急速にカスケードするので、blueprintsの警告とエラーを直ちに修正する必要があります。
 
-Do *not* submit broken blueprints to source control. If you must store them on source control, shelve them instead.
+破損したblueprintsをソース管理に提出しない*。 それらをソース管理に保存する必要がある場合は、代わりにそれらをシェルフしてください。
 
-Broken blueprints can cause problems that manifest in other ways, such as broken references, unexpected behavior, cooking failures, and frequent unneeded recompilation. A broken blueprint has the power to break your entire game.
+壊れたblueprintsは、壊れた参照、予期しない動作、料理の失敗、頻繁な不要な再コンパイルなど、別の方法で現れる問題を引き起こす可能性があります。 壊れたblueprintsはあなたのゲーム全体を破壊する力を持っています。
 
 <a name="3.2"></a>
 <a name="bp-vars"></a>
@@ -667,13 +667,13 @@ Broken blueprints can cause problems that manifest in other ways, such as broken
 <a name="bp-var-naming-nouns"></a>
 ##### 3.2.1.1 Nouns ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All non-boolean variable names must be clear, unambiguous, and descriptive nouns.
+すべての非ブール変数名は、明確で明確で説明的な名詞でなければなりません。
 
 <a name="3.2.1.2"></a>
 <a name="bp-var-naming-case"></a>
 ##### 3.2.1.2 PascalCase ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-All non-boolean variables should be in the form of [PascalCase](#terms-cases).
+すべての非ブール変数は [PascalCase](#terms-cases) の形式でなければなりません。
 
 <a name="3.2.1.2e"></a>
 ###### 3.2.1.2e Examples:
@@ -689,11 +689,11 @@ All non-boolean variables should be in the form of [PascalCase](#terms-cases).
 <a name="bp-var-bool-prefix"></a>
 ##### 3.2.1.3 Boolean `b` Prefix ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-All booleans should be named in PascalCase but prefixed with a lowercase `b`.
+すべてのブール値はPascalCaseで指定する必要がありますが、先頭に小文字の `b` を付けます。
 
-Example: Use `bDead` and `bEvil`, **not** `Dead` and `Evil`.
+例： `Dead`と` Evil` **ではなく**、 `bDead`と` bEvil`を使います。
 
-UE4 Blueprint editors know not to include the `b` in user-friendly displays of the variable.
+UE4 Blueprint editors は、変数の使いやすい表示に `b`を含めないことを知っています。
 
 <a name="3.2.1.4"></a>
 <a name="bp-var-bool-names"></a>
@@ -702,31 +702,31 @@ UE4 Blueprint editors know not to include the `b` in user-friendly displays of t
 <a name="3.2.1.4.1"></a>
 ###### 3.2.1.4.1 General And Independent State Information ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-All booleans should be named as descriptive adjectives when possible if representing general information. Do not include words that phrase the variable as a question, such as `Is`. This is reserved for functions.
+すべてのブール値は、一般的な情報を表すならば可能なときには記述的形容詞として命名されるべきである。 その変数を疑問として含む単語、例えば `Is`を含めないでください。 これは関数用に予約されています。
 
-Example: Use `bDead` and `bHostile` **not** `bIsDead` and `bIsHostile`.
+例： `bDead`と` bHostile` **ではなく**、 `bIsDead`と` bIsHostile`を使います。
 
-Try to not use verbs such as `bRunning`. Verbs tend to lead to complex states.
+`bRunning`のような動詞を使わないようにしてください。 動詞は複雑な状態につながる傾向があります。
 
 <a name="3.2.1.4.2"></a>
 ###### 3.2.1.4.2 Complex States ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-Do not to use booleans to represent complex and/or dependent states. This makes state adding and removing complex and no longer easily readable. Use an enumeration instead.
+複合および/または従属状態を表すためにブール値を使用しないでください。 これにより、状態の追加と削除が複雑になり、もはや簡単には読み込めなくなります。 代わりに列挙を使用してください。
 
-Example: When defining a weapon, do **not** use `bReloading` and `bEquipping` if a weapon can't be both reloading and equipping. Define an enumeration named `EWeaponState` and use a variable with this type named `WeaponState` instead. This makes it far easier to add new states to weapons.
+例：武器を定義するときに、武器を再装備したり装備することが**できない場合は**、 bReloadingを使用せず、bEquippingを使用しないでください。 `EWeaponState`という名前の列挙体を定義し、代わりに` WeaponState`という名前のこの型の変数を使用してください。 これにより、武器に新しい状態を追加することがはるかに容易になります。
 
-Example: Do **not** use `bRunning` if you also need `bWalking` or `bSprinting`. This should be defined as an enumeration with clearly defined state names.
+例： `bWalking`や` bSprinting`が必要な場合は `Root`を**使わないでください**。 これは、明確に定義された状態名を持つ列挙として定義する必要があります。
 
 <a name="3.2.1.5"></a>
 <a name="bp-vars-naming-context"></a>
 ##### 3.2.1.5 Considered Context ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All variable names must not be redundant with their context as all variable references in Blueprint will always have context.
+Blueprintのすべての変数参照は常にコンテキストを持つので、すべての変数名はコンテキストと重複してはいけません。
 
 <a name="3.2.1.5e"></a>
 ###### 3.2.1.5e Examples:
 
-Consider a Blueprint called `BP_PlayerCharacter`.
+`BP_PlayerCharacter`というBlueprintを考えてみましょう。
 
 **Bad**
 
@@ -737,7 +737,7 @@ Consider a Blueprint called `BP_PlayerCharacter`.
 * `CharacterSkills`
 * `ChosenCharacterSkin`
 
-All of these variables are named redundantly. It is implied that the variable is representative of the `BP_PlayerCharacter` it belongs to because it is `BP_PlayerCharacter` that is defining these variables.
+これらの変数はすべて重複して名前が付けられます。 これらの変数を定義しているのは `BP_PlayerCharacter`なので、変数はその変数が属する` BP_PlayerCharacter`を表しています。
 
 **Good**
 
