@@ -175,7 +175,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Level / Map             |            |            | [Should be in a folder called Maps.](#2.3) |
+| Level / Map             |            |            | [ Maps フォルダ内に配置するべき.](#2.3) |
 | Level (Persistent)      |            | _P         |                                  |
 | Level (Audio)           |            | _Audio     |                                  |
 | Level (Lighting)        |            | _Lighting  |                                  |
@@ -183,11 +183,13 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Level (Gameplay)        |            | _Gameplay  |                                  |
 | Blueprint               | BP_        |            |                                  |
 | Material                | M_         |            |                                  |
-| Static Mesh             | S_ or SM_  |            | Pick only one. Prefer S_.        |
+| Static Mesh             | S_ or SM_  |            | どちらか1つだけを選択。 S_ を優先する。        |
 | Skeletal Mesh           | SK_        |            |                                  |
-| Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
+| Texture                 | T_         | _?         | [Textures](#anc-textures) を参照してください。   |
 | Particle System         | PS_        |            |                                  |
-| Widget Blueprint        | WBP_ or WB_|            | Pick only one. Prefer WBP_.      |
+| Widget Blueprint        | WBP_ or WB_|            | どちらか1つだけを選択。 WBP_ を優先する。      |
+
+マップと呼ばれるフォルダにある必要があります
 
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
@@ -536,25 +538,25 @@ If your project plans to release DLC or has multiple sub-projects associated wit
 
 <a name="2.3"></a>
 <a name="structure-developers"></a>
-### 2.3 Use Developers Folder For Local Testing ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.3 ローカルテスト用にDevelopersフォルダを使用してください ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-During a project's development, it is very common for team members to have a sort of 'sandbox' where they can experiment freely without risking the core project. Because this work may be ongoing, these team members may wish to put their assets on a project's source control server. Not all teams require use of Developer folders, but ones that do use them often run into a common problem with assets submitted to source control.
+プロジェクトの開発中に、チームメンバーがコアプロジェクトを危険にさらすことなく自由に実験できる「サンドボックス」を持つことは非常に一般的です。この作業が進行中である可能性があるため、これらのチームメンバはプロジェクトのソース管理サーバーに資産を配置することができます。すべてのチームがデベロッパーフォルダの使用を必要とするわけではありませんが、それらを使用するチームはソース管理に提出された資産に共通の問題に遭遇することがよくあります。
 
-It is very easy for a team member to accidentally use assets that are not ready for use which will cause issues once those assets are removed. For example, an artist may be iterating on a modular set of static meshes and still working on getting their sizing and grid snapping correct. If a world builder sees these assets in the main project folder, they might use them all over a level not knowing they could be subject to incredible change and/or removal. This causes massive amounts of re-working by everyone on the team to resolve.
+チームメンバーが、使用準備が整っていない資産を誤って使用することは非常に簡単で、その資産が削除されると問題が発生する可能性があります。たとえば、アーティストが静的メッシュのモジュラセットを反復処理していて、サイジングとグリッドのスナッピングが正しく行われているとします。世界の建築家がこれらの資産をメインプロジェクトフォルダに見た場合、彼らは信じられないほどの変更や削除を受ける可能性があることを知らずに、レベル全体でそれらの資産を使用するかもしれません。これにより、チームの全員が大量の再作業を行うことになります。
 
-If these modular assets were placed in a Developer folder, the world builder should never of had a reason to use them and the whole issue would never happen. The Content Browser has specific View Options that will hide Developer folders (they are hidden by default) making it impossible to accidentally use Developer assets under normal use.
+これらのモジュラーアセットがDeveloperフォルダに配置されている場合、世界の建築家は決してそれらを使用する理由があってはならず、問題は起こりません。コンテンツブラウザには、デベロッパーフォルダを非表示にする特定の表示オプションがあります（デフォルトでは非表示になっています）ので、通常の使用状態で誤ってデベロッパーアセットを使用することはできません。
 
-Once the assets are ready for use, an artist simply has to move the assets into the project specific folder and fix up redirectors. This is essentially 'promoting' the assets from experimental to production.
+アセットを使用できるようになると、アーティストはアセットをプロジェクト固有のフォルダに移動し、リダイレクタを修正するだけです。これは本質的に資産を実験から生産に「促進」しています。
 
 <a name="2.4"></a>
 <a name="structure-maps"></a>
-### 2.4 All Map[<sup>*</sup>](#terms-level-map) Files Belong In A Folder Called Maps ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 2.4 すべてのMap[<sup>*</sup>](#terms-level-map) ファイルは、マップと呼ばれるフォルダに所属しています ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Map files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-levels or streaming levels. No matter what system of map organization is in place for the specific project, all levels should belong in `/Content/Project/Maps`.
+Map ファイルは信じられないほど特殊で、特にサブレベルやストリーミングレベルで作業する場合は、すべてのプロジェクトで独自のマップ命名システムを使用するのが一般的です。特定のプロジェクトでどのようなマップ体系が整っていても、すべてのレベルは `/Content/Project/Maps` に属している必要があります。
 
-Being able to tell someone to open a specific map without having to explain where it is is a great time saver and general 'quality of life' improvement. It is common for levels to be within sub-folders of `Maps`, such as `Maps/Campaign1/` or `Maps/Arenas`, but the most important thing here is that they all exist within `/Content/Project/Maps`.
+場所を説明することなく特定の地図を開くように誰かに指示できることは、時間の節約と一般的な「クオリティ・オブ・ライフ」改善です。 `Maps/Campaign1/`や `Maps/Arenas`のように、レベルが`Maps`のサブフォルダ内にあるのが一般的ですが、ここで最も重要なのは  `/Content/Project/Maps`。
 
-This also simplifies the job of cooking for engineers. Wrangling levels for a build process can be extremely frustrating if they have to dig through arbitrary folders for them. If a team's maps are all in one place, it is much harder to accidentally not cook a map in a build. It also simplifies lighting build scripts as well QA processes.
+これにより、エンジニア向けの調理作業も簡単になります。ビルドプロセスのレベルを狂わせることは、それらのために任意のフォルダを掘り下げなければならない場合、非常に不快になります。チームの地図がすべて1か所にある場合、誤ってビルド内の地図を調理するのはずっと難しくなります。また、QAプロセスだけでなくビルドスクリプトも簡単に作成できます。
 
 <a name="2.5"></a>
 <a name="structure-core"></a>
