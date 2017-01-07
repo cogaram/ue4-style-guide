@@ -70,21 +70,21 @@
 また、スタイルについて考える必要もなく、指示に従うだけで、より生産的な作成と保守が可能です。 このスタイルガイドはベストプラクティスを念頭に置いて書かれています。つまり、このスタイルガイドに従って、問題を追跡するのを最小限に抑えることができます。
 
 <a name="0.3"></a>
-### 0.3 Friends do not let friends have bad style.
+### 0.3 友人は友人に悪いスタイルをさせません。
 
-If you see someone working either against a style guide or no style guide, try to correct them.
+スタイルガイドまたはスタイルガイドなしのいずれかで作業している人がいる場合は、修正するようにしてください。
 
-When working within a team or discussing within a community such as [Unreal Slackers](http://join.unrealslackers.org/), it is far easier to help and to ask for help when people are consistent. Nobody likes to help untangle someone's Blueprint spaghetti or deal with assets with names they can't understand.
+チーム内で働いたり、[Unreal Slackers](http://join.unrealslackers.org/) などのコミュニティで議論するときは、一貫性があるときに助けて助けを求めるのがはるかに簡単です。 誰も、誰かの青写真スパゲッティを解くのを手伝ったり、理解できない名前の資産を扱ったりするのを好む人はいません。
 
-If you are helping someone who's work conforms to a different but consistent and sane style guide, you should be able to adapt to it. If they do not conform to any style guide, please direct them here.
+あなたの仕事の人が異なるが、一貫性があり、正真正銘のスタイルガイドに従うのを手助けしているなら、あなたはそれに適応できるはずです。 スタイルガイドに準拠していない場合は、ここで指示してください。
 
 <a name="0.4"></a>
-### 0.4 A team without a style guide is no team of mine.
+### 0.4 スタイルガイドのないチームは私のチームではありません。
 
-When joining an Unreal Engine 4 team one of your first questions should be "Do you have a style guide?". If the answer is no, you should be skeptical about their ability to work as a team.
+Unreal Engine 4チームに参加するときは、最初の質問の1つが「あなたはスタイルガイドを持っていますか？」でなければなりません。 答えがノーなら、あなたはチームとして働く能力について懐疑的でなければなりません。
 
 <a name="toc"></a>
-## Table of Contents
+## 目次
 
 > 1. [Asset Naming Conventions](#anc)
 > 1. [Directory Structure](#structure)
@@ -92,32 +92,32 @@ When joining an Unreal Engine 4 team one of your first questions should be "Do y
 
 <a name="anc"></a>
 <a name="1"></a>
-## 1. Asset Naming Conventions ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 1. アセットの命名規則 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-Naming conventions should be treated as law. A project that conforms to a naming convention is able to have its assets managed, searched, parsed, and maintained with incredible ease.
+命名規則は法律として扱うべきです。 命名規則に準拠したプロジェクトでは、アセットの管理、検索、解析、維持管理が非常に簡単です。
 
-Most things are prefixed with prefixes being generally an acronym of the asset type followed by an underscore.
+ほとんどのものに接頭辞が付いています。接頭辞は一般的にアセットタイプの略語で、その後にアンダースコアが続きます。
 
 <a name="base-asset-name"></a>
 <a name="1.1"></a>
-### 1.1 Base Asset Name - `Prefix_BaseAssetName_Variant_Suffix` ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 1.1 基本アセット名 - `Prefix_BaseAssetName_Variant_Suffix` ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-All assets should have a _Base Asset Name_. A Base Asset Name represents a logical grouping of related assets. Any asset that is part of this logical group should follow the the standard of  `Prefix_BaseAssetName_Variant_Suffix`.
+すべてのアセットに _Base Asset Name_ が必要です。基本資産名は、関連する資産の論理的なグループを表します。この論理グループの一部である資産は、 `Prefix_BaseAssetName_Variant_Suffix`の標準に従うべきです。
 
-Keeping the pattern `Prefix_BaseAssetName_Variant_Suffix` and in mind and using common sense is generally enough to warrant good asset names. Here are some detailed rules regarding each element.
+パターン `Prefix_BaseAssetName_Variant_Suffix` を念頭に置いて常識的に使うことは、一般的には良い資産名を保証するのに十分です。各要素に関するいくつかの詳細なルールがあります。
 
-`Prefix` and `Suffix` are to be determined by the asset type through the following [Asset Name Modifier](#asset-name-modifiers) tables.
+`Prefix`と` Suffix`は、以下の [Asset Name Modifier](#asset-name-modifiers) テーブルを介して、資産タイプによって決定されます。
 
-`BaseAssetName` should be determined by short and easily recognizable name related to the context of this group of assets. For example, if you had a character named Bob, all of Bob's assets would have the `BaseAssetName` of `Bob`.
+`BaseAssetName`は、この資産群の文脈に関連した簡単で分かりやすい名前によって決定されるべきです。たとえば、Bobという名前のキャラクターがあった場合、Bobのすべてのアセットは `Base`の` Bob`という名前になります。
 
-For unique and specific variations of assets, `Variant` is either a short and easily recognizable name that represents logical grouping of assets that are a subset of an asset's base name. For example, if Bob had multiple skins these skins should still use `Bob` as the `BaseAssetName` but include a recognizable `Variant`. An 'Evil' skin would be referred to as `Bob_Evil` and a 'Retro' skin would be referred to as `Bob_Retro`.
+独特で特殊な資産のバリエーションの場合、 `Variant` は、資産の基本名のサブセットである資産の論理的なグループ分けを表す簡単で分かりやすい名前のいずれかです。例えば、Bobが複数のスキンを持っていた場合、これらのスキンは `BaseAssetName`として` Bob`を使用しますが、認識可能な `Variant`を含みます。 「Evil」スキンは `Bob_Evil` と呼ばれ、「Retro」スキンは `Bob_Retro` と呼ばれる。
 
-For unique but generic variations of assets, `Variant` is a two digit number starting at `01`. For example, if you have an environment artist generating nondescript rocks, they would be named `Rock_01`, `Rock_02`, `Rock_03`, etc. Except for rare exceptions, you should never require a three digit variant number. If you have more than 100 assets, you should consider organizing them with different base names or using multiple variant names.
+ユニークではあるが一般的な資産のバリエーションでは、 `Variant` は `01` から始まる2桁の数字です。例えば、謎めいた岩石を生成する環境アーティストがいる場合、名前は `Rock_01`、` Rock_02`、 `Rock_03` などとなります。まれな例外を除いて、3桁の変種番号は必要ありません。資産が100以上ある場合は、異なるベース名で複数のバリアント名を使用して整理することを検討する必要があります。
 
-Depending on how your asset variants are made, you can chain together variant names. For example, if you are creating flooring assets for an Arch Viz project you should use the base name `Flooring` with chained variants such as `Flooring_Marble_01`, `Flooring_Maple_01`, `Flooring_Tile_Squares_01`.
+資産バリアントの作成方法に応じて、バリアント名を連結することができます。たとえば、Arch Vizプロジェクトのフロアリングアセットを作成する場合は、`Flooring_Marble_01`, `Flooring_Maple_01`, `Flooring_Tile_Squares_01` などの連鎖変形を含むベース名 `Flooring` を使用する必要があります。
 
 <a name="1.1-examples"></a>
-#### 1.1 Examples
+#### 1.1 例
 
 ##### 1.1e1 Bob
 
@@ -139,9 +139,9 @@ Depending on how your asset variants are made, you can chain together variant na
 | Material                | M_Rock                                                     |
 | Material Instance (Snow)| MI_Rock_Snow                                               |
 
-### 1.2 Asset Name Modifiers ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 1.2 アセット名修飾子　![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-When naming an asset use these tables to determine the prefix and suffix to use with an asset's [Base Asset Name](#base-asset-name).
+アセットの名前を付けるときは、これらのテーブルを使用してアセットの　[Base Asset Name](#base-asset-name)　で使用する接頭辞と接尾辞を決定します。
 
 #### Sections
 
