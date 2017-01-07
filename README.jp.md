@@ -752,91 +752,90 @@ Blueprintのすべての変数参照は常にコンテキストを持つので�
 <a name="bp-vars-naming-atomic"></a>
 ##### 3.2.1.6 Do _Not_ Include Atomic Type Names ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Atomic or primitive variables are variables that represent data in their simplest form, such as booleans, integers, floats, and enumerations.
+Atomic変数またはプリミティブ変数は、ブール値、整数、浮動小数点数、および列挙型など、最も単純な形式のデータを表す変数です。
 
-Strings and vectors are considered atomic in terms of style when working with Blueprints, however they are technically not atomic.
+Blueprintsで作業する場合、文字列やベクトルはスタイルの観点からアトミック的であるとみなされますが、技術的にはアトミックではありません。
 
-> While vectors consist of three floats, vectors are often able to be manipulated as a whole, same with rotators.
+> ベクトルは3つの浮動小数点で構成されますが、ベクトルは回転子と同じように全体として操作することができます。
 
-> Do _not_ consider Text variables as atomic, they are secretly hiding localization functionality. The atomic type of a string of characters is `String`, not `Text`.
+> テキスト変数をアトミックなものと見なすのではなく、密かにローカライゼーション機能を隠していますか？文字列のアトミックタイプは `Text`ではなく` String`です。
 
-Atomic variables should not have their type name in their name.
+Atomic変数の型名はその名前に含まれるべきではありません。
 
-Example: Use `Score`, `Kills`, and `Description` **not** `ScoreFloat`, `FloatKills`, `DescriptionString`.
+例： ` ScoreFloat`、 `FloatKills`、` DescriptionString` **ではなく** `Score`、` Kills`、 `Description` を使用します。
 
-The only exception to this rule is when a variable represents 'a number of' something to be counted _and_ when using a name without a variable type is not easy to read.
+このルールの唯一の例外は、変数が変数の型を持たない名前を使うのが読みにくい場合に、変数が '数えられる何か'を表していることです。
 
-Example: A fence generator needs to generate X number of posts. Store X in `NumPosts` or `PostsCount` instead of `Posts` as `Posts` may potentially read as an Array of a variable type named `Post`.
+例：フェンスジェネレータは、X個のポストを生成する必要があります。 `Posts`の` Posts`ではなく `NumPosts`や` PostsCount`にXをストアすると、 `Post`という名前の変数型の配列として読み込まれる可能性があります。
 
 <a name="3.2.1.7"></a>
 <a name="bp-vars-naming-complex"></a>
 ##### 3.2.1.7 Do Include Non-Atomic Type Names ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-Non-atomic or complex variables are variables that represent data as a collection of atomic variables. Structs, Classes, Interfaces, and primitives with hidden behavior such as `Text` and `Name` all qualify under this rule.
+非Atomic変数または複合変数は、データをアトミック変数の集合として表す変数です。 `Text`や` Name`のような隠れた振る舞いを持つ構造体、クラス、インタフェース、プリミティブはすべてこのルールの対象となります。
 
-> While an Array of an atomic variable type is a list of variables, Arrays do not change the 'atomicness' of a variable type.
+>アトミック変数型の配列は変数のリストですが、配列は変数型の 'アトミック性'を変更しません。
 
-These variables should include their type name while still considering their context.
+これらの変数は、コンテキストを考慮しながら型名を含める必要があります。
 
-If a class owns an instance of a complex variable, i.e. if a `BP_PlayerCharacter` owns a `BP_Hat`, it should be stored as the variable type as without any name modifications.
+クラスが複雑な変数のインスタンスを所有している場合、つまり `BP_PlayerCharacter`が` BP_Hat`を所有している場合は、名前を変更することなく変数型として格納する必要があります。
 
-Example: Use `Hat`, `Flag`, and `Ability` **not** `MyHat`, `MyFlag`, and `PlayerAbility`.
+例： `` MyHat``、 `MyFlag`、` PlayerAbility` **ではなく** `Hat`、` Flag`、 `Ability` を使用します。
 
-If a class does not own the value a complex variable represents, you should use a noun along with the variable type.
+複雑な変数が表す値をクラスが所有していない場合は、変数型とともに名詞を使用する必要があります。
 
-Example: If a `BP_Turret` has the ability to target a `BP_PlayerCharacter`, it should store its target as `TargetPlayer` as when in the context of `BP_Turret` it should be clear that it is a reference to another complex variable type that it does not own.
+例： `BP_Turret`が` BP_PlayerCharacter`を対象とする能力を持っているならば、 `BP_Turret`の文脈で` TargetPlayer`としてその目標を保存する必要があります。それは所有していません。
 
 
 <a name="3.2.1.8"></a>
 <a name="bp-vars-naming-arrays"></a>
 ##### 3.2.1.8 Arrays ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-Arrays follow the same naming rules as above, but should be named as a plural noun.
+配列は上記と同じ命名規則に従いますが、複数の名詞として命名する必要があります。
 
-Example: Use `Targets`, `Hats`, and `EnemyPlayers`, **not** `TargetList`, `HatArray`, `EnemyPlayerArray`.
-
+例： `Target`、` Hats`、 `EnemyPlayers` **ではなく** `TargetList`、` HatArray`、 `EnemyPlayerArray`ではありません。
 
 <a name="3.2.2"></a>
 <a name="bp-vars-editable"></a>
 #### 3.2.2 Editable Variables ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-All variables that are safe to change the value of in order to configure behavior of a blueprint should be marked as `Editable`.
+青写真の動作を設定するために値を変更するのに安全なすべての変数は、`編集可能` としてマークする必要があります。
 
-Conversely, all variables that are not safe to change or should not be exposed to designers should _not_ be marked as editable, unless for engineering reasons the variable must be marked as `Expose On Spawn`.
+逆に、変更が安全でない、または設計者に公開されるべきでないすべての変数は、エンジニアリング上の理由で、変数が `Expose On Spawn` としてマークされていない限り、編集可能とマークされてはなりません。
 
-Do not arbitrarily mark variables as `Editable`.
+変数を `編集可能` として任意にマークしないでください。
 
 <a name="3.2.2.1"></a>
 <a name="bp-vars-editable-tooltips"></a>
 ##### 3.2.2.1 Tooltips ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All `Editable` variables, including those marked editable just so they can be marked as `Expose On Spawn`, should have a description in their `Tooltip` fields that explains how changing this value affects the behavior of the blueprint.
+編集可能とマークされた変数を含むすべての `Editable`変数は、` Expose On Spawn`としてマークすることができるので、この値の変更が青写真の動作にどのように影響するかを説明する `Tooltip`フィールドに記述する必要があります。
 
 <a name="3.2.2.2"></a>
 <a name="bp-vars-editable-ranges"></a>
 ##### 3.2.2.2 Slider And Value Ranges ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All `Editable` variables should make use of slider and value ranges if there is ever a value that a variable should _not_ be set to.
+すべての `Editable`変数は、変数が設定されては _ならない_ 値が存在する場合、スライダと値の範囲を使用する必要があります。
 
-Example: A blueprint that generates fence posts might have an editable variable named `PostsCount` and a value of -1 would not make any sense. Use the range fields to mark 0 as a minimum.
+例：フェンスポストを生成するblueprintには、編集可能な変数 `PostsCount` があり、-1の値は意味をなさないでしょう。 範囲フィールドを使用して0を最小値としてマークします。
 
-If an editable variable is used in a Construction Script, it should have a reasonable Slider Range defined so that someone can not accidentally assign it a large value that could crash the editor.
+編集可能な変数が構築スクリプトで使用されている場合は、誤ってエディタをクラッシュさせる大きな値を割り当てることができないように、適切なスライダ範囲が定義されている必要があります。
 
-A Value Range only needs to be defined if the bounds of a value are known. While a Slider Range prevents accidental large number inputs, an undefined Value Range allows a user to specify a value outside the Slider Range that may be considered 'dangerous' but still valid.
+値の範囲は、値の境界がわかっている場合にのみ定義する必要があります。 Slider Rangeは偶発的な多数の入力を防ぎますが、未定義のValue Rangeを使用するとスライダ範囲外の値を指定することができます。この値は「危険」とみなされますが有効です。
 
 <a name="3.2.3"></a>
 <a name="bp-vars-categories"></a>
 #### 3.2.3 Categories ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-If a class has only a small number of variables, categories are not required.
+クラスに少数の変数のみがある場合、カテゴリは必須ではありません。
 
-If a class has a moderate amount of variables (5-10), all `Editable` variables should have a non-default category assigned. A common category is `Config`.
+クラスに適度な量の変数（5〜10）がある場合、すべての `Editable`変数にはデフォルト以外のカテゴリが割り当てられます。 一般的なカテゴリは `Config`です。
 
-If a class has a large amount of variables, all `Editable` variables should be categorized into sub-categories using the category `Config` as the base category. Non-editable variables should be categorized into descriptive categories describing their usage. 
+クラスに多量の変数がある場合、すべての `Editable`変数は、` Config`カテゴリを基本カテゴリとして使用してサブカテゴリに分類する必要があります。 編集不可能な変数は、その使用法を説明する記述的なカテゴリに分類されるべきです。
 
-> You can define sub-categories by using the pipe character `|`, i.e. `Config | Animations`.
+>パイプ文字 `|`を使ってサブカテゴリを定義することができます。すなわち `Config | Animations`
 
-Example: A weapon class set of variables might be organized as:
+例：武器クラスの変数セットは、以下のように構成されています:
 
 	|-- Config
 	|	|-- Animations
@@ -852,49 +851,49 @@ Example: A weapon class set of variables might be organized as:
 <a name="bp-vars-access"></a>
 #### 3.2.4 Variable Access Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-In C++, variables have a concept of access level. Public means any code outside the class can access the variable. Protected means only the class and any child classes can access this variable internally. Private means only this class and no child classes can access this variable.
+C++では、変数にはアクセスレベルの概念があります。 publicは、クラス外のコードが変数にアクセスできることを意味します。 Protectedは、クラスおよびすべての子クラスだけがこの変数に内部的にアクセスできることを意味します。 Privateはこのクラスのみを意味し、この変数には子クラスはアクセスできません。
 
-Blueprints do not have a defined concept of protected access currently.
+青写真には、現在保護されているアクセスの概念が定義されていません。
 
-Treat `Editable` variables as public variables. Treat non-editable variables as protected variables.
+`編集可能` 変数を公開変数として扱います。 編集不可能な変数を保護された変数として扱います。
 
 <a name="3.2.4.1"></a>
 <a name="bp-vars-access-private"></a>
 ##### 3.2.4.1 Private Variables ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-Unless it is known that a variable should only be accessed within the class it is defined and never a child class, do not mark variables as private. Until variables are able to be marked `protected`, reserve private for when you absolutely know you want to restrict child class usage.
+変数が定義されたクラス内でしかアクセスされず、子クラスではないことが分かっている場合を除き、変数をプライベートとしてマークしないでください。 変数が `protected`とマークされるまで、子クラスの使用を制限したいことが絶対に分かっているときは、privateを確保してください。
 
 <a name="3.2.5"></a>
 <a name="bp-vars-advanced"></a>
 #### 3.2.5 Advanced Display ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-If a variable should be editable but often untouched, mark it as `Advanced Display`. This makes the variable hidden unless the advanced display arrow is clicked.
+変数を編集可能であるがしばしば触れていなければならない場合は、それを `Advanced Display`とマークします。 これにより、拡張表示矢印をクリックしない限り、変数が非表示になります。
 
-To find the `Advanced Display` option, it is listed as an advanced displayed variable in the variable details list.
+`Advanced Display`オプションを見つけるために、それは変数の詳細リストに表示される高度な変数としてリストされます。
 
 <a name="3.2.6"></a>
 <a name="bp-vars-transient"></a>
 #### 3.2.6 Transient Variables ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All variables that are not editable and have a initial value of zero or null should be marked as `Transient`.
+編集可能でなく、初期値がゼロまたはヌルのすべての変数は、 `Transient` としてマークする必要があります。
 
-Transient variables are variables that do not need to have their value saved and loaded and have an initial value of zero or null. This is useful for references to other objects and actors who's value isn't known until run-time.
+一時変数とは、値を保存して読み込む必要がなく、ゼロまたはゼロの初期値を持つ変数です。 これは、実行時まで値がわからない他のオブジェクトやアクタへの参照に役立ちます。
 
-This forces the variable to always initialize as zero or null, prevents the editor from ever saving a reference to it, and speeds up saving and loading of the blueprint class.
+これにより、変数は常にゼロまたはヌルとして初期化され、エディタがこれまでリファレンスを保存できなくなり、ブループリントクラスの保存と読み込みが高速化されます。
 
 <a name="3.2.7"></a>
 <a name="bp-vars-savegame"></a>
 #### 3.2.7 SaveGame Variables ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Only use the SaveGame property of variables when inside a class derived from `SaveGame`. Use this property only if the `SaveGame` class should save this value.
+`SaveGame`から派生したクラスの中でのみ変数のSaveGameプロパティを使用してください。 このプロパティは、 `SaveGame`クラスがこの値を保存する場合にのみ使用してください。
 
-Do **not** mix `SaveGame` and `Transient`, this does not make any sense.
+`SaveGame`と` Transient`をミックス **しないでください**。 これは意味をなさない。
 
 <a name="3.2.8"></a>
 <a name="bp-vars-config"></a>
 #### 3.2.8 Config Variables ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Do not use the `Config Variable` flag. This makes it harder for designers to control blueprint behavior. Config variables should only be used in C++ for rarely changed variables. Think of them as `Advanced Advanced Display` variables.
+`Config Variable`フラグは使わないでください。 これにより、設計者は blueprint の動作を制御することが難しくなります。 構成変数は、まれに変更された変数に対してのみC++で使用する必要があります。 それらを `Advanced Advanced Display` 変数と考えてください。
 
 ## Contributors
 
@@ -913,6 +912,6 @@ See [LICENSE](/LICENSE)
 
 ## Amendments
 
-We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
+このガイドをフォークし、チームのスタイルガイドに合わせてルールを変更することをお勧めします。 以下に、スタイルガイドのいくつかの修正案を挙げることができます。 これにより、マージの競合に対処することなく、スタイルガイドを定期的に更新することができます。
 
 # };
