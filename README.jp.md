@@ -1,73 +1,73 @@
 # [Gamemakin](https://gamemak.in) UE4 Style Guide() {
 
-*A mostly reasonable approach to Unreal Engine 4*
+*Unreal Engine 4 への最も合理的なアプローチ*
 
-Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
+[Airbnb Javascript Style Guide](https://github.com/airbnb/javascript) に大きな影響を受けています。
 
 [![Analytics](https://ga-beacon.appspot.com/UA-80567399-1/repo?useReferrer)](#) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 ## Unreal Engine 4 Linter Plugin
 
-An automated method of checking your project against this style guide is available for purchase at [the Unreal Engine marketplace](https://www.unrealengine.com/marketplace/linter). This plugin's source code will eventually be free, but in order to use with UE4 without building the engine from source code, please use the marketplace version.
+このスタイルガイドに対してプロジェクトをチェックする自動化された方法は、[the Unreal Engine marketplace](https://www.unrealengine.com/marketplace/linter) で購入できます。 このプラグインのソースコードは最終的に無料になりますが、ソースコードからエンジンを構築せずにUE4で使用するには、マーケットプレイス版を使用してください。
 
-## Linking To This Document
+## 本ドキュメントへリンクする場合
 
-Every section of this style guide is numbered for both easy reference and easy linking. You can link to any section directly by simply append a hash tag and the section number to the end of http://ue4.style
-For example, if you want to send someone to the first principle of this style guide you would append `#0.1`, resulting in http://ue4.style#0.1.
+このスタイルガイドの各セクションは、簡単な参照と簡単なリンクのために番号が付けられています。 http://ue4.style の最後にハッシュタグとセクション番号を付加するだけで、任意のセクションに直接リンクすることができます
+たとえば、このスタイルガイドの第1原則に誰かを送りたい場合は、http：//ue4.style#0.1という結果になる `＃0.1` を追加します。
 
-## Forks And Translations
+## Forks と翻訳
 
-If you have made a notable fork or translation that is not suitable for a pull request into this repo, please submit a pull request to add the fork or translation here.
+このレポへのプルリクエストに適していない注目すべきフォークまたは翻訳を行った場合は、ここにフォークまたは翻訳を追加するプルリクエストを提出してください。
 
 * [Korean Translation](https://github.com/ymkim50/ue4-style-guide/blob/master/README_Kor.md) by ymkim50
 * [Russian Translation](https://github.com/CosmoMyzrailGorynych/ue4-style-guide-rus/blob/master/README.md) by CosmoMyzrailGorynych
 
-## Important Terminology
+## 重要用語
 
 <a name="terms-level-map"></a>
 ##### Levels/Maps
 
-The word 'map' generally refers to what the average person calls a 'level' and may be used interchangeably. See this term's history [here](https://en.wikipedia.org/wiki/Level_(video_gaming)).
+'map' という語は一般に、平均的な人が'level'と呼んでいるものを指し、互換的に使用することができます。この用語の歴史については[こちら](https://en.wikipedia.org/wiki/Level_(video_gaming))を参照してください。
 
 <a name="terms-cases"></a>
 ##### Cases
 
-There are a few different ways you can name things. Here are some common casing types:
+物事に名前を付ける方法はいくつかあります。 いくつかの一般的なケーシングタイプがあります:
 
 > ###### PascalCase
 >
-> Capitalize every word and remove all spaces, e.g. `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
+> すべての単語を大文字にし、スペースをすべて削除します。, e.g. `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
 > 
 > ###### camelCase
 >
-> The first letter is always lowercase but every following word starts with uppercase, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
+> 最初の文字は常に小文字ですが、その後のすべての単語は大文字で始まります。, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
 >
 > ###### Snake_case
 >
-> Words can arbitrarily start upper or lowercase but words are separated by an underscore, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
+> 単語は任意に大文字または小文字を開始できますが、単語はアンダースコアで区切られます。, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
 
 <a name="0"></a>
-## 0. Principles
+## 0. 原則
 
-These principles have been adapted from [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/).
+これらの原則は[idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/)に即します。
 
 <a name="0.1"></a>
-### 0.1 If your UE4 project already has a style guide, you should follow it.
+### 0.1 あなたのUE4プロジェクトにすでにスタイルガイドがある場合は、それに従ってください。
 
-If you are working on a project or with a team that has a pre-existing style guide, it should be respected.  Any inconsistency between an existing style guide and this guide should defer to the existing.
+既存のスタイルガイドがあるチームまたはプロジェクトで作業している場合は、それを尊重する必要があります。 既存のスタイルガイドとこのガイドとの間に矛盾がある場合は、既存のスタイルガイドに従わなくてはなりません。
 
-Style guides should be living documents however and you should propose style guide changes to an existing style guide as well as this guide if you feel the change benefits all usages.
+スタイルガイドは生き生きしたドキュメントでなければなりません。すべての用途に変更のメリットがあると感じる場合は、既存のスタイルガイドとこのガイドのスタイルガイドの変更を提案する必要があります。
 
-> #### "Arguments over style are pointless. There should be a style guide, and you should follow it."
+> #### "スタイル上の議論は無意味です。スタイルガイドが必要です。それに従うべきです"
 > [_Rebecca Murphey_](https://rmurphey.com)
 
 <a name="0.2"></a>
-### 0.2 All structure, assets, and code in any Unreal Engine 4 project should look like a single person created it, no matter how many people contributed.
+### 0.2 すべてのUnreal Engine 4プロジェクトの構造、アセット、およびコードは、どれだけの人が貢献しても、1人の人が作成したように見えるはずです。
 
-Moving from one project to another should not cause a re-learning of style and structure. Conforming to a style guide removes unneeded guesswork and ambiguities.
+あるプロジェクトから別のプロジェクトに移っても、スタイルや構造を再学習してはいけません。 スタイルガイドに従うことで、不必要な推測やあいまいがなくなります。
 
-It also allows for more productive creation and maintenance as one does not need to think about style, simply follow instructions. This style guide is written with best practices in mind, meaning that by following this style guide you will also minimize hard to track issues.
+また、スタイルについて考える必要もなく、指示に従うだけで、より生産的な作成と保守が可能です。 このスタイルガイドはベストプラクティスを念頭に置いて書かれています。つまり、このスタイルガイドに従って、問題を追跡するのを最小限に抑えることができます。
 
 <a name="0.3"></a>
 ### 0.3 Friends do not let friends have bad style.
