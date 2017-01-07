@@ -189,8 +189,6 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Particle System         | PS_        |            |                                  |
 | Widget Blueprint        | WBP_ or WB_|            | どちらか1つだけを選択。 WBP_ を優先する。      |
 
-マップと呼ばれるフォルダにある必要があります
-
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
 #### 1.2.2 Animations ![#](https://img.shields.io/badge/lint-supported-green.svg)
