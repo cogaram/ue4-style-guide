@@ -175,7 +175,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Level / Map             |            |            | [ Maps フォルダ内に配置するべき.](#2.3) |
+| Level / Map             |            |            | [ <Maps></Maps> フォルダ内に配置するべき.](#2.3) |
 | Level (Persistent)      |            | _P         |                                  |
 | Level (Audio)           |            | _Audio     |                                  |
 | Level (Lighting)        |            | _Lighting  |                                  |
@@ -202,7 +202,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Animation Blueprint     | ABP_       |            |                                  |
 | Animation Composite     | AC_        |            |                                  |
 | Animation Montage       | AM_        |            |                                  |
-| Animation Sequence      | A_ or AS_  |            | Pick only one. Prefer A_.        |
+| Animation Sequence      | A_ or AS_  |            | どちらか1つだけを選択。 A_ を優先する。        |
 | Blend Space             | BS_        |            |                                  |
 | Blend Space 1D          | BS_        |            |                                  |
 | Level Sequence          | LS_        |            |                                  |
@@ -234,10 +234,10 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Blueprint               | BP_        |            |                                  |
 | Blueprint Function Library | BPFL_   |            |                                  |
 | Blueprint Interface     | BPI_       |            |                                  |
-| Blueprint Macro Library | BPML_      |            | Do not use macro libraries if possible. |
-| Enumeration             | E          |            | No underscore.                   |
-| Structure               | F or S     |            | No underscore.                   |
-| Widget Blueprint        | WBP_ or WB_|            | Pick only one. Prefer WBP_.      |
+| Blueprint Macro Library | BPML_      |            | 可能な限り、マクロライブライを使うべきでない。 |
+| Enumeration             | E          |            | アンダースコアを付けない。                   |
+| Structure               | F or S     |            | アンダースコアを付けない。                   |
+| Widget Blueprint        | WBP_ or WB_|            | どちらか1つだけを選択。 WBP_ を優先する。      |
 
 <a name="anc-materials"></a>
 <a name="1.2.5"></a>
@@ -250,7 +250,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Material Function       | MF_        |            |                                  |
 | Material Instance       | MI_        |            |                                  |
 | Material Parameter Collection | MPC_ |            |                                  |
-| Subsurface Profile      | SP_ or SSP_|            | Pick only one. Prefer SP_.       |
+| Subsurface Profile      | SP_ or SSP_|            | どちらか1つだけを選択。 SP_ を優先する。       |
 | Physical Materials      | PM_        |            |                                  |
 
 <a name="anc-textures"></a>
@@ -264,26 +264,26 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Texture (Normal)        | T_         | _N         |                                  |
 | Texture (Roughness)     | T_         | _R         |                                  |
 | Texture (Alpha/Opacity) | T_         | _A         |                                  |
-| Texture (Ambient Occlusion) | T_     | _O or _AO  | Pick only one. Prefer _O.        |
+| Texture (Ambient Occlusion) | T_     | _O or _AO  | どちらか1つだけを選択。 _O を優先する。       |
 | Texture (Bump)          | T_         | _B         |                                  |
 | Texture (Emissive)      | T_         | _E         |                                  |
 | Texture (Mask)          | T_         | _M         |                                  |
 | Texture (Specular)      | T_         | _S         |                                  |
-| Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
+| Texture (Packed)        | T_         | _*         | 下記の注記 [packing](#anc-textures-packing) を参照 |
 | Texture Cube            | TC_        |            |                                  |
 | Media Texture           | MT_        |            |                                  |
-| Render Target           | RT_ or RTT_|            | Pick only one. Prefer RT_.       |
+| Render Target           | RT_ or RTT_|            | どちらか1つだけを選択。 RT_ を優先する。       |
 | Cube Render Target      | RTC_       |            |                                  |
 | Texture Light Profile   | TLP        |            |                                  |
 
 <a name="anc-textures-packing"</a>
 <a name="1.2.6.1"></a>
 #### 1.2.6.1 Texture Packing ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
-It is common practice to pack multiple layers of texture data into one texture. An example of this is packing Emissive, Roughness, Ambient Occlusion together as the Red, Green, and Blue channels of a texture respectively. To determine the suffix, simply stack the given suffix letters from above together, e.g. `_ERO`.
+テクスチャデータの複数のレイヤを1つのテクスチャにパックするのが一般的な方法です。 これの一例は、エミッシブ、ラフネス、アンビエントオクルージョンをテクスチャの赤、緑、青のチャンネルとしてまとめたものです。 接尾辞を決定するには、上の指定された接尾辞の文字を単純にスタックします。 `_ERO`。
 
-> It is generally acceptable to include an Alpha/Opacity layer in your Diffuse/Albedo's alpha channel and as this is common practice, adding `A` to the `_D` suffix is optional.
+> Diffuse/AlbedoのアルファチャンネルにAlpha/Opacityレイヤーを含めることは一般的に受け入れられます。これは一般的な方法で、 `_D` 接尾辞に ` A` を追加することはオプションです。
 
-Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Diffuse/Albedo's alpha channel as a texture with an alpha channel incurs more overhead than one without.
+Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4チャンネルのデータをテクスチャ（RGBA）にパッキングするのはお勧めできません。
 
 <a name="anc-misc"></a>
 <a name="1.2.7"></a>
@@ -295,7 +295,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Camera Anim             | CA_        |            |                                  |
 | Color Curve             | Curve_     | _Color     |                                  |
 | Curve Table             | Curve_     | _Table     |                                  |
-| Data Asset              | *_         |            | Prefix should be based on class. |
+| Data Asset              | *_         |            | 接頭辞はクラスに基づいている必要があります。 |
 | Data Table              | DT_        |            |                                  |
 | Float Curve             | Curve_     | _Float     |                                  |
 | Foliage Type            | FT_        |            |                                  |
@@ -305,7 +305,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Matinee Data            | Matinee_   |            |                                  |
 | Media Player            | MP_        |            |                                  |
 | Object Library          | OL_        |            |                                  |
-| Redirector              |            |            | These should be fixed up ASAP.   |
+| Redirector              |            |            | これらはできるだけ早く修正する必要があります。 |
 | Sprite Sheet            | SS_        |            |                                  |
 | Static Vector Field     | VF_        |            |                                  |
 | Touch Interface Setup   | TI_        |            |                                  |
@@ -344,8 +344,8 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Media Sound Wave        | MSW_       |            |                                  |
 | Reverb Effect           | Reverb_    |            |                                  |
 | Sound Attenuation       | ATT_       |            |                                  |
-| Sound Class             |            |            | No prefix/suffix. Should be put in a folder called SoundClasses |
-| Sound Concurrency       |            | _SC        | Should be named after a SoundClass |
+| Sound Class             |            |            | 接頭辞/接尾辞を付けません。 SoundClassesフォルダ配下に置べき |
+| Sound Concurrency       |            | _SC        | SoundClassの後に名前付けるべき |
 | Sound Cue               | A_         | _Cue       |                                  |
 | Sound Mix               | Mix_       |            |                                  |
 | Sound Wave              | A_         |            |                                  |
@@ -359,7 +359,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Font                    | Font_      |            |                                  |
 | Slate Brush             | Brush_     |            |                                  |
 | Slate Widget Style      | Style_     |            |                                  |
-| Widget Blueprint        | WBP_ or WB_|            | Pick only one. Prefer WBP_.      |
+| Widget Blueprint        | WBP_ or WB_|            | どちらか1つだけを選択。 WBP_ を優先する。      |
 
 <a name="anc-effects"></a>
 <a name="1.2.12"></a>
@@ -372,16 +372,17 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 
 <a name="2"></a>
 <a name="structure"></a>
-## 2. Content Directory Structure ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 2. コンテンツディレクトリの構造 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-Equally important as asset names, the directory structure style of a project should be considered law. Asset naming conventions and content directory structure go hand in hand, and a violation of either causes unneeded chaos.
+アセット名と同様に重要なことに、プロジェクトのディレクトリ構造は法律とみなすべきです。 資産の命名規則とコンテンツディレクトリ構造が両立し、いずれかの違反は不要な混乱の原因となります。
 
-There are multiple ways to lay out the content of a UE4 project. In this style, we will be using a structure that relies more on filtering and search abilities of the Content Browser for those working with assets to find assets of a specific type instead of another common structure that groups asset types with folders.
+UE4プロジェクトのコンテンツをレイアウトする方法は複数あります。 このスタイルでは、アセットをグループ化する別の共通構造ではなく、特定のタイプのアセットを検索するために、コンテンツブラウザのフィルタリングと検索機能にもっと依存する構造を使用します。
 
-> If you are using the prefix [naming convention](#1.2) above, using folders to contain assets of similar types such as `Meshes`, `Textures`, and `Materials` is a redundant practice as asset types are already both sorted by prefix as well as able to be filtered in the content browser.
+>上の [naming convention](#1.2) を使用している場合、フォルダに `Meshes`, `Textures`, および `Materials`などの類似の型のアセットを格納することは、アセットの型がすでにソートされているため、 プレフィックスだけでなく、コンテンツブラウザでフィルタリングすることができます。
+
 
 <a name="2e1"><a>
-### 2e1 Example Project Content Structure
+### 2e1 プロジェクトのコンテンツ構造の例
 <pre>
 |-- Content
     |-- <a href="#2.2">GenericShooter</a>
@@ -436,7 +437,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 
 The reasons for this structure are listed in the following sub-sections.
 
-### Sections
+### 章
 
 > 2.1 [Folder Names](#structure-folder-names)
 
@@ -457,30 +458,30 @@ The reasons for this structure are listed in the following sub-sections.
 
 <a name="2.1"></a>
 <a name="structure-folder-names"><a>
-### 2.1 Folder Names ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 2.1  フォルダ名 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-These are common rules for naming any folder in the content structure.
+これらは、コンテンツ構造内の任意のフォルダに名前を付ける一般的な規則です。
 
 <a name="2.1.1"></a>
-#### 2.1.1 Always Use PascalCase[<sup>*</sup>](#terms-cases) ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.1.1 常に PascalCase を使用 [<sup>*</sup>](#terms-cases) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-PascalCase refers to starting a name with a capital letter and then instead of using spaces, every following word also starts with a capital letter. For example, `DesertEagle`, `RocketPistol`, and `ASeriesOfWords`.
+PascalCaseは、大文字で名前を始めることを意味し、スペースを使用する代わりに、すべての次の単語も大文字で始まります。 たとえば、`DesertEagle`, `RocketPistol`,および`ASeriesOfWords` などです。
 
 See [Cases](#terms-cases).
 
 <a name="2.1.2"></a>
-#### 2.1.2 Never Use Spaces ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.1.2 決してスペースを使用しないでください ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Re-enforcing [2.1.1](#2.1.1), never use spaces. Spaces can cause various engineering tools and batch processes to fail. Ideally your project's root also contains no spaces and is located somewhere such as `D:\Project` instead of `C:\Users\My Name\My Documents\Unreal Projects`.
+[2.1.1](#2.1.1) を再実施し、決してスペースを使用しないでください。 スペースによって、さまざまなエンジニアリングツールやバッチ処理が失敗する可能性があります。 理想的には、プロジェクトのルートには空白が含まれておらず、 `C:\Users\My Name\My Documents\Unreal Projects` の代わりに `D:\Project`のような場所に置かれているのが理想的です。
 
 <a name="2.1.3"></a>
-#### 2.1.3 Never Use Unicode Characters And Other Symbols ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.1.3 Unicode文字とその他の記号を使用しないでください ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-If one of your game characters is named 'Zoë', its folder name should be `Zoe`. Unicode characters can be worse than [Spaces](#2.1.2) for engineering tool and some parts of UE4 don't support Unicode characters in paths either.
+あなたのゲームキャラクターの名前が「Zoë」の場合、そのフォルダー名は `Zoe`でなければなりません。 Unicode文字はエンジニアリングツールの [Spaces](#2.1.2) より悪くなり、UE4の一部ではパス内のUnicode文字もサポートされません。
 
-Related to this, if your project has [unexplained issues](https://answers.unrealengine.com/questions/101207/undefined.html) and your computer's user name has a Unicode character (i.e. your name is `Zoë`), any project located in your `My Documents` folder will suffer from this issue. Often simply moving your project to something like `D:\Project` will fix these mysterious issues.
+これに関連して、プロジェクトに [説明できない問題](https://answers.unrealengine.com/questions/101207/undefined.html) があり、コンピュータのユーザー名がUnicode文字（つまり、あなたの名前は `Zoë`）である場合、 あなたの `My Documents`フォルダにあるプロジェクトはこの問題を抱えています。 単にプロジェクトを `D:\Project`のようなものに移動するだけで、これらの不思議な問題が修正されます。
 
-Using other characters outside `a-z`, `A-Z`, and `0-9` such as `@`, `-`, `_`, `,`, `*`, and `#` can also lead to unexpected and hard to track issues on other platforms, source control, and weaker engineering tools. 
+`@`, `-`, `_`, `,`, `*`, と `#` のような `a-z`, `A-Z`, 及び `0-9` 以外の文字を使うと、 他のプラットフォーム、ソース管理、および弱いエンジニアリングツールの問題を追跡することは困難です。
 
 <a name="2.2"></a>
 <a name="structure-top-level"><a>
