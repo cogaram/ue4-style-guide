@@ -1,4 +1,4 @@
-# [Gamemakin](https://gamemak.in) UE4 Style Guide() {
+# [Gamemakin](https://gamemak.in) UE4スタイルガイド() {
 
 *Unreal Engine 4 への最も合理的なアプローチ*
 
@@ -8,14 +8,14 @@
 
 ## Unreal Engine 4 Linter Plugin
 
-このスタイルガイドに対してプロジェクトをチェックする自動化された方法は、[the Unreal Engine marketplace](https://www.unrealengine.com/marketplace/linter) で購入できます。 このプラグインのソースコードは最終的に無料になりますが、ソースコードからエンジンを構築せずにUE4で使用するには、マーケットプレイス版を使用してください。
+このスタイルガイドに対してプロジェクトをチェックする自動化された方法は、[the Unreal Engine marketplace](https://www.unrealengine.com/marketplace/linter) で購入できます。 このプラグインのソースコードは最終的に無料になりますが、ソースコードからエンジンをビルドせずにUE4で使用するには、マーケットプレイス版を使用してください。
 
 ## 本ドキュメントへリンクする場合
 
 このスタイルガイドの各セクションは、簡単な参照と簡単なリンクのために番号が付けられています。 http://ue4.style の最後にハッシュタグとセクション番号を付加するだけで、任意のセクションに直接リンクすることができます
 たとえば、このスタイルガイドの第1原則に誰かを送りたい場合は、 http://ue4.style#0.1 という結果になる `＃0.1` を追加します。
 
-## Forks と翻訳
+## フォークと翻訳
 
 このレポへのプルリクエストに適していない注目すべきフォークまたは翻訳を行った場合は、ここにフォークまたは翻訳を追加するプルリクエストを提出してください。
 
@@ -27,50 +27,50 @@
 <a name="terms-level-map"></a>
 ##### Levels/Maps
 
-'map' という語は一般に、平均的な人が'level'と呼んでいるものを指し、互換的に使用することができます。この用語の歴史については[こちら](https://en.wikipedia.org/wiki/Level_(video_gaming))を参照してください。
+'map' という語は一般に、平均的な人が 'level' と呼んでいるものを指し、互換的に使用することができます。この用語の歴史については[こちら](https://en.wikipedia.org/wiki/Level_(video_gaming))を参照してください。
 
 <a name="terms-cases"></a>
-##### Cases
+##### 記法(Cases)
 
-物事に名前を付ける方法はいくつかあります。 いくつかの一般的なケーシングタイプがあります:
+物事に名前を付ける方法はいくつかあります。 ここに一般的ないくつかの記法の種類があります:
 
 > ###### PascalCase
 >
-> すべての単語を大文字にし、スペースをすべて削除します。, e.g. `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
+> すべての単語を大文字にし、スペースをすべて削除します。例えば `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
 > 
 > ###### camelCase
 >
-> 最初の文字は常に小文字ですが、その後のすべての単語は大文字で始まります。, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
+> 最初の文字は常に小文字ですが、その後のすべての単語は大文字で始まります。例えば `desertEagle`, `styleGuide`, `aSeriesOfWords`.
 >
 > ###### Snake_case
 >
-> 単語は任意に大文字または小文字を開始できますが、単語はアンダースコアで区切られます。, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
+> 単語は任意に大文字または小文字を開始できますが、単語はアンダースコアで区切られます。例えば `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
 
 <a name="0"></a>
 ## 0. 原則
 
-これらの原則は[idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/)に即します。
+これらの原則は [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/) に即します。
 
 <a name="0.1"></a>
-### 0.1 あなたのUE4プロジェクトにすでにスタイルガイドがある場合は、それに従ってください。
+### 0.1 あなたのUE4プロジェクトにすでにスタイルガイドがある場合は、それに従うべき
 
 既存のスタイルガイドがあるチームまたはプロジェクトで作業している場合は、それを尊重する必要があります。 既存のスタイルガイドとこのガイドとの間に矛盾がある場合は、既存のスタイルガイドに従わなくてはなりません。
 
 スタイルガイドは生き生きしたドキュメントでなければなりません。すべての用途に変更のメリットがあると感じる場合は、既存のスタイルガイドとこのガイドのスタイルガイドの変更を提案する必要があります。
 
-> #### "スタイル上の議論は無意味です。スタイルガイドが必要です。それに従うべきです"
+> #### "スタイルを超えた議論は無意味です。スタイルガイドがあるべきで、あなたはそれに従うべきです"
 > [_Rebecca Murphey_](https://rmurphey.com)
 
 <a name="0.2"></a>
-### 0.2 すべてのUnreal Engine 4プロジェクトの構造、アセット、およびコードは、どれだけの人が貢献しても、1人の人が作成したように見えるはずです。
+### 0.2 すべてのUE4プロジェクトの、構造、アセット、およびコードは、どれだけの沢山の人が貢献しても、1人が作成したように見えるべき
 
 あるプロジェクトから別のプロジェクトに移っても、スタイルや構造を再学習してはいけません。 スタイルガイドに従うことで、不必要な推測やあいまいがなくなります。
 
 また、スタイルについて考える必要もなく、指示に従うだけで、より生産的な作成と保守が可能です。 このスタイルガイドはベストプラクティスを念頭に置いて書かれています。つまり、このスタイルガイドに従って、問題を追跡するのを最小限に抑えることができます。
 
 <a name="0.3"></a>
-### 0.3 友人は友人に悪いスタイルをさせません。
+### 0.3 友人は、友人の悪いスタイルをさせないように行動しくてださい
 
 スタイルガイドまたはスタイルガイドなしのいずれかで作業している人がいる場合は、修正するようにしてください。
 
@@ -79,9 +79,9 @@
 あなたの仕事の人が異なるが、一貫性があり、正真正銘のスタイルガイドに従うのを手助けしているなら、あなたはそれに適応できるはずです。 スタイルガイドに準拠していない場合は、ここで指示してください。
 
 <a name="0.4"></a>
-### 0.4 スタイルガイドのないチームは私のチームではありません。
+### 0.4 スタイルガイドのないチームは、私のチームではありません
 
-Unreal Engine 4チームに参加するときは、最初の質問の1つが「あなたはスタイルガイドを持っていますか？」でなければなりません。 答えがノーなら、あなたはチームとして働く能力について懐疑的でなければなりません。
+UE4チームに参加するときは、最初の質問の1つが「あなたはスタイルガイドを持っていますか？」でなければなりません。 答えがノーなら、あなたはチームとして働く能力について懐疑的でなければなりません。
 
 <a name="toc"></a>
 ## 目次
@@ -102,13 +102,13 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 <a name="1.1"></a>
 ### 1.1 基本アセット名 - `Prefix_BaseAssetName_Variant_Suffix` ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-すべてのアセットに _Base Asset Name_ が必要です。基本資産名は、関連する資産の論理的なグループを表します。この論理グループの一部である資産は、 `Prefix_BaseAssetName_Variant_Suffix`の標準に従うべきです。
+すべてのアセットに _基本アセット名_ が必要です。基本アセット名は、関連する資産の論理的なグループを表します。この論理グループの一部である資産は、 `Prefix_BaseAssetName_Variant_Suffix`の標準に従うべきです。
 
 パターン `Prefix_BaseAssetName_Variant_Suffix` を念頭に置いて常識的に使うことは、一般的には良い資産名を保証するのに十分です。各要素に関するいくつかの詳細なルールがあります。
 
 `Prefix`と` Suffix`は、以下の [Asset Name Modifier](#asset-name-modifiers) テーブルを介して、資産タイプによって決定されます。
 
-`BaseAssetName`は、この資産群の文脈に関連した簡単で分かりやすい名前によって決定されるべきです。たとえば、Bobという名前のキャラクターがあった場合、Bobのすべてのアセットは `Base`の` Bob`という名前になります。
+`BaseAssetName`は、このアセット群の文脈に関連した簡単で分かりやすい名前によって決定されるべきです。たとえば、Bobという名前のキャラクターがあった場合、Bobのすべてのアセットは `BaseAssetName` の ` Bob` という名前になります。
 
 独特で特殊な資産のバリエーションの場合、 `Variant` は、資産の基本名のサブセットである資産の論理的なグループ分けを表す簡単で分かりやすい名前のいずれかです。例えば、Bobが複数のスキンを持っていた場合、これらのスキンは `BaseAssetName`として` Bob`を使用しますが、認識可能な `Variant`を含みます。 「Evil」スキンは `Bob_Evil` と呼ばれ、「Retro」スキンは `Bob_Retro` と呼ばれる。
 
@@ -175,7 +175,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Level / Map             |            |            | [ <Maps></Maps> フォルダ内に配置するべき.](#2.3) |
+| Level / Map             |            |            | [ Mapsフォルダ配下に置くべき.](#2.3) |
 | Level (Persistent)      |            | _P         |                                  |
 | Level (Audio)           |            | _Audio     |                                  |
 | Level (Lighting)        |            | _Lighting  |                                  |
@@ -183,11 +183,11 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Level (Gameplay)        |            | _Gameplay  |                                  |
 | Blueprint               | BP_        |            |                                  |
 | Material                | M_         |            |                                  |
-| Static Mesh             | S_ or SM_  |            | どちらか1つだけを選択。 S_ を優先する。        |
+| Static Mesh             | S_ or SM_  |            | どちらか1つを選択。 S_ を優先        |
 | Skeletal Mesh           | SK_        |            |                                  |
-| Texture                 | T_         | _?         | [Textures](#anc-textures) を参照してください。   |
+| Texture                 | T_         | _?         | [Textures](#anc-textures) を参照   |
 | Particle System         | PS_        |            |                                  |
-| Widget Blueprint        | WBP_ or WB_|            | どちらか1つだけを選択。 WBP_ を優先する。      |
+| Widget Blueprint        | WBP_ or WB_|            | どちらか1つを選択。 WBP_ を優先      |
 
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
@@ -200,7 +200,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Animation Blueprint     | ABP_       |            |                                  |
 | Animation Composite     | AC_        |            |                                  |
 | Animation Montage       | AM_        |            |                                  |
-| Animation Sequence      | A_ or AS_  |            | どちらか1つだけを選択。 A_ を優先する。        |
+| Animation Sequence      | A_ or AS_  |            | どちらか1つを選択。 A_ を優先        |
 | Blend Space             | BS_        |            |                                  |
 | Blend Space 1D          | BS_        |            |                                  |
 | Level Sequence          | LS_        |            |                                  |
@@ -235,7 +235,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Blueprint Macro Library | BPML_      |            | 可能な限り、マクロライブライを使うべきでない。 |
 | Enumeration             | E          |            | アンダースコアを付けない。                   |
 | Structure               | F or S     |            | アンダースコアを付けない。                   |
-| Widget Blueprint        | WBP_ or WB_|            | どちらか1つだけを選択。 WBP_ を優先する。      |
+| Widget Blueprint        | WBP_ or WB_|            | どちらか1つを選択。 WBP_ を優先      |
 
 <a name="anc-materials"></a>
 <a name="1.2.5"></a>
@@ -248,7 +248,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Material Function       | MF_        |            |                                  |
 | Material Instance       | MI_        |            |                                  |
 | Material Parameter Collection | MPC_ |            |                                  |
-| Subsurface Profile      | SP_ or SSP_|            | どちらか1つだけを選択。 SP_ を優先する。       |
+| Subsurface Profile      | SP_ or SSP_|            | どちらか1つを選択。 SP_ を優先       |
 | Physical Materials      | PM_        |            |                                  |
 
 <a name="anc-textures"></a>
@@ -262,7 +262,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Texture (Normal)        | T_         | _N         |                                  |
 | Texture (Roughness)     | T_         | _R         |                                  |
 | Texture (Alpha/Opacity) | T_         | _A         |                                  |
-| Texture (Ambient Occlusion) | T_     | _O or _AO  | どちらか1つだけを選択。 _O を優先する。       |
+| Texture (Ambient Occlusion) | T_     | _O or _AO  | どちらか1つを選択。 _O を優先       |
 | Texture (Bump)          | T_         | _B         |                                  |
 | Texture (Emissive)      | T_         | _E         |                                  |
 | Texture (Mask)          | T_         | _M         |                                  |
@@ -270,7 +270,7 @@ Unreal Engine 4チームに参加するときは、最初の質問の1つが「�
 | Texture (Packed)        | T_         | _*         | 下記の注記 [packing](#anc-textures-packing) を参照 |
 | Texture Cube            | TC_        |            |                                  |
 | Media Texture           | MT_        |            |                                  |
-| Render Target           | RT_ or RTT_|            | どちらか1つだけを選択。 RT_ を優先する。       |
+| Render Target           | RT_ or RTT_|            | どちらか1つを選択。 RT_ を優先       |
 | Cube Render Target      | RTC_       |            |                                  |
 | Texture Light Profile   | TLP        |            |                                  |
 
@@ -357,7 +357,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 | Font                    | Font_      |            |                                  |
 | Slate Brush             | Brush_     |            |                                  |
 | Slate Widget Style      | Style_     |            |                                  |
-| Widget Blueprint        | WBP_ or WB_|            | どちらか1つだけを選択。 WBP_ を優先する。      |
+| Widget Blueprint        | WBP_ or WB_|            | どちらか1つを選択。 WBP_ を優先      |
 
 <a name="anc-effects"></a>
 <a name="1.2.12"></a>
