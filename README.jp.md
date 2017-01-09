@@ -233,7 +233,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 | Blueprint               | BP_        |            |                                  |
 | Blueprint Function Library | BPFL_   |            |                                  |
 | Blueprint Interface     | BPI_       |            |                                  |
-| Blueprint Macro Library | BPML_      |            | 可能な限り、マクロライブライを使うべきでない。 |
+| Blueprint Macro Library | BPML_      |            | 可能な限り、マクロライブラリは使わない。 |
 | Enumeration             | E          |            | アンダースコアを付けない。                   |
 | Structure               | F or S     |            | アンダースコアを付けない。                   |
 | Widget Blueprint        | WBP_ or WB_|            | どちらか1つを選択。 WBP_ を優先      |
