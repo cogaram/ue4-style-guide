@@ -87,13 +87,13 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="toc"></a>
 ## 目次
 
-> 1. [Asset Naming Conventions](#anc)
-> 1. [Directory Structure](#structure)
-> 1. [Blueprints](#bp)
+> 1. [アセット命名規則](#anc)
+> 1. [ディレクトリ構成](#structure)
+> 1. [ブループリント](#bp)
 
 <a name="anc"></a>
 <a name="1"></a>
-## 1. アセットの命名規則 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 1. アセットの命名規則について ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 命名規則は法律として扱うべきです。 命名規則に準拠したプロジェクトでは、アセットの管理、検索、解析、維持管理が非常に簡単です。
 
@@ -278,7 +278,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="anc-textures-packing"</a>
 <a name="1.2.6.1"></a>
 #### 1.2.6.1 Texture Packing ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
-テクスチャデータの複数のレイヤを1つのテクスチャにパックするのが一般的な方法です。 これの一例は、エミッシブ、ラフネス、アンビエントオクルージョンをテクスチャの赤、緑、青のチャンネルとしてまとめたものです。 接尾辞を決定するには、上の指定された接尾辞の文字を単純にスタックします。 `_ERO`。
+テクスチャデータの複数のレイヤを1つのテクスチャにパックするのが一般的な方法です。 これの一例は、発光（エミッシブ）、粗さ（ラフネス）、環境遮蔽（アンビエントオクルージョン）をテクスチャの赤、緑、青のチャンネルとしてまとめたものです。 接尾辞を決定するには、上の指定された接尾辞の文字を単純にスタックします。 `_ERO`。
 
 > Diffuse/AlbedoのアルファチャンネルにAlpha/Opacityレイヤーを含めることは一般的に受け入れられます。これは一般的な方法で、 `_D` 接尾辞に ` A` を追加することはオプションです。
 
@@ -371,7 +371,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 
 <a name="2"></a>
 <a name="structure"></a>
-## 2. コンテンツディレクトリの構造 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 2. コンテンツディレクトリの構成について ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 アセット名と同様に重要なことに、プロジェクトのディレクトリ構造は法律とみなすべきです。 資産の命名規則とコンテンツディレクトリ構造が両立し、いずれかの違反は不要な混乱の原因となります。
 
@@ -616,7 +616,7 @@ Map ファイルは信じられないほど特殊で、特にサブレベルや�
 
 <a name="3"></a>
 <a name="bp"></a>
-## 3. Blueprints ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 3. ブループリントについて ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 このセクションでは、Blueprintのクラスとその内部について説明します。 可能であれば、スタイルルールは [Epic's Coding Standard](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard) に準拠しています。
 
