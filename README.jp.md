@@ -31,21 +31,21 @@
 'map' という語は一般に、平均的な人が 'level' と呼んでいるものを指し、互換的に使用することができます。この用語の歴史については[こちら](https://en.wikipedia.org/wiki/Level_(video_gaming))を参照してください。
 
 <a name="terms-cases"></a>
-##### 記法(Cases)
+##### Cases（記法）
 
 物事に名前を付ける方法はいくつかあります。 ここに一般的ないくつかの記法の種類があります:
 
 > ###### PascalCase
 >
-> すべての単語を大文字にし、スペースをすべて削除します。例えば `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
+> すべての単語を大文字にし、スペースをすべて削除します。例： `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
 > 
 > ###### camelCase
 >
-> 最初の文字は常に小文字ですが、その後のすべての単語は大文字で始まります。例えば `desertEagle`, `styleGuide`, `aSeriesOfWords`.
+> 最初の文字は常に小文字ですが、その後のすべての単語は大文字で始まります。例： `desertEagle`, `styleGuide`, `aSeriesOfWords`.
 >
 > ###### Snake_case
 >
-> 単語は任意に大文字または小文字を開始できますが、単語はアンダースコアで区切られます。例えば `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
+> 単語は任意に大文字または小文字を開始できますが、単語はアンダースコアで区切られます。例： `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
 
 <a name="0"></a>
@@ -88,22 +88,22 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 ## 目次
 
 > 1. [アセット命名規則](#anc)
-> 1. [ディレクトリ構成](#structure)
+> 1. [コンテンツディレクトリ構成](#structure)
 > 1. [ブループリント](#bp)
 
 <a name="anc"></a>
 <a name="1"></a>
 ## 1. アセットの命名規則について ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-命名規則は法律として扱うべきです。 命名規則に準拠したプロジェクトでは、アセットの管理、検索、解析、維持管理が非常に簡単です。
+命名規則は、法律のように扱うべきです。 命名規則に準拠したプロジェクトでは、アセットの管理、検索、解析、維持管理が非常に簡単です。
 
-ほとんどのものに接頭辞が付いています。接頭辞は一般的にアセットタイプの略語で、その後にアンダースコアが続きます。
+ほとんどのものにPrefix（接頭辞）が付いています。接頭辞は一般的にアセットタイプの略語で、その後にアンダースコアが続きます。
 
 <a name="base-asset-name"></a>
 <a name="1.1"></a>
 ### 1.1 基本アセット名 - `Prefix_BaseAssetName_Variant_Suffix` ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-すべてのアセットに _基本アセット名_ が必要です。基本アセット名は、関連するアセットの論理的なグループを表します。この論理グループの一部であるアセットは、 `Prefix_BaseAssetName_Variant_Suffix`の標準に従うべきです。
+すべてのアセットに _Base Asset Name_ _（基本アセット名）_ が必要です。基本アセット名は、関連するアセットの論理的なグループを表します。この論理グループの一部であるアセットは、 `Prefix_BaseAssetName_Variant_Suffix`の標準に従うべきです。
 
 パターン `Prefix_BaseAssetName_Variant_Suffix` を念頭に置いて常識的に使うことは、一般的には良いアセット名を保証するのに十分です。各要素に関するいくつかの詳細なルールがあります。
 
