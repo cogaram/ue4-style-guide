@@ -437,7 +437,7 @@ UE4プロジェクトのコンテンツをレイアウトする方法は複数�
             |-- Rifles
 </pre>
 
-The reasons for this structure are listed in the following sub-sections.
+この構造の理由は、以下のサブセクションに記載されています。
 
 ### セクション
 
