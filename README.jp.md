@@ -168,7 +168,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 
 > 1.2.10 [サウンド(Sound)](#anc-sound)
 
-> 1.2.11 [User Interface](#anc-ui)
+> 1.2.11 [UI(User Interface)](#anc-ui)
 
 > 1.2.12 [エフェクト(Effects)](#anc-effects)
 
@@ -297,7 +297,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 | Camera Anim             | CA_        |            |                                  |
 | Color Curve             | Curve_     | _Color     |                                  |
 | Curve Table             | Curve_     | _Table     |                                  |
-| Data Asset              | *_         |            | 接頭辞はクラスに基づいている必要があります。 |
+| Data Asset              | *_         |            | 接頭辞はクラスに基づいている必要があります |
 | Data Table              | DT_        |            |                                  |
 | Float Curve             | Curve_     | _Float     |                                  |
 | Foliage Type            | FT_        |            |                                  |
@@ -307,7 +307,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 | Matinee Data            | Matinee_   |            |                                  |
 | Media Player            | MP_        |            |                                  |
 | Object Library          | OL_        |            |                                  |
-| Redirector              |            |            | これらはできるだけ早く修正する必要があります。 |
+| Redirector              |            |            | これらはできるだけ早く修正する必要があります |
 | Sprite Sheet            | SS_        |            |                                  |
 | Static Vector Field     | VF_        |            |                                  |
 | Touch Interface Setup   | TI_        |            |                                  |
