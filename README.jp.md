@@ -462,7 +462,7 @@ UE4プロジェクトのコンテンツをレイアウトする方法は複数�
 <a name="structure-folder-names"><a>
 ### 2.1  フォルダ名 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-これらはコンテンツディレクトリ構造の内部の任意フォルダに、名前付けのための共通ルール  です。
+これらはコンテンツディレクトリ構造内の任意フォルダの名前付け共通ルールです。
 
 <a name="2.1.1"></a>
 #### 2.1.1 常に PascalCase を使うこと [<sup>*</sup>](#terms-cases) ![#](https://img.shields.io/badge/lint-supported-green.svg)
@@ -474,14 +474,14 @@ PascalCaseは、大文字で名前を始めることを意味し、スペース�
 <a name="2.1.2"></a>
 #### 2.1.2 絶対にスペースを使わないこと ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-[2.1.1](#2.1.1) を再実施したうえで、絶対にスペースを使わない。 スペースによって、さまざまな開発ツールやバッチ処理などで失敗する可能性があります。 理想的には、プロジェクトのルートには空白が含まれておらず、 `C:\Users\My Name\My Documents\Unreal Projects` の代わりに `D:\Project`のような場所に置かれているのが理想的です。
+[常に PascalCase を使うこと](#2.1.1) を再徹底したうえで、絶対にスペースを使わないでください。 スペースによって、さまざまな開発ツールやバッチ処理などで失敗する可能性があります。 理想的には、プロジェクトのルートには空白が含まれておらず、 `C:\Users\My Name\My Documents\Unreal Projects` の代わりに `D:\Project`のような場所に置かれているのが理想的です。
 
 <a name="2.1.3"></a>
 #### 2.1.3 絶対にUnicodeと、その他の記号を使わないこと ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-あなたのゲームキャラクターの名前が「Zoë」の場合、そのフォルダー名は `Zoe`でなければなりません。 Unicodeは、解析ツールやUE4の一部ではパス内のUnicode文字もサポートされないため [スペース](#2.1.2) より悪くなることがあります。
+あなたのゲームキャラクターの名前が「Zoë」の場合、そのフォルダー名は `Zoe`でなければなりません。 Unicodeは、解析ツールやUE4の一部ではパス(path)に含まれるのUnicode文字もサポートされないため [スペース](#2.1.2) より悪くなることがあります。
 
-これに関連して、プロジェクトに [説明できない問題](https://answers.unrealengine.com/questions/101207/undefined.html) があり、コンピュータのユーザー名がUnicode文字（つまり、あなたの名前は `Zoë`）である場合、 あなたの `My Documents`フォルダにあるプロジェクトはこの問題を抱えています。 単にプロジェクトを `D:\Project`のようなものに移動するだけで、これらの不思議な問題が修正されます。
+これに関連して、プロジェクトに [不可解な問題](https://answers.unrealengine.com/questions/101207/undefined.html) があり、コンピュータのユーザー名がUnicode文字（つまり、あなたの名前は `Zoë`）である場合や、 `My Documents`フォルダ以下にUE4プロジェクトを置いている場合は、この問題を抱えています。 ただ単にUE4プロジェクトを `D:\Project` などに移動するだけで、これらの摩訶不思議な問題が解決するでしょう。
 
 `@`, `-`, `_`, `,`, `*`, と `#` のような `a-z`, `A-Z`, 及び `0-9` 以外の文字を使うことによる、 他のプラットフォーム、ソース管理、および脆弱な解析ツールの問題を追跡することは困難です。
 
