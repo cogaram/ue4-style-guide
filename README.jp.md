@@ -120,7 +120,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="1.1-examples"></a>
 #### 1.1 例
 
-##### 1.1e1 Bob（キャラクター、人物、動物など）
+##### 1.1e1 Bob((キャラクター、人物、動物など))
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
@@ -130,7 +130,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 | Texture (Normal)        | T_Bob_N                                                    |
 | Texture (Evil Diffuse)  | T_Bob_Evil_D                                               |
 
-##### 1.1e2 Rocks（静物、背景オブジェクトなど）
+##### 1.1e2 Rocks((静物、背景オブジェクトなど))
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
@@ -148,35 +148,35 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 
 #### セクション
 
-> 1.2.1 [Most Common](#anc-common)
+> 1.2.1 [共通項目(Most Common)](#anc-common)
 
-> 1.2.2 [Animations](#anc-animations)
+> 1.2.2 [アニメーション(Animations)](#anc-animations)
 
-> 1.2.3 [Artificial Intelligence](#anc-ai)
+> 1.2.3 [人工知能(Artificial Intelligence)](#anc-ai)
 
-> 1.2.4 [Blueprints](#anc-bp)
+> 1.2.4 [ブループリント(Blueprints)](#anc-bp)
 
-> 1.2.5 [Materials](#anc-materials)
+> 1.2.5 [マテリアル(Materials)](#anc-materials)
 
-> 1.2.6 [Textures](#anc-textures)
+> 1.2.6 [テクスチャー(Textures)](#anc-textures)
 
-> 1.2.7 [Miscellaneous](#anc-misc)
+> 1.2.7 [その他(Miscellaneous)](#anc-misc)
 
 > 1.2.8 [Paper 2D](#anc-paper2d)
 
-> 1.2.9 [Physics](#anc-physics)
+> 1.2.9 [物理(Physics)](#anc-physics)
 
-> 1.2.10 [Sound](#anc-sound)
+> 1.2.10 [サウンド(Sound)](#anc-sound)
 
 > 1.2.11 [User Interface](#anc-ui)
 
-> 1.2.12 [Effects](#anc-effects)
+> 1.2.12 [エフェクト(Effects)](#anc-effects)
 
 <a name="anc-common"></a>
 <a name="1.2.1"></a>
 #### 1.2.1 Most Common ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Level / Map             |            |            | [ Mapsフォルダ配下に置くべき.](#2.3) |
 | Level (Persistent)      |            | _P         |                                  |
@@ -196,7 +196,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="1.2.2"></a>
 #### 1.2.2 Animations ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Aim Offset              | AO_        |            |                                  |
 | Aim Offset 1D           | AO_        |            |                                  |
@@ -217,7 +217,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="1.2.3"></a>
 ### 1.2.3 Artificial Intelligence ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | AI Controller           | AIC_       |            |                                  |
 | Behavior Tree           | BT_        |            |                                  |
@@ -230,7 +230,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="1.2.4"></a>
 ### 1.2.4 Blueprints ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Blueprint               | BP_        |            |                                  |
 | Blueprint Function Library | BPFL_   |            |                                  |
@@ -244,7 +244,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="1.2.5"></a>
 ### 1.2.5 Materials ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Material                | M_         |            |                                  |
 | Material (Post Process) | PP_        |            |                                  |
@@ -258,7 +258,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="1.2.6"></a>
 ### 1.2.6 Textures ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Texture                 | T_         |            |                                  |
 | Texture (Diffuse/Albedo/Base Color)| T_ | _D      |                                  |
@@ -291,7 +291,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 <a name="1.2.7"></a>
 ### 1.2.7 Miscellaneous ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Animated Vector Field   | VFA_       |            |                                  |
 | Camera Anim             | CA_        |            |                                  |
@@ -317,7 +317,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 <a name="1.2.8"></a>
 ### 1.2.8 Paper 2D ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Paper Flipbook          | PFB_       |            |                                  |
 | Sprite                  | SPR_       |            |                                  |
@@ -329,7 +329,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 <a name="1.2.9"></a>
 ### 1.2.9 Physics ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Physical Material       | PM_        |            |                                  |
 | Physical Asset	  | PHYS_      |            |                                  |
@@ -339,7 +339,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 <a name="1.2.10"></a>
 ### 1.2.10 Sounds ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Dialogue Voice          | DV_        |            |                                  |
 | Dialogue Wave           | DW_        |            |                                  |
@@ -356,7 +356,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 <a name="1.2.11"></a>
 ### 1.2.11 User Interface ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Font                    | Font_      |            |                                  |
 | Slate Brush             | Brush_     |            |                                  |
@@ -367,7 +367,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 <a name="1.2.12"></a>
 ### 1.2.12 Effects ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
+| Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Particle System         | PS_        |            |                                  |
 | Material (Post Process) | PP_        |            |                                  |
