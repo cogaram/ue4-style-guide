@@ -380,7 +380,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 
 UE4プロジェクトのコンテンツをレイアウトする方法は複数あります。 このスタイルでは、アセットをグループ化する別の共通構造ではなく、特定のタイプのアセットを検索するために、コンテンツブラウザのフィルタリングと検索機能にもっと依存する構造を使用します。
 
->上記の [命名規則](#1.2) を使用している場合、フォルダに `Meshes`, `Textures`, および `Materials`などの類似の型のアセットを格納することは、アセットの型がすでにソートされているため、 プレフィックスだけでなく、コンテンツブラウザでフィルタリングすることができます。
+> 上記の [命名規則](#1.2) を使用している場合、フォルダに `Meshes`, `Textures`, および `Materials`などの類似の型のアセットを格納することは、アセットの型がすでにソートされているため、 プレフィックスだけでなく、コンテンツブラウザでフィルタリングすることができます。
 
 
 <a name="2e1"><a>
@@ -441,15 +441,15 @@ UE4プロジェクトのコンテンツをレイアウトする方法は複数�
 
 ### セクション
 
-> 2.1 [Folder Names](#structure-folder-names)
+> 2.1 [フォルダ名](#structure-folder-names)
 
-> 2.2 [Top-Level Folders](#structure-top-level)
+> 2.2 [トップレベルのフォルダ](#structure-top-level)
 
-> 2.3 [Developer Folders](#structure-developers)
+> 2.3 [Developer フォルダ](#structure-developers)
 
-> 2.4 [Maps](#structure-maps)
+> 2.4 [Maps フォルダ](#structure-maps)
 
-> 2.5 [Core](#structure-core)
+> 2.5 [Core フォルダ](#structure-core)
 
 > 2.6 [`Assets` and `AssetTypes`](#structure-assettypes)
 
@@ -487,7 +487,7 @@ PascalCaseは、大文字で名前を始めることを意味し、スペース�
 
 <a name="2.2"></a>
 <a name="structure-top-level"><a>
-### 2.2 プロジェクト固有アセットには、トップレベルフォルダを使うこと ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 2.2 プロジェクト固有アセットには、トップレベルのフォルダを使うこと ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 すべてのプロジェクトのアセットは、プロジェクトの名前を付けたフォルダに存在する必要があります。 たとえば、プロジェクトの名前が「Generic Shooter」の場合、そのコンテンツの _全て_ は `Content/GenericShooter` 以下に存在する必要があります。
 
@@ -553,7 +553,7 @@ DLCをリリースする予定のプロジェクト、または複数のサブ�
 
 <a name="2.4"></a>
 <a name="structure-maps"></a>
-### 2.4 すべてのMap[<sup>*</sup>](#terms-level-map) ファイルは、Mapsフォルダ内に配置すること ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 2.4 すべてのMap[<sup>*</sup>](#terms-level-map) ファイルは、Mapsフォルダに配置すること ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 Mapファイルは信じられないほど特殊で、特にサブレベルやストリーミングレベルで作業する場合は、すべてのプロジェクトで独自のマップ命名システムを使用するのが一般的です。特定のプロジェクトでどのようなマップ体系が整っていても、すべてのレベルは `/Content/Project/Maps` に属している必要があります。
 
