@@ -722,12 +722,12 @@ UE4 Blueprint editors は、変数の使いやすい表示に `b`を含めない
 
 <a name="3.2.1.5"></a>
 <a name="bp-vars-naming-context"></a>
-##### 3.2.1.5 Considered Context ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.1.5 コンテキストの考慮(Considered Context) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-Blueprintのすべての変数参照は常にコンテキストを持つので、すべての変数名はコンテキストと重複してはいけません。
+Blueprintのすべての変数への参照は常にそのコンテキストを持つので、すべての変数名はコンテキストと重複してはいけません。
 
 <a name="3.2.1.5e"></a>
-###### 3.2.1.5e Examples:
+###### 3.2.1.5e 例:
 
 `BP_PlayerCharacter`というBlueprintを考えてみましょう。
 
@@ -740,7 +740,7 @@ Blueprintのすべての変数参照は常にコンテキストを持つので�
 * `CharacterSkills`
 * `ChosenCharacterSkin`
 
-これらの変数はすべて重複して名前が付けられます。 これらの変数を定義しているのは `BP_PlayerCharacter`なので、変数はその変数が属する` BP_PlayerCharacter`を表しています。
+これらの変数はすべて重複して名前が付けられています。 これらの変数を定義しているのは `BP_PlayerCharacter`なので、変数はその変数が属する`BP_PlayerCharacter`を表しています。
 
 **良い場合**
 
@@ -753,7 +753,7 @@ Blueprintのすべての変数参照は常にコンテキストを持つので�
 
 <a name="3.2.1.6"></a>
 <a name="bp-vars-naming-atomic"></a>
-##### 3.2.1.6 Do _Not_ Include Atomic Type Names ![#](https://img.shields.io/badge/lint-supported-green.svg)
+##### 3.2.1.6 アトミック型名を含める _べきでない_ (Do _Not_ Include Atomic Type Names) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 Atomic変数またはプリミティブ変数は、ブール値、整数、浮動小数点数、および列挙型など、最も単純な形式のデータを表す変数です。
 
