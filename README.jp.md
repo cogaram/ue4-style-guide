@@ -873,6 +873,7 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 
 <a name="3.2.5"></a>
 <a name="bp-vars-advanced"></a>
+<!-- https://wiki.unrealengine.com/UPROPERTY -->
 #### 3.2.5 Advanced Display ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 変数を編集可能であるがしばしば触れていなければならない場合は、それを `Advanced Display`とマークします。 これにより、拡張表示矢印をクリックしない限り、変数が非表示になります。
