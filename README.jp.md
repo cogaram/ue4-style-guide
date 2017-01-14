@@ -622,7 +622,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 <a name="bp"></a>
 ## 3. ブループリントについて ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-このセクションでは、Blueprintのクラスとその内部について説明します。 可能であれば、スタイルルールは [Epic's Coding Standard](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard) に準拠しています。
+このセクションでは、Blueprintクラスとその内部について説明します。 可能であれば、スタイルルールは [Epic's Coding Standard](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard) に準拠しています。
 
 ### セクション
 
@@ -698,7 +698,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 例： `Dead`と` Evil` **ではなく**、 `bDead`と` bEvil`を使用して下さい。
 
-UE4 Blueprint editors は、変数の使いやすい表示に `b`を含めないことを知っています。
+UE4 Blueprint editors は、変数の使いやすい表示に `b` を含めないことを知っています。
 
 <a name="3.2.1.4"></a>
 <a name="bp-var-bool-names"></a>
@@ -825,7 +825,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 すべての `Editable`変数は、その変数に設定されては _ならない_ 値が存在する場合、スライダと値の範囲を使用する必要があります。
 
-例：フェンスの支柱を生成するblueprintには、編集可能な変数 `PostsCount` があり、-1の値は意味をなさないでしょう。 範囲フィールドを使用して0を最小値としてマークします。
+例：フェンスの支柱を生成するブループリントには、編集可能な変数 `PostsCount` があり、-1の値は意味をなさないでしょう。 範囲フィールドを使用して0を最小値としてマークします。
 
 編集可能な変数が構築スクリプトで使用されている場合は、誤ってエディタをクラッシュさせる大きな値を割り当てることができないように、適切なスライダ範囲が定義されている必要があります。
 
@@ -861,7 +861,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 C++では、変数にはアクセスレベルの概念があります。 Publicは、クラス外のコードが変数にアクセスできることを意味します。 Protectedは、クラスおよびすべての子クラスだけがこの変数に内部的にアクセスできることを意味します。 Privateはこのクラスのみを意味し、この変数には子クラスはアクセスできません。
 
-ブループリントには、現在保護されているアクセスの概念が定義されていません。
+ブループリントには現在、Protectedのアクセスの制御の概念が定義されていません。
 
 `編集可能` 変数をPublic(公開)変数として扱います。 編集不可能な変数をProtected(保護)変数として扱います。
 
@@ -874,17 +874,17 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 <a name="3.2.5"></a>
 <a name="bp-vars-advanced"></a>
 <!-- https://wiki.unrealengine.com/UPROPERTY -->
-#### 3.2.5 Advanced Display ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.2.5 ((option:))詳細表示(Advanced Display) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-変数を編集可能であるがしばしば触れていなければならない場合は、それを `Advanced Display`とマークします。 これにより、拡張表示矢印をクリックしない限り、変数が非表示になります。
+変数を `編集可能` であるが、頻繁には値を変更しない場合は、それを `Advanced Display`をマークするべきです。 これにより、拡張表示矢印をクリックしない限り、変数が非表示になります。
 
-`Advanced Display`オプションを見つけるために、それは変数の詳細リストに表示される高度な変数としてリストされます。
+`Advanced Display`オプションを検索するには、詳細表示された変数として変数の詳細一覧に表示されます。
 
 <a name="3.2.6"></a>
 <a name="bp-vars-transient"></a>
-#### 3.2.6 Transient Variables ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.2.6 ((option:))一時変数(Transient Variables) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-編集可能でなく、初期値がゼロまたはヌルのすべての変数は、 `Transient` としてマークする必要があります。
+`編集可能` でなく、初期値がゼロまたはヌルのすべての変数は、 `Transient` としてマークする必要があります。
 
 一時変数とは、値を保存して読み込む必要がなく、ゼロまたはゼロの初期値を持つ変数です。 これは、実行時まで値がわからない他のオブジェクトやアクタへの参照に役立ちます。
 
@@ -892,17 +892,17 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 
 <a name="3.2.7"></a>
 <a name="bp-vars-savegame"></a>
-#### 3.2.7 SaveGame Variables ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.2.7 ((option:))保存変数(SaveGame Variables) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-`SaveGame`から派生したクラスの中でのみ変数のSaveGameプロパティを使用してください。 このプロパティは、 `SaveGame`クラスがこの値を保存する場合にのみ使用してください。
+`SaveGame`から派生したクラスの中でのみ変数のSaveGameプロパティを使用してください。 このプロパティは、`SaveGame`クラスがこの値を保存する場合にのみ使用してください。
 
-`SaveGame`と` Transient`をミックス **しないでください**。 これは意味をなさない。
+`SaveGame`と`Transient`をミックス **しないでください**。 これは意味をなさないです。
 
 <a name="3.2.8"></a>
 <a name="bp-vars-config"></a>
-#### 3.2.8 Config Variables ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.2.8 ((option:))構成変数(Config Variables) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-`Config Variable`フラグは使わないでください。 これにより、設計者は blueprint の動作を制御することが難しくなります。 構成変数は、まれに変更された変数に対してのみC++で使用する必要があります。 それらを `Advanced Advanced Display` 変数と考えてください。
+`Config Variable`フラグは使わないでください。 これにより、設計者は ブループリント の動作を制御することが難しくなります。 構成変数は、まれに変更された変数に対してのみC++で使用する必要があります。 それらを `Advanced Advanced Display` 変数と考えてください。
 
 ## Contributors
 
