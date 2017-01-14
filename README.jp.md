@@ -66,7 +66,7 @@
 <a name="0.2"></a>
 ### 0.2 どんなに多くの人が貢献したとしても、どのUE4プロジェクトの、全ての構造、アセット、およびコードは、1人で作成したようにするべき
 
-あるプロジェクトから別のプロジェクトに移っても、スタイルや構造を再学習してはいけません。 スタイルガイドに従うことで、不必要な推測やあいまいがなくなります。
+あるプロジェクトから別のプロジェクトに移っても、スタイルや構造を再学習してはいけません。 スタイルガイドに従うことで、不必要な推測や曖昧さがなくなります。
 
 また、スタイルについて考える必要もなく、指示に従うだけで、より生産的な作成と保守が可能です。 このスタイルガイドはベストプラクティスを念頭に置いて書かれています。つまり、このスタイルガイドに従って、問題を追跡するのを最小限に抑えることができます。
 
@@ -632,7 +632,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
-### 3.1 Compiling ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 3.1 コンパイル(Compiling) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 すべてのブループリントは、警告及びエラー無しで、コンパイルする必要があります。 放置しておくと非常に恐ろしい予期しない動作へと次々に連なるので、ブループリントの警告とエラーを直ちに修正するべきです。
 
@@ -642,7 +642,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 <a name="3.2"></a>
 <a name="bp-vars"></a>
-### 3.2 Variables ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 3.2 変数(Variables) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 (( [ブループリントの変数](https://docs.unrealengine.com/latest/JPN/Engine/Blueprints/UserGuide/Variables/index.html)を参照 ))
 
@@ -692,7 +692,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 <a name="3.2.1.3"></a>
 <a name="bp-var-bool-prefix"></a>
-##### 3.2.1.3 Boolean `b` Prefix ![#](https://img.shields.io/badge/lint-supported-green.svg)
+##### 3.2.1.3 Boopleanの接頭辞`b` (Boolean `b` Prefix ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 すべてのブール値はPascalCaseで命名するべきですが、先頭に小文字の `b` を付けます。
 
