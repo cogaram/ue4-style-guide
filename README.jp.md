@@ -703,7 +703,7 @@ UE4 Blueprint editors は、変数の使いやすい表示に `b`を含めない
 ##### 3.2.1.4 ブール値名(Boolean Names) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 <a name="3.2.1.4.1"></a>
-###### 3.2.1.4.1 一般的かつ、General And Independent State Information ![#](https://img.shields.io/badge/lint-supported-green.svg)
+###### 3.2.1.4.1 一般かつ独立した状態の情報(General And Independent State Information) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 すべてのブール値は、一般的な情報を表すならば可能なときには叙述的な形容詞として命名されるべきである。 その変数を疑問として含む単語、例えば `Is`を含めないでください。 これは関数用に予約されています。
 
@@ -712,7 +712,7 @@ UE4 Blueprint editors は、変数の使いやすい表示に `b`を含めない
 `bRunning`のような動詞を使わないようにしてください。 動詞は複雑な状態につながる傾向があります。
 
 <a name="3.2.1.4.2"></a>
-###### 3.2.1.4.2 Complex States ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+###### 3.2.1.4.2 複合した状態(Complex States) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 複合および/または従属状態を表すためにブール値を使用しないでください。 これにより、状態の追加と削除が複雑になり、もはや簡単には読み込めなくなります。 代わりに列挙を使用してください。
 
