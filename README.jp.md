@@ -800,7 +800,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 配列は上記と同じ命名規則に従いますが、複数の名詞として命名する必要があります。
 
-例： `Target`、` Hats`、 `EnemyPlayers` **ではなく** `TargetList`、` HatArray`、 `EnemyPlayerArray`ではありません。
+例： `TargetList`、` HatArray`、 `EnemyPlayerArray` **ではなく** `Target`、` Hats`、 `EnemyPlayers` を使用します。
 
 <a name="3.2.2"></a>
 <a name="bp-vars-editable"></a>
