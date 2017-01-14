@@ -638,7 +638,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 破損したブループリントをSVN/git等に(ソースのバージョン管理システム)にコミット **しないでください**。 それらをどうしてもSVN等に保存する必要がある場合は、代わりにそれらを葬ってください。
 
-壊れたブループリントは、壊れた参照、予期しない動作、料理の失敗、頻繁な不要な再コンパイルなど、別の方法で現れる問題を引き起こす可能性があります。 壊れたブループリントはあなたのゲーム全体を破壊する力を持っています。
+壊れたブループリントは、壊れた参照、予期しない動作、料理の失敗、頻繁で不要な再コンパイルなど、別の方法で現れる問題を引き起こす可能性があります。 壊れたブループリントはあなたのゲーム全体を破壊する力を持っています。
 
 <a name="3.2"></a>
 <a name="bp-vars"></a>
@@ -650,17 +650,17 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 > 3.2.2 [編集可能(Editable)](#bp-vars-editable)
 
-> 3.2.3 [Categories](#bp-vars-categories)
+> 3.2.3 [分類(Categories)](#bp-vars-categories)
 
-> 3.2.4 [Access](#bp-vars-access)
+> 3.2.4 [アクセス(Access)](#bp-vars-access)
 
-> 3.2.5 [Advanced](#bp-vars-advanced)
+> 3.2.5 [高度(Advanced)](#bp-vars-advanced)
 
-> 3.2.6 [Transient](#bp-vars-transient)
+> 3.2.6 [一時的(Transient)](#bp-vars-transient)
 
-> 3.2.7 [SaveGame](#bp-vars-savegame)
+> 3.2.7 [保存(SaveGame)](#bp-vars-savegame)
 
-> 3.2.8 [Config](#bp-vars-config)
+> 3.2.8 [設定(Config)](#bp-vars-config)
 
 <a name="3.2.1"></a>
 <a name="bp-var-naming"></a>
@@ -692,7 +692,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 <a name="bp-var-bool-prefix"></a>
 ##### 3.2.1.3 Boolean `b` Prefix ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-すべてのブール値はPascalCaseで指定する必要がありますが、先頭に小文字の `b` を付けます。
+すべてのブール値はPascalCaseで命名するべきですが、先頭に小文字の `b` を付けます。
 
 例： `Dead`と` Evil` **ではなく**、 `bDead`と` bEvil`を使用して下さい。
 
@@ -700,12 +700,12 @@ UE4 Blueprint editors は、変数の使いやすい表示に `b`を含めない
 
 <a name="3.2.1.4"></a>
 <a name="bp-var-bool-names"></a>
-##### 3.2.1.4 Boolean Names ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+##### 3.2.1.4 ブール値名(Boolean Names) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 <a name="3.2.1.4.1"></a>
-###### 3.2.1.4.1 General And Independent State Information ![#](https://img.shields.io/badge/lint-supported-green.svg)
+###### 3.2.1.4.1 一般的かつ、General And Independent State Information ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-すべてのブール値は、一般的な情報を表すならば可能なときには記述的形容詞として命名されるべきである。 その変数を疑問として含む単語、例えば `Is`を含めないでください。 これは関数用に予約されています。
+すべてのブール値は、一般的な情報を表すならば可能なときには叙述的な形容詞として命名されるべきである。 その変数を疑問として含む単語、例えば `Is`を含めないでください。 これは関数用に予約されています。
 
 例： `bIsDead` と `bIsHostile` **ではなく**、 `bDead`と` bHostile` を使用して下さい。
 
