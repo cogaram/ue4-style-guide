@@ -644,6 +644,8 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 <a name="bp-vars"></a>
 ### 3.2 Variables ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
+(( [ブループリントの変数](https://docs.unrealengine.com/latest/JPN/Engine/Blueprints/UserGuide/Variables/index.html)を参照 ))
+
 #### セクション
 
 > 3.2.1 [名前付け(Naming)](#bp-vars)
@@ -750,6 +752,8 @@ Blueprintのすべての変数への参照は常にそのコンテキストを�
 * `Name`
 * `Skills`
 * `Skin`
+
+((上記のように、`BP_PlayerCharacter`に属する変数であることを考慮して、シンプルに表すべきです))
 
 <a name="3.2.1.6"></a>
 <a name="bp-vars-naming-atomic"></a>
