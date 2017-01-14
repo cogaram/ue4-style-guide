@@ -821,11 +821,11 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 <a name="3.2.2.2"></a>
 <a name="bp-vars-editable-ranges"></a>
 <!-- https://forums.unrealengine.com/showthread.php?65227-Float-Variable-With-Slider-Range-From-C -->
-##### 3.2.2.2 Slider And Value Ranges ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.2.2 ((option:))スライダーと、値の範囲(Slider And Value Ranges) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-すべての `Editable`変数は、変数が設定されては _ならない_ 値が存在する場合、スライダと値の範囲を使用する必要があります。
+すべての `Editable`変数は、その変数に設定されては _ならない_ 値が存在する場合、スライダと値の範囲を使用する必要があります。
 
-例：フェンスポストを生成するblueprintには、編集可能な変数 `PostsCount` があり、-1の値は意味をなさないでしょう。 範囲フィールドを使用して0を最小値としてマークします。
+例：フェンスの支柱を生成するblueprintには、編集可能な変数 `PostsCount` があり、-1の値は意味をなさないでしょう。 範囲フィールドを使用して0を最小値としてマークします。
 
 編集可能な変数が構築スクリプトで使用されている場合は、誤ってエディタをクラッシュさせる大きな値を割り当てることができないように、適切なスライダ範囲が定義されている必要があります。
 
@@ -833,7 +833,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 <a name="3.2.3"></a>
 <a name="bp-vars-categories"></a>
-#### 3.2.3 Categories ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.2.3 分類(Categories) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 クラスに少数の変数のみがある場合、カテゴリは必須ではありません。
 
@@ -841,7 +841,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 クラスに多量の変数がある場合、すべての `Editable`変数は、` Config`カテゴリを基本カテゴリとして使用してサブカテゴリに分類する必要があります。 編集不可能な変数は、その使用法を説明する記述的なカテゴリに分類されるべきです。
 
->パイプ文字 `|`を使ってサブカテゴリを定義することができます。すなわち `Config | Animations`
+> パイプ文字 `|`を使ってサブカテゴリを定義することができます。すなわち `Config | Animations`
 
 例：武器クラスの変数セットは、以下のように構成されています:
 
@@ -857,17 +857,17 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 <a name="3.2.4"></a>
 <a name="bp-vars-access"></a>
-#### 3.2.4 Variable Access Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.2.4 変数のアクセスレベル(Variable Access Level) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-C++では、変数にはアクセスレベルの概念があります。 publicは、クラス外のコードが変数にアクセスできることを意味します。 Protectedは、クラスおよびすべての子クラスだけがこの変数に内部的にアクセスできることを意味します。 Privateはこのクラスのみを意味し、この変数には子クラスはアクセスできません。
+C++では、変数にはアクセスレベルの概念があります。 Publicは、クラス外のコードが変数にアクセスできることを意味します。 Protectedは、クラスおよびすべての子クラスだけがこの変数に内部的にアクセスできることを意味します。 Privateはこのクラスのみを意味し、この変数には子クラスはアクセスできません。
 
 ブループリントには、現在保護されているアクセスの概念が定義されていません。
 
-`編集可能` 変数を公開変数として扱います。 編集不可能な変数を保護された変数として扱います。
+`編集可能` 変数をPublic(公開)変数として扱います。 編集不可能な変数をProtected(保護)変数として扱います。
 
 <a name="3.2.4.1"></a>
 <a name="bp-vars-access-private"></a>
-##### 3.2.4.1 Private Variables ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.4.1 非公開変数(Private Variables) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 変数が定義されたクラス内でしかアクセスされず、子クラスではないことが分かっている場合を除き、変数をプライベートとしてマークしないでください。 変数が `protected`とマークされるまで、子クラスの使用を制限したいことが絶対に分かっているときは、privateを確保してください。
 
