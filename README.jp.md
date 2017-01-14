@@ -820,6 +820,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 <a name="3.2.2.2"></a>
 <a name="bp-vars-editable-ranges"></a>
+<!-- https://forums.unrealengine.com/showthread.php?65227-Float-Variable-With-Slider-Range-From-C -->
 ##### 3.2.2.2 Slider And Value Ranges ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 すべての `Editable`変数は、変数が設定されては _ならない_ 値が存在する場合、スライダと値の範囲を使用する必要があります。
