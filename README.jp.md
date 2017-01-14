@@ -796,7 +796,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 <a name="3.2.1.8"></a>
 <a name="bp-vars-naming-arrays"></a>
-##### 3.2.1.8 配列(Arrays) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+##### 3.2.1.8 ((Type:))配列(Arrays) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 配列は上記と同じ命名規則に従いますが、複数の名詞として命名する必要があります。
 
@@ -804,7 +804,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 <a name="3.2.2"></a>
 <a name="bp-vars-editable"></a>
-#### 3.2.2 Editable Variables ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+#### 3.2.2 ((option:))Editable Variables((パブリックで編集可能のon/off)) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 ブループリントの動作を設定するために値を変更するのに安全なすべての変数は、`編集可能` としてマークする必要があります。
 
@@ -814,7 +814,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 <a name="3.2.2.1"></a>
 <a name="bp-vars-editable-tooltips"></a>
-##### 3.2.2.1 Tooltips ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.2.1 ((option:))Tooltips((変数の追加情報として表示する内容)) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 編集可能とマークされた変数を含むすべての `Editable`変数は、` Expose On Spawn`としてマークすることができるので、この値の変更がブループリントの動作にどのように影響するかを説明する `Tooltip`フィールドに記述する必要があります。
 
