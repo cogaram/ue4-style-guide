@@ -757,31 +757,31 @@ Blueprintのすべての変数への参照は常にそのコンテキストを�
 
 <a name="3.2.1.6"></a>
 <a name="bp-vars-naming-atomic"></a>
-##### 3.2.1.6 アトミック型名を含める _べきでない_ (Do _Not_ Include Atomic Type Names) ![#](https://img.shields.io/badge/lint-supported-green.svg)
+##### 3.2.1.6 アトミック型名を変数名に含める _べきでない_ (Do _Not_ Include Atomic Type Names) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Atomic変数またはプリミティブ変数は、ブール値、整数、浮動小数点数、および列挙型など、最も単純な形式のデータを表す変数です。
+Atomicまたはプリミティブ変数は、ブール値、整数、浮動小数点数、および列挙型など、最も単純な形式のデータを表す変数です。
 
-ブループリントで作業する場合、文字列やベクトルはスタイルの観点からアトミック的であるとみなされますが、技術的にはアトミックではありません。
+ブループリントで作業する場合、StringやVectorはスタイルの観点からアトミック的であるとみなされますが、正確にはアトミックではありません。
 
-> ベクトルは3つの浮動小数点で構成されますが、ベクトルは回転子と同じように全体として操作することができます。
+> Vectorは3つの浮動小数点で構成されますが、Vectorは回転子と同じように全体として操作することができます。
 
-> テキスト変数をアトミックなものと見なすのではなく、密かにローカライゼーション機能を隠していますか？文字列のアトミックタイプは `Text`ではなく` String`です。
+> Text変数をアトミックなものと見なすのではなく、密かにローカライゼーション機能を隠していますか？文字列のアトミックタイプは `Text`ではなく` String`です。
 
 Atomic変数の型名はその名前に含まれるべきではありません。
 
 例： ` ScoreFloat`、 `FloatKills`、` DescriptionString` **ではなく** `Score`、` Kills`、 `Description` を使用します。
 
-このルールの唯一の例外は、変数が変数の型を持たない名前を使うのが読みにくい場合に、変数が '数えられる何か'を表していることです。
+このルールの唯一の例外は、変数が変数の型を持たない名前を使うのが読みにくい場合に、変数が '数えられる何か' を表していることです。
 
 例：フェンスジェネレータは、X個のポストを生成する必要があります。 `Posts`の` Posts`ではなく `NumPosts`や` PostsCount`にXをストアすると、 `Post`という名前の変数型の配列として読み込まれる可能性があります。
 
 <a name="3.2.1.7"></a>
 <a name="bp-vars-naming-complex"></a>
-##### 3.2.1.7 Do Include Non-Atomic Type Names ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.1.7 非アトミック型名は変数名に含めるべき (Do Include Non-Atomic Type Names) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-非Atomic変数または複合変数は、データをアトミック変数の集合として表す変数です。 `Text`や` Name`のような隠れた振る舞いを持つ構造体、クラス、インタフェース、プリミティブはすべてこのルールの対象となります。
+非Atomicまたは複合変数は、データをアトミック変数の集合として表す変数です。 `Text`や` Name`のような隠れた振る舞いを持つ構造体、クラス、インタフェース、プリミティブはすべてこのルールの対象となります。
 
->アトミック変数型の配列は変数のリストですが、配列は変数型の 'アトミック性'を変更しません。
+> アトミック変数型の配列は変数のリストですが、配列は変数型の '原子性(atomicness)' を変更しません。
 
 これらの変数は、コンテキストを考慮しながら型名を含める必要があります。
 
@@ -796,7 +796,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 <a name="3.2.1.8"></a>
 <a name="bp-vars-naming-arrays"></a>
-##### 3.2.1.8 Arrays ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+##### 3.2.1.8 配列(Arrays) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 配列は上記と同じ命名規則に従いますが、複数の名詞として命名する必要があります。
 
