@@ -909,6 +909,7 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 * [Michael Allar](http://allarsblog.com): [GitHub](https://github.com/Allar), [Twitter](https://twitter.com/michaelallar)
 * [CosmoMyzrailGorynych](https://github.com/CosmoMyzrailGorynych)
 * [billymcguffin](https://github.com/billymcguffin)
+* [akenatsu](https://github.com/akenatsu)
 
 ## License
 
