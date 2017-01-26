@@ -157,7 +157,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 
 > 1.2.3 [人工知能(Artificial Intelligence)](#anc-ai)
 
-> 1.2.4 [ブループリント(ブループリント)](#anc-bp)
+> 1.2.4 [ブループリント(Blueprint)](#anc-bp)
 
 > 1.2.5 [マテリアル(Materials)](#anc-materials)
 
@@ -231,7 +231,7 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 
 <a name="anc-bp"></a>
 <a name="1.2.4"></a>
-### 1.2.4 ブループリント ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 1.2.4 Blueprint ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 | Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
