@@ -96,6 +96,8 @@ UE4チームに参加するときは、最初の質問の1つが「あなたは�
 <a name="1"></a>
 ## 1. アセットの命名規則について ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
+(( [アセットの命名規則 ](https://wiki.unrealengine.com/Assets_Naming_Convention_JP) ))
+
 命名規則は、法律のように扱うべきです。 命名規則に準拠したプロジェクトでは、アセットの管理、検索、解析、維持管理が非常に簡単です。
 
 ほとんどのものに接頭辞(Prefix)が付いています。接頭辞は一般的にアセットタイプの略語で、その後にアンダースコアが続きます。
