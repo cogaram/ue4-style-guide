@@ -1021,17 +1021,17 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 
 <a name="3.3.1.4"></a>
 <a name="bp-funcs-naming-eventhandlers"></a>
-#### 3.3.1.4 イベントハンドラとディスパッチャは `On` で開始するべき
+#### 3.3.1.4 イベントハンドラとディスパッチャは `On` で始まるべき
 
-イベントを処理したり、イベントをディスパッチする関数は、`On` を指定して、[動詞規則](#bp-funcs-naming-verbs)に従ってください。 過去動詞がうまく読めば、動詞は最後に移動するかもしれません。
+イベントハンドラや、イベントディスパッチなどの関数は、`On` で始まるべきで、続きは [動詞規則](#bp-funcs-naming-verbs) に従ってください。 過去動詞がうまく読めば、動詞は最後に移動するかもしれません。
 
-単語 `On` の[連語](http://dictionary.cambridge.org/us/grammar/british-grammar/about-words-clauses-and-sentences/collocation)は、動詞規則に従うことが免除されます。
+単語 `On` の[連結語句](http://dictionary.cambridge.org/us/grammar/british-grammar/about-words-clauses-and-sentences/collocation)は、動詞規則に従うことが免除されます。
 
 `Handle` は許されません。'Unreal' では `Handle` の代わりに` On` を使用しますが、他のフレームワークでは `On`の代わりに` Handle` を使う方がよいかもしれません。
 
 良い例：
 
-* `OnDeath` - ゲームの一般的な連語
+* `OnDeath` - ゲームの一般的な連結語句
 * `OnPickup`
 * `OnReceiveMessage`
 * `OnMessageRecieved`
