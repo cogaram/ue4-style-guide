@@ -698,11 +698,11 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 <a name="3.2.1"></a>
 <a name="bp-var-naming"></a>
-#### 3.2.1 Naming ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+#### 3.2.1 名前付け ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 <a name="3.2.1.1"></a>
 <a name="bp-var-naming-nouns"></a>
-##### 3.2.1.1 Nouns ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.1.1 名詞 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 すべての非ブール変数名は、明確で明確で説明的な名詞でなければなりません。
 
@@ -713,7 +713,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 すべての非ブール変数は [PascalCase](#terms-cases) の形式でなければなりません。
 
 <a name="3.2.1.2e"></a>
-###### 3.2.1.2e Examples:
+###### 3.2.1.2e 例:
 
 * `Score`
 * `Kills`
@@ -724,7 +724,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 <a name="3.2.1.3"></a>
 <a name="bp-var-bool-prefix"></a>
-##### 3.2.1.3 Boopleanの接頭辞`b` (Boolean `b` Prefix ![#](https://img.shields.io/badge/lint-supported-green.svg)
+##### 3.2.1.3 Boopleanの接頭辞は `b`　にするべき ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 すべてのブール値はPascalCaseで命名するべきですが、先頭に小文字の `b` を付けます。
 
@@ -734,7 +734,7 @@ UE4 Blueprint editors は、変数の使いやすい表示に `b` を含めな�
 
 <a name="3.2.1.4"></a>
 <a name="bp-var-bool-names"></a>
-##### 3.2.1.4 ブール値名(Boolean Names) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+##### 3.2.1.4 ブール値の命名規則 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 <a name="3.2.1.4.1"></a>
 ###### 3.2.1.4.1 一般かつ独立した状態の情報(General And Independent State Information) ![#](https://img.shields.io/badge/lint-supported-green.svg)
