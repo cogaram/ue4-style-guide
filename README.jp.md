@@ -12,7 +12,7 @@
 
 ## このスタイルガイドを検討する 
 
-Gamemakin LLCはhttp://discord.gamemak.inのPublic Discordチャンネルを持っており、スタイルガイドとLinterプラグインに関するすべてのことについて議論したい場合は#linterチャンネルがあります。 
+Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネルを持っており、スタイルガイドとLinterプラグインに関するあらゆる事について、議論したい場合は #linter チャンネルを使用してください。 
 
 ## 本ドキュメントへリンクする場合
 
