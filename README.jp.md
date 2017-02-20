@@ -10,6 +10,10 @@
 
 このスタイルガイドに対してプロジェクトをチェックする自動化された方法は、[the Unreal Engine marketplace](https://www.unrealengine.com/marketplace/linter) で購入できます。 このプラグインのソースコードは最終的に無料になりますが、ソースコードからエンジンをビルドせずにUE4で使用するには、マーケットプレイス版を使用してください。
 
+## このスタイルガイドを検討する 
+
+Gamemakin LLCはhttp://discord.gamemak.inのPublic Discordチャンネルを持っており、スタイルガイドとLinterプラグインに関するすべてのことについて議論したい場合は#linterチャンネルがあります。 
+
 ## 本ドキュメントへリンクする場合
 
 このスタイルガイドの各セクションは、簡単な参照と簡単なリンクのために番号が付けられています。 http://ue4.style の最後にハッシュタグとセクション番号を付加するだけで、任意のセクションに直接リンクすることができます
@@ -22,6 +26,7 @@
 * [Korean Translation](https://github.com/ymkim50/ue4-style-guide/blob/master/README_Kor.md) by ymkim50
 * [Russian Translation](https://github.com/CosmoMyzrailGorynych/ue4-style-guide-rus/blob/master/README.md) by CosmoMyzrailGorynych
 * [Japanese Translation](https://github.com/akenatsu/ue4-style-guide/blob/master/README.jp.md) by akenatsu
+* [Chinese Translation](https://github.com/skylens-inc/ue4-style-guide/blob/master/README.md) by Beijing Skylens Tech.
 
 ## 重要用語
 
@@ -47,6 +52,21 @@
 >
 > 単語は任意に大文字または小文字を開始できますが、単語はアンダースコアで区切られます。例： `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
+<a name="terms-var-prop"></a> 
+##### 変数/プロパティ (Variables / Properties)
+ほとんどの文脈では、 '変数' と 'プロパティ'   という言葉は入れ替え可能です。 ただし、両方が同じコンテキストで一緒に使用されている場合は：
+
+<a name="terms-property"></a> 
+###### プロパティ (Properties)
+通常、クラス内で定義された変数を指します。 たとえば、`BP_Barrel` ブループリントクラスに `bExploded` 変数がある場合、 `bExploded` は `BP_Barrel` クラスのプロパティと呼ばれます。
+
+クラスのコンテキストでは、以前に定義されたデータへのアクセスを暗示するためによく使用されます。
+
+<a name="terms-variable"></a> 
+###### 変数 (Variables)
+通常は、関数の引数または関数内のローカル変数として定義された変数を指します。 
+
+クラスの文脈では、その定義とそれが保持するものについての議論を伝えるためによく使用されます。 
 
 <a name="0"></a>
 ## 0. 原則
@@ -627,11 +647,17 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 このセクションでは、Blueprintクラスとその内部について説明します。 可能であれば、スタイルルールは [Epic's Coding Standard](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard) に準拠しています。
 
+思い出す：ブループリントはひどく荒れ狂っています。 （[KorkuVeren](http://github.com/KorkuVeren)談）
+
 ### セクション
 
 > 3.1 [コンパイル(Compiling)](#bp-compiling)
 
 > 3.2 [変数(Variables)](#bp-vars)
+
+> 3.3 [関数(Functions)](#bp-functions) 
+
+> 3.4 [グラフ(Graphs)](#bp-graphs) 
 
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
@@ -648,6 +674,8 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 ### 3.2 変数(Variables) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 (( [ブループリントの変数](https://docs.unrealengine.com/latest/JPN/Engine/Blueprints/UserGuide/Variables/index.html)を参照 ))
+
+「変数」と「プロパティ」という言葉は、同じ意味で使用できます。
 
 #### セクション
 
@@ -906,6 +934,183 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 #### 3.2.8 ((option:))構成変数(Config Variables) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 `Config Variable`フラグは使わないでください。 これにより、設計者は ブループリント の動作を制御することが難しくなります。 構成変数は、まれに変更された変数に対してのみC++で使用する必要があります。 それらを `Advanced Advanced Display` 変数と考えてください。
+
+<a name="3.3"></a>
+<a name="bp-functions"></a>
+### 3.3 関数、イベント、およびイベントディスパッチャ(Functions, Events, and Event Dispatchers) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+このセクションでは、関数、イベント、およびイベントディスパッチャの作成方法について説明します。特記事項がない限り、関数に適用されるすべてのものがイベントにも適用されます。
+
+<a name="3.3.1"></a>
+<a name="bp-funcs-naming"></a>
+#### 3.3.1 関数の名前付け
+
+関数、イベント、イベントディスパッチャーの命名は非常に重要です。名前だけに基づいて、機能についてある種の前提が立てられます。例えば：
+
+* それは純粋関数か？
+* それは状態情報を取得してるか？
+* それはハンドラか？
+* それはRPCか？
+* その目的は何か？
+
+関数の名前が適切であれば、これらの質問などはすべて答えることができます。
+
+<a name="3.3.1.1"></a>
+<a name="bp-funcs-naming-verbs"></a>
+#### 3.3.1.1 すべての関数は動詞であるべき
+
+すべての関数とイベントは、情報の取得、データの計算、または何かを爆発させるなど、何らかのアクションを実行します。したがって、すべての関数はすべて動詞で始まる必要があります。彼らは現時点で可能な限り語られるべきです。彼らはまた、彼らが何をしているかについていくつかの文脈を持つべきです。
+
+`OnRep` 関数、イベントハンドラ、およびイベントディスパッチャは、このルールの例外です。
+
+良い例：
+
+* `Fire` - Character/Weaponクラスの場合は良い例です、それの持っている文脈(context)に即しています。Barrel/Grass/及び他のあいまいなクラスであれば悪い例です。
+* `Jump` - Characterクラス中であればい例です、他の場合は文脈が必要です。
+* `Explode`
+* `ReceiveMessage`
+* `SortPlayerArray`
+* `GetArmOffset`
+* `GetCoordinates`
+* `UpdateTransforms`
+* `EnableBigHeadMode`
+* `IsEnemy` - ["Is" は動詞](http://writingexplained.org/is-is-a-verb)
+
+悪い例：
+
+* `Dead` - 死んでいる？これから死ぬのか？
+* `Rock`
+* `ProcessData` - あいまいで、これらの言葉は何も意味しません。
+* `PlayerState` - 名詞はあいまいです。
+* `Color` - 文脈のない動詞、あいまいな名詞。
+
+<a name="3.3.1.2"></a>
+<a name="bp-funcs-naming-onrep"></a>
+<!-- https://docs.unrealengine.com/latest/JPN/Resources/ContentExamples/Networking/1_4/index.html -->
+#### 3.3.1.2 プロパティRepNotify関数は常に `OnRep_Variable` (Property RepNotify Functions Always `OnRep_Variable`)
+
+通知変数で複製されるすべての関数は、 `OnRep_Variable` の形式でなければなりません。これはBlueprintエディタによって強制されます。ただし、C ++の `OnRep` 関数を記述している場合、それをBlueprintsに公開する際にはこの規則に従ってください。
+
+<a name="3.3.1.3"></a>
+<a name="bp-funcs-naming-bool"></a>
+#### 3.3.1.3 Boolを返す情報関数は質問をするべきです (Info Functions Returning Bool Should Ask Questions)
+
+オブジェクトの状態を変更したりオブジェクトを変更したりせず、単に情報、状態、または計算をyes/no値にするための関数を書くときには、質問をする必要があります。これは[動詞規則](#bp-funcs-naming-verbs)従うべきです。
+
+これは、質問が尋ねられないかのように、関数がアクションを実行し、そのアクションが成功したかどうかを返すと仮定できるように、非常に重要です。
+
+良い例：
+
+* `IsDead`
+* `IsOnFire`
+* `IsAlive`
+* `IsSpeaking`
+* `IsHavingAnExistentialCrisis`
+* `IsVisible`
+* `HasWeapon` - ["Has" は動詞](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
+* `WasCharging` - ["Was" は "be"の過去形](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html) '前のフレーム' または '前の状態' を参照するとき "was" を使用.
+* `CanReload` - ["Can" は動詞](http://grammar.yourdictionary.com/parts-of-speech/verbs/Helping-Verbs.html)
+
+悪い例：
+
+* `Fire` - 燃えている？ 発砲するか？ 燃やすのか？
+* `OnFire` - 発射のイベントディスパッチャと混同することがあります。
+* `Dead` - 死んでいる？これから死ぬのか？
+* `Visibility` - 視認出来る？ 可視化する？ 飛行条件の説明？
+
+<a name="3.3.1.4"></a>
+<a name="bp-funcs-naming-eventhandlers"></a>
+#### 3.3.1.4 イベントハンドラとディスパッチャは `On` で開始するべき
+
+イベントを処理したり、イベントをディスパッチする関数は、`On` を指定して、[動詞規則](#bp-funcs-naming-verbs)に従ってください。 過去動詞がうまく読めば、動詞は最後に移動するかもしれません。
+
+単語 `On` の[連語](http://dictionary.cambridge.org/us/grammar/british-grammar/about-words-clauses-and-sentences/collocation)は、動詞規則に従うことが免除されます。
+
+`Handle` は許されません。'Unreal' では `Handle` の代わりに` On` を使用しますが、他のフレームワークでは `On`の代わりに` Handle` を使う方がよいかもしれません。
+
+良い例：
+
+* `OnDeath` - ゲームの一般的な連語
+* `OnPickup`
+* `OnReceiveMessage`
+* `OnMessageRecieved`
+* `OnTargetChanged`
+* `OnClick`
+* `OnLeave`
+
+悪い例：
+
+* `OnData`
+* `OnTarget`
+* `HandleMessage`
+* `HandleDeath`
+
+<a name="3.3.1.5"></a>
+<a name="bp-funcs-naming-rpcs"></a>
+#### 3.3.1.5 リモートプロシージャコールにはターゲットが前置されている必要があります
+
+RPCが作成されるたびに、 `Server`、` Client`、または `Multicast`の接頭辞が付いていなければなりません。例外なく。
+
+接頭辞の後に、関数命名に関する他のすべての規則に従います。
+
+良い例：
+
+* `ServerFireWeapon`
+* `ClientNotifyDeath`
+* `MulticastSpawnTracerEffect`
+
+悪い例：
+
+* `FireWeapon` - 何らかの種類のRPCを示すものではありません。
+* `ServerClientBroadcast` - 混乱します。
+* `AllNotifyDeath` - ` Multicast` を使用し、決して `All` を使用しないでください。
+* `ClientWeapon` - 動詞ではなく、あいまいです。
+
+
+<a name="3.3.2"></a>
+<a name="bp-funcs-return"></a>
+#### 3.3.2 すべての関数にはリターンノードが必要です
+
+すべての関数にはリターンノードが必要ですが、例外はありません。
+
+戻りノードは、関数の実行が終了したことを明示的に示します。青写真が `Sequence`、` ForLoopWithBreak`、および逆方向の経路変更ノードで満たされる世界では、明示的な実行フローは、可読性、メンテナンス、およびデバッグの容易さのために重要です。
+
+Blueprintコンパイラーは実行の流れに従うことができ、返されたノードを使用する場合、処理されていない戻り値または不良な流れを持つコードの分岐があるかどうか警告します。
+
+プログラマがfor節を追加したり、forループが完了した後にロジックを追加してループの反復が早期に返ったりするような状況では、コードフローに偶発的なエラーが生じることがあります。 Blueprintコンパイラの警告は、これらの問題のすべてを直ちに警告します。
+
+<a name="3.4"></a>
+<a name="bp-graphs"></a>
+### 3.4 Blueprintグラフ (Blueprint Graphs)
+
+このセクションでは、すべてのBlueprintグラフに適用される事項について説明します。
+
+<a name="3.4.1"></a>
+<a name="bp-graphs-spaghetti"></a>
+#### 3.4.1 スパゲッティなし
+
+ワイヤーは明確な始まりと終わりを持つべきです。グラフを知覚するために、精神的にワイヤーを解く必要はありません。以下のセクションの多くは、スパゲッティを減らすことに専念しています。
+
+<a name="3.4.2"></a>
+<a name="bp-graphs-align-wires"></a>
+#### 3.4.2 ワイヤをノードに合わせない
+
+ノードではなくワイヤーを常に整列させます。ノードのサイズとピン位置を常に制御することはできませんが、ノードの位置を常に制御してワイヤを制御することはできます。直線状の線は、明確な線形流れを提供する。ウィグリーワイヤーは知恵をつけている。 BPノードが選択されたStraigten Connectionsコマンドを使用して、ワイヤをまっすぐにすることができます。ホットキー：Q
+
+良い例：ノードの上部は、完全に真っ白なexecラインを維持するためにずらしてあります。
+![Aligned By Wires](https://github.com/allar/ue4-style-guide/raw/master/images/bp-graphs-align-wires-good.png "ワイヤによって整列")
+
+悪い例：ノードの上端が一直線に並んでいて、揺れている白いexec行を作ります。
+![Bad](https://github.com/allar/ue4-style-guide/raw/master/images/bp-graphs-align-wires-bad.png "波状(Wiggly)")
+
+許容可能な例：特定のノードは、アラインメントツールの使い方にかかわらず協力しないかもしれません。このような状況では、ノードをより近くに持っていくことで、ウィグルを最小限に抑えてください。
+![Acceptable](https://github.com/allar/ue4-style-guide/raw/master/images/bp-graphs-align-wires-acceptable.png "受け入れ可能(Acceptable)")
+
+<a name="3.4.3"></a>
+<a name="bp-graphs-exec-first-class"></a>
+#### 3.4.3 ホワイトExec回線は最優先です
+
+線形の白いエグゼクティブ線を整列させるか、何らかの種類のデータ線を整えるかどうかを決める必要がある場合は、常に白い線を真っ直ぐにします。
 
 ## Contributors
 
