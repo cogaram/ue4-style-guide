@@ -1070,6 +1070,7 @@ RPCが作成されるたびに、 `Server`、` Client`、または `Multicast`�
 
 <a name="3.3.2"></a>
 <a name="bp-funcs-return"></a>
+<!-- https://answers.unrealengine.com/questions/139959/how-can-i-create-return-node.html -->
 #### 3.3.2 すべての関数にはReturnノードが必須
 
 すべての関数にはReturnノードが必要ですが、例外はありません。
@@ -1094,6 +1095,7 @@ Blueprintコンパイラーは実行の流れに従うことができ、返さ�
 
 <a name="3.4.2"></a>
 <a name="bp-graphs-align-wires"></a>
+<!-- https://answers.unrealengine.com/questions/323566/unreal-engin-why-u-make-me-so-angry.html -->
 #### 3.4.2 ワイヤをノードに合わせない
 
 ノードではなくワイヤーを常に整列させます。ノードのサイズとピン位置を常に制御することはできませんが、ノードの位置を常に制御してワイヤーを制御することはできます。直線のワイヤーのラインは、明瞭な線形フローを提供する。凸凹な波打つワイヤーのラインは、邪悪なほど知恵を消耗させる。 BPノードが選択してStraigten Connectionsコマンドを使用することにより、ワイヤをまっすぐにすることができます。Hotkey: Q
