@@ -1073,7 +1073,7 @@ RPCが作成されるたびに、 `Server`、` Client`、または `Multicast`�
 <!-- https://answers.unrealengine.com/questions/139959/how-can-i-create-return-node.html -->
 #### 3.3.2 すべての関数にはReturnノードが必須
 
-すべての関数にはReturnノードが必要ですが、例外はありません。
+すべての関数にはReturnノードが必要です。例外はありません。
 
 Returnノードは、関数の実行が終了したことを明示的に示します。Blueprintが `Sequence`、` ForLoopWithBreak`、および逆方向の経路変更ノードで満たされる世界では、明示的な実行フローは、可読性、メンテナンス、およびデバッグの容易さのために重要です。
 
