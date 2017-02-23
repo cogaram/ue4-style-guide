@@ -988,17 +988,17 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 <a name="3.3.1.2"></a>
 <a name="bp-funcs-naming-onrep"></a>
 <!-- https://docs.unrealengine.com/latest/JPN/Resources/ContentExamples/Networking/1_4/index.html -->
-#### 3.3.1.2  ((option:)) RepNotify関数プロパティは常に `OnRep_Variable` 形式であるべき
+#### 3.3.1.2  ((option:)) RepNotify関数プロパティは常に `OnRep_Variable` の形式であるべき
 
 通知変数で複製されるすべての関数は、 `OnRep_Variable` の形式でなければなりません。これはBlueprintエディタによって強制されます。ただし、C++ の `OnRep` 関数を記述している場合、それをBlueprintsに公開する際にはこの規則に従ってください。
 
 <a name="3.3.1.3"></a>
 <a name="bp-funcs-naming-bool"></a>
-#### 3.3.1.3 Boolを返す情報関数には質問をするべき (Info Functions Returning Bool Should Ask Questions)
+#### 3.3.1.3  Boolを返す情報関数は質問形式にするべき
 
-状態を変更しない、または他のオブジェクトを変更しない。かつ、単に情報、状態、またはboolのyes/noを取得するための関数を書くときには、質問をするべきです。これはまた [動詞規則](#bp-funcs-naming-verbs) にも従うべきです。
+状態を変えず、どんなオブジェクトも更新せず、単に情報、状態、またはboolのyes/noを取得するための関数を書くときには質問形式にするべきです。同時に [動詞規則](#bp-funcs-naming-verbs) にも従うべきです。
 
-これは、質問が尋ねられないかのように、関数がアクションを実行し、そのアクションが成功したかどうかを返すと仮定できるように、非常に重要です。
+これは質問形式でなければ、その関数がアクションを実行し、そのアクションが成功したかどうかを返すと仮定してよいのと同様に非常に重要です。
 
 良い例：
 
@@ -1089,7 +1089,7 @@ Blueprintコンパイラーは実行の流れに従うことができ、返さ�
 
 <a name="3.4.1"></a>
 <a name="bp-graphs-spaghetti"></a>
-#### 3.4.1 スパゲッティにするべきで無い
+#### 3.4.1 スパゲティをなくせ
 
 ワイヤーは明確な始まりと終わりを持つべきです。グラフを知覚するために、精神的にワイヤーを解く必要はありません。以下のセクションの多くは、スパゲッティを減らすことに専念しています。
 
