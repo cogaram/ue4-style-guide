@@ -1,27 +1,27 @@
 # [Gamemakin](https://gamemak.in) UE4スタイルガイド() {
 
-*Unreal Engine 4 への最も合理的なアプローチ*
+*もっとも妥当なUnreal Engine 4 へのアプローチ*
 
-[Airbnb Javascript Style Guide](https://github.com/airbnb/javascript) に大きな影響を受けています。
+本ガイドは、[Airbnb Javascript スタイルガイド](https://github.com/airbnb/javascript) を多大な影響を受けています。
 
 [![Analytics](https://ga-beacon.appspot.com/UA-80567399-1/repo?useReferrer)](#) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 ## Unreal Engine 4 Linter Plugin
 
-このスタイルガイドに対してプロジェクトをチェックする自動化された方法は、[the Unreal Engine marketplace](https://www.unrealengine.com/marketplace/linter) で購入できます。 このプラグインのソースコードは最終的に無料になりますが、ソースコードからエンジンをビルドせずにUE4で使用するには、マーケットプレイス版を使用してください。
+あなたのプロジェクトが本スタイルガイドに準じているか自動的にチェックする方法は、[the Unreal Engine marketplace](https://www.unrealengine.com/marketplace/linter) で購入できます。 このプラグインのソースコードは最終的に無料になりますが、ソースコードからエンジンのビルドせずにUE4で使用するには、マーケットプレイス版を使用をお勧めします。
 
-## このスタイルガイドを検討する 
+## 本スタイルガイドについて議論するには
 
-Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネルを持っており、スタイルガイドとLinterプラグインに関するあらゆる事について、議論したい場合は #linter チャンネルを使用してください。 
+Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネルを持っており、スタイルガイドとLinterプラグインに関するあらゆる事について、議論したい場合は #linter チャンネルを利用してください。 
 
-## 本ドキュメントへリンクする場合
+## 本ドキュメントへリンクする場合には
 
-このスタイルガイドの各セクションは、簡単な参照と簡単なリンクのために番号が付けられています。 http://ue4.style の最後にハッシュタグとセクション番号を付加するだけで、任意のセクションに直接リンクすることができます
-たとえば、このスタイルガイドの第1原則に誰かを送りたい場合は、 http://ue4.style#0.1 という結果になる `＃0.1` を追加します。
+本スタイルガイドの全てのセクションは、参照とリンクの利便性ために番号が振られています。 http://ue4.style の末尾にハッシュタグとセクション番号を付け足すだけで、特定のセクションに直接リンクができます
+たとえば、このスタイルガイドの原則、第一節へのリンクを誰かに教えたい場合は、 http://ue4.style#0.1 という風に `＃0.1` を追加します。
 
 ## フォークと翻訳
 
-このレポへのプルリクエストに適していない注目すべきフォークまたは翻訳を行った場合は、ここにフォークまたは翻訳を追加するプルリクエストを提出してください。
+本githubリポジトリへのプルリクエストにそぐわないが、素晴らしいフォーク、または翻訳を行った場合は、以下にそのフォークまたは翻訳へのリンクを追加するプルリクエストの提出をお願いします。
 
 * [Korean Translation](https://github.com/ymkim50/ue4-style-guide/blob/master/README_Kor.md) by ymkim50
 * [Russian Translation](https://github.com/CosmoMyzrailGorynych/ue4-style-guide-rus/blob/master/README.md) by CosmoMyzrailGorynych
