@@ -33,41 +33,41 @@ Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネル
 <a name="terms-level-map"></a>
 ##### Levels/Maps
 
-'map' という語は一般に、平均的な人が 'level' と呼んでいるものを指し、互換的に使用することができます。この用語の歴史については[こちら](https://en.wikipedia.org/wiki/Level_(video_gaming))を参照してください。
+'map' という用語は、普通に人々が 'level' と呼んでいるものを一般に指し、どちらを使用しても同様の意味となります。この用語の歴史については[こちら](https://en.wikipedia.org/wiki/Level_(video_gaming))を参照してください。
 
 <a name="terms-cases"></a>
 ##### 記法(Cases)
 
-物事に名前を付ける方法はいくつかあります。 ここに一般的ないくつかの記法の種類があります:
+名前付けには、いくつかの方法があります。 いかに幾つかを記載します:
 
 > ###### PascalCase
 >
-> すべての単語を大文字にし、スペースをすべて削除します。例： `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
+> 全単語の最初を大文字で、スペースは使わない。例： `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
 > 
 > ###### camelCase
 >
-> 最初の文字は常に小文字ですが、その後のすべての単語は大文字で始まります。例： `desertEagle`, `styleGuide`, `aSeriesOfWords`.
+> 最初の単語は小文字で、残りの単語の最初を大文字で。例： `desertEagle`, `styleGuide`, `aSeriesOfWords`.
 >
 > ###### Snake_case
 >
-> 単語は任意に大文字または小文字を開始できますが、単語はアンダースコアで区切られます。例： `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
+> 各単語は任意で大文字または小文字始まり、全ての単語間はアンダースコアで区切る。例： `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
 <a name="terms-var-prop"></a> 
 ##### 変数/プロパティ (Variables / Properties)
 
-ほとんどのコンテキストでは、 '変数' と 'プロパティ' という言葉は同じ意味です。 ただし、両方が同じコンテキストで一緒に使用されている場合は：
+ほとんどのコンテキスト(文脈)において、 '変数' と 'プロパティ' は同じ意味で使われます。 ただし、両方が同一コンテキスト上で使用されている場合においてのみ、使用可能です：
 
 <a name="terms-property"></a> 
 ###### プロパティ (Properties)
 通常、クラス内で定義された変数を指します。 たとえば、`BP_Barrel` ブループリントクラスに `bExploded` 変数がある場合、 `bExploded` は `BP_Barrel` クラスのプロパティと呼ばれます。
 
-クラスのコンテキストでは、以前に定義されたデータへのアクセスを暗示するためによく使用されます。
+クラスのコンテキスト内では、事前にアクセス可能な定義データのように、よく使用されます。
 
 <a name="terms-variable"></a> 
 ###### 変数 (Variables)
-通常は、関数の引数または関数内のローカル変数として定義された変数を指します。 
+通常は、関数の引数または関数内のローカル変数などの、変数定義を指します。 
 
-クラスのコンテキストでは、その定義とそれが何を保持するかについての議論を、伝えるためによく使用されます。 
+クラスのコンテキスト内では、変数自身の定義とその変数が保持するか何かについての議論を伝えるために、よく使用されます。 
 
 <a name="0"></a>
 ## 0. 原則
