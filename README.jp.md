@@ -2,7 +2,7 @@
 
 *もっとも妥当なUnreal Engine 4 へのアプローチ*
 
-本ガイドは、[Airbnb Javascript スタイルガイド](https://github.com/airbnb/javascript) を多大な影響を受けています。
+本ガイドは、[Airbnb Javascript スタイルガイド](https://github.com/airbnb/javascript) に多大な影響を受けています。
 
 [![Analytics](https://ga-beacon.appspot.com/UA-80567399-1/repo?useReferrer)](#) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
