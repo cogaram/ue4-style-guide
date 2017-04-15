@@ -916,14 +916,9 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 <a name="bp-vars-transient"></a>
 #### 3.2.6 ((option:))一時変数(Transient Variables) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-`編集可能` でなく、初期値がゼロまたはヌルのすべての変数は、 `Transient` としてマークする必要があります。
-Transient variables are variables that do not need to have their value saved and loaded and have an initial value of zero or null. This is useful for references to other objects and actors who's value isn't known until run-time. This prevents the editor from ever saving a reference to it, and speeds up saving and loading of the blueprint class.
+一時変数とは、値を保存して読み込む必要がなく、ゼロまたはゼロの初期値を持つ変数です。 これは、実行時まで値がわからない他のオブジェクトやアクタへの参照に役立ちます。これはエディタによってそのリファレンスが保存されることを防ぎ、Blueprintクラスの保存と読み込みが高速化されます。
 
-一時変数とは、値を保存して読み込む必要がなく、ゼロまたはゼロの初期値を持つ変数です。 これは、実行時まで値がわからない他のオブジェクトやアクタへの参照に役立ちます。
-
-これにより、変数は常にゼロまたはヌルとして初期化され、エディタがこれまでリファレンスを保存できなくなり、ブループリントクラスの保存と読み込みが高速化されます。
-Because of this, all transient variables should always be initialized as zero or null. To do otherwise would result in hard to debug errors. 
-
+このため、全ての一時変数は常にゼロまたはnullとして初期化しておく必要があります。 でないとエラーをデバッグするのが難しくなります。
 
 <a name="3.2.7"></a>
 <a name="bp-vars-savegame"></a>
