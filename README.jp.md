@@ -917,10 +917,13 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 #### 3.2.6 ((option:))一時変数(Transient Variables) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 `編集可能` でなく、初期値がゼロまたはヌルのすべての変数は、 `Transient` としてマークする必要があります。
+Transient variables are variables that do not need to have their value saved and loaded and have an initial value of zero or null. This is useful for references to other objects and actors who's value isn't known until run-time. This prevents the editor from ever saving a reference to it, and speeds up saving and loading of the blueprint class.
 
 一時変数とは、値を保存して読み込む必要がなく、ゼロまたはゼロの初期値を持つ変数です。 これは、実行時まで値がわからない他のオブジェクトやアクタへの参照に役立ちます。
 
 これにより、変数は常にゼロまたはヌルとして初期化され、エディタがこれまでリファレンスを保存できなくなり、ブループリントクラスの保存と読み込みが高速化されます。
+Because of this, all transient variables should always be initialized as zero or null. To do otherwise would result in hard to debug errors. 
+
 
 <a name="3.2.7"></a>
 <a name="bp-vars-savegame"></a>
@@ -1080,6 +1083,23 @@ Returnノードは、関数の実行が終了したことを明示します。Bl
 Blueprintコンパイラーは実行フローを追うことができ、Returnノードを使用すれば、ハンドルされないReturnまたは不良なフローがコードのブランチにあるかどうかを警告します。
 
 プログラマがfor節を追加したり、forループが完了した後にロジックを追加してループの反復が早期に返ったりするような状況では、コードフローに偶発的なエラーが生じることがあります。 Blueprintコンパイラの警告は、これらの問題のすべてを直ちに警告します。
+
+ 
+<a name="3.3.3"></a> 
+<a name="bp-graphs-funcs-node-limit"></a> 
+#### 3.3.3 No Function Should Have More Than 50 Nodes  
+ 
+Simply, no function should not have more than 50 nodes. Any function this big should be broken down into smaller functions for readability and ease of maintenance. 
+ 
+The following nodes are not counted as they are deemed to not increase function complexity: 
+ 
+* Comment 
+* Route 
+* Cast 
+* Getting a Variable 
+* Breaking a Struct 
+* Function Entry 
+* Self 
 
 <a name="3.4"></a>
 <a name="bp-graphs"></a>
