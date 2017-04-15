@@ -301,7 +301,7 @@ UE4チームに参加するとき、最初にすべき質問の1つは「あな�
 | Cube Render Target      | RTC_       |            |                                  |
 | Texture Light Profile   | TLP        |            |                                  |
 
-<a name="anc-textures-packing"</a>
+<a name="anc-textures-packing"></a>
 <a name="1.2.6.1"></a>
 #### 1.2.6.1 Texture Packing ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
