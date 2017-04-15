@@ -1079,15 +1079,15 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 プログラマがfor節を追加したり、forループが完了した後にロジックを追加してループの反復が早期に返ったりするような状況では、コードフローに偶発的なエラーが生じることがあります。 Blueprintコンパイラの警告は、これらの問題のすべてを直ちに警告します。
 
- 
+
 <a name="3.3.3"></a> 
 <a name="bp-graphs-funcs-node-limit"></a> 
-#### 3.3.3 No Function Should Have More Than 50 Nodes  
- 
-Simply, no function should have more than 50 nodes. Any function this big should be broken down into smaller functions for readability and ease of maintenance. 
- 
-The following nodes are not counted as they are deemed to not increase function complexity: 
- 
+#### 3.3.3 関数のノード数は50未満に抑えるべき
+
+まず関数は50以上のノードを持つべきでありません。そのような大きな関数は、可読性と保守性のためさらに小さな関数に機能分割するべきです。
+
+以下に記載のノード達は、関数の複雑性を増大させないと思いますので、カウントしません：
+
 * Comment 
 * Route 
 * Cast 
