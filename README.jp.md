@@ -105,6 +105,16 @@ Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネル
 
 UE4チームに参加するとき、最初にすべき質問の1つは「あなたたちはスタイルガイドを持っていますか？」です。 答えがノーなら、彼らのチームとして作業する能力について疑問を持たなければなりません。
 
+<a name="0.5"></a>
+### 0.5 Don't Break The Law
+
+Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and behavior to a project, including but not limited to:
+
+* Don't distribute content you don't have the rights to distribute
+* Don't infringe on someone else's copyrighted or trademark material
+* Don't steal content
+* Follow licensing restrictions on content, e.g. attribute when attributions are needed
+
 <a name="toc"></a>
 <a name="table-of-contents"></a>
 ## 目次
@@ -210,11 +220,11 @@ UE4チームに参加するとき、最初にすべき質問の1つは「あな�
 | Level (Gameplay)        |            | _Gameplay  |                                  |
 | Blueprint               | BP_        |            |                                  |
 | Material                | M_         |            |                                  |
-| Static Mesh             | S_ or SM_  |            | どちらか1つを選択。 S_ を優先        |
+| Static Mesh             | S_         |            | SM_ がよく使用されるが、 我々は S_ を推奨する |
 | Skeletal Mesh           | SK_        |            |                                  |
 | Texture                 | T_         | _?         | [Textures](#anc-textures) を参照   |
 | Particle System         | PS_        |            |                                  |
-| Widget Blueprint        | WBP_ or WB_|            | どちらか1つを選択。 WBP_ を優先      |
+| Widget Blueprint        | WBP_       |            |                                  |
 
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
@@ -227,7 +237,7 @@ UE4チームに参加するとき、最初にすべき質問の1つは「あな�
 | Animation Blueprint     | ABP_       |            |                                  |
 | Animation Composite     | AC_        |            |                                  |
 | Animation Montage       | AM_        |            |                                  |
-| Animation Sequence      | A_ or AS_  |            | どちらか1つを選択。 A_ を優先        |
+| Animation Sequence      | A_         |            |                                  |
 | Blend Space             | BS_        |            |                                  |
 | Blend Space 1D          | BS_        |            |                                  |
 | Level Sequence          | LS_        |            |                                  |
@@ -257,12 +267,14 @@ UE4チームに参加するとき、最初にすべき質問の1つは「あな�
 | Asset Type              | Prefix     | Suffix     | 注意(Notes)                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Blueprint               | BP_        |            |                                  |
+| Blueprint Componet      | BP_        | Component  | 即ち BP_InventoryComponent       |
 | Blueprint Function Library | BPFL_   |            |                                  |
 | Blueprint Interface     | BPI_       |            |                                  |
 | Blueprint Macro Library | BPML_      |            | 可能な限り、マクロライブラリは使わない。 |
 | Enumeration             | E          |            | アンダースコアを付けない。                   |
 | Structure               | F or S     |            | アンダースコアを付けない。                   |
-| Widget Blueprint        | WBP_ or WB_|            | どちらか1つを選択。 WBP_ を優先      |
+| Tutorial Blueprint      | TBP_       |            |                                  |
+| Widget Blueprint        | WBP_       |            |                                  |
 
 <a name="anc-materials"></a>
 <a name="1.2.5"></a>
@@ -275,7 +287,7 @@ UE4チームに参加するとき、最初にすべき質問の1つは「あな�
 | Material Function       | MF_        |            |                                  |
 | Material Instance       | MI_        |            |                                  |
 | Material Parameter Collection | MPC_ |            |                                  |
-| Subsurface Profile      | SP_ or SSP_|            | どちらか1つを選択。 SP_ を優先       |
+| Subsurface Profile      | SP_        |            |                                  |
 | Physical Materials      | PM_        |            |                                  |
 
 <a name="anc-textures"></a>
@@ -289,7 +301,7 @@ UE4チームに参加するとき、最初にすべき質問の1つは「あな�
 | Texture (Normal)        | T_         | _N         |                                  |
 | Texture (Roughness)     | T_         | _R         |                                  |
 | Texture (Alpha/Opacity) | T_         | _A         |                                  |
-| Texture (Ambient Occlusion) | T_     | _O or _AO  | どちらか1つを選択。 _O を優先       |
+| Texture (Ambient Occlusion) | T_     | _O         |                                  |
 | Texture (Bump)          | T_         | _B         |                                  |
 | Texture (Emissive)      | T_         | _E         |                                  |
 | Texture (Mask)          | T_         | _M         |                                  |
@@ -297,7 +309,7 @@ UE4チームに参加するとき、最初にすべき質問の1つは「あな�
 | Texture (Packed)        | T_         | _*         | 下記の注記 [packing](#anc-textures-packing) を参照 |
 | Texture Cube            | TC_        |            |                                  |
 | Media Texture           | MT_        |            |                                  |
-| Render Target           | RT_ or RTT_|            | どちらか1つを選択。 RT_ を優先       |
+| Render Target           | RT_        |            |                                  |
 | Cube Render Target      | RTC_       |            |                                  |
 | Texture Light Profile   | TLP        |            |                                  |
 
@@ -385,7 +397,7 @@ Diffuse/AlbedoのアルファチャンネルのAlpha/Opacityマスク以外の4�
 | Font                    | Font_      |            |                                  |
 | Slate Brush             | Brush_     |            |                                  |
 | Slate Widget Style      | Style_     |            |                                  |
-| Widget Blueprint        | WBP_ or WB_|            | どちらか1つを選択。 WBP_ を優先      |
+| Widget Blueprint        | WBP_       |            |                                  |
 
 <a name="anc-effects"></a>
 <a name="1.2.12"></a>
@@ -642,6 +654,22 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 テストやデバッグのためのマテリアルは `MaterialLibrary/Debug` の中になければなりません。これにより、出荷前にデバッグマテリアルをプロジェクトから簡単に取り除くことができ、参照エラーが表示されるかどうかで、プロダクトアセットがそれらを使用しているかどうかがはっきり明確になります。
 
+<a name="2.9"></a>
+<a name="structure-no-empty-folders"></a>
+### 2.9 No Empty Folders ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+There simply shouldn't be any empty folders. They clutter the content browser.
+
+If you find that the content browser has an empty folder you can't delete, you should perform the following:
+1. Be sure you're using source control.
+1. Immediately run Fix Up Redirectors on your project.
+1. Navigate to the folder on-disk and delete the assets inside.
+1. Close the editor.
+1. Make sure your source control state is in sync (i.e. if using Perforce, run a Reconcile Offline Work on your content directory)
+1. Open the editor. Confirm everything still works as expected. If it doesn't, revert, figure out what went wrong, and try again.
+1. Ensure the folder is now gone.
+1. Submit changes to source control.
+
 <a name="3"></a>
 <a name="bp"></a>
 ## 3. ブループリントについて ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
@@ -692,9 +720,7 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 > 3.2.6 [一時的(Transient)](#bp-vars-transient)
 
-> 3.2.7 [保存(SaveGame)](#bp-vars-savegame)
-
-> 3.2.8 [設定(Config)](#bp-vars-config)
+> 3.2.7 [設定(Config)](#bp-vars-config)
 
 <a name="3.2.1"></a>
 <a name="bp-var-naming"></a>
@@ -846,7 +872,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 <a name="3.2.2.1"></a>
 <a name="bp-vars-editable-tooltips"></a>
-##### 3.2.2.1 ((option:))Tooltips((変数の追加情報として表示する内容)) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.2.1 ((option:))Tooltips((変数の追加情報として表示する内容)) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 編集可能とマークされた変数を含むすべての `Editable`変数は、` Expose On Spawn`としてマークすることができるので、この値の変更がブループリントの動作にどのように影響するかを説明する `Tooltip`フィールドに記述する必要があります。
 
@@ -921,14 +947,6 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 このため、全ての一時変数は常にゼロまたはnullとして初期化しておく必要があります。 でないとエラーをデバッグするのが難しくなります。
 
 <a name="3.2.7"></a>
-<a name="bp-vars-savegame"></a>
-#### 3.2.7 ((option:))保存変数(SaveGame Variables) ![#](https://img.shields.io/badge/lint-supported-green.svg)
-
-`SaveGame`から派生したクラスの中でのみ変数のSaveGameプロパティを使用してください。 このプロパティは、`SaveGame`クラスがこの値を保存する場合にのみ使用してください。
-
-`SaveGame`と`Transient`をミックス **しないでください**。 これは意味をなさないです。
-
-<a name="3.2.8"></a>
 <a name="bp-vars-config"></a>
 #### 3.2.8 ((option:))構成変数(Config Variables) ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
@@ -942,7 +960,7 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 
 <a name="3.3.1"></a>
 <a name="bp-funcs-naming"></a>
-#### 3.3.1 関数の名前付け
+#### 3.3.1 関数の名前付け ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 関数、イベント、イベントディスパッチャーの命名は非常に重要です。名前だけを基に、機能についてある程度の予想がつくようになります。例えば：
 
@@ -956,7 +974,7 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 
 <a name="3.3.1.1"></a>
 <a name="bp-funcs-naming-verbs"></a>
-#### 3.3.1.1 すべての関数は動詞であるべき
+#### 3.3.1.1 すべての関数は動詞であるべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 すべての関数とイベントは、情報の取得、データの計算、または何かを爆発させるなど、何らかのアクションを実行します。したがって、すべての関数はすべて動詞で始まる必要があります。それらは現時点で可能な限り語られるべきです。それらはまた、関数等が何をしているかについていくつかのコンテキストを持つべきです。
 
@@ -986,13 +1004,13 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 <a name="3.3.1.2"></a>
 <a name="bp-funcs-naming-onrep"></a>
 <!-- https://docs.unrealengine.com/latest/JPN/Resources/ContentExamples/Networking/1_4/index.html -->
-#### 3.3.1.2  ((option:)) RepNotify関数プロパティは常に `OnRep_Variable` の形式であるべき
+#### 3.3.1.2  ((option:)) RepNotify関数プロパティは常に `OnRep_Variable` の形式であるべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 通知変数で複製されるすべての関数は、 `OnRep_Variable` の形式でなければなりません。これはBlueprintエディタによって強制されます。ただし、C++ の `OnRep` 関数を記述している場合、それをBlueprintsに公開する際にはこの規則に従ってください。
 
 <a name="3.3.1.3"></a>
 <a name="bp-funcs-naming-bool"></a>
-#### 3.3.1.3  Boolを返す情報関数は質問形式にするべき
+#### 3.3.1.3  Boolを返す情報関数は質問形式にするべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 状態を変えず、どんなオブジェクトも更新せず、単に情報、状態、またはboolのyes/noを取得するための関数を書くときには質問形式にするべきです。同時に [動詞規則](#bp-funcs-naming-verbs) にも従うべきです。
 
@@ -1019,7 +1037,7 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 
 <a name="3.3.1.4"></a>
 <a name="bp-funcs-naming-eventhandlers"></a>
-#### 3.3.1.4 イベントハンドラとディスパッチャは `On` で始まるべき
+#### 3.3.1.4 イベントハンドラとディスパッチャは `On` で始まるべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 イベントハンドラや、イベントディスパッチなどの関数は、`On` で始まるべきで、続きは [動詞規則](#bp-funcs-naming-verbs) に従ってください。 ただし、過去のことであることがうまく読み取れる場合は、動詞を末尾に移動した方がよいかもしれません。
 
@@ -1046,7 +1064,7 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 
 <a name="3.3.1.5"></a>
 <a name="bp-funcs-naming-rpcs"></a>
-#### 3.3.1.5 リモートプロシージャコールにはターゲットが前置されるべき
+#### 3.3.1.5 リモートプロシージャコールにはターゲットが前置されるべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 RPCを作成する場合は、いつでも `Server`、` Client`、または `Multicast`の接頭辞が付いていなければなりません。一切の例外なくです。
 
@@ -1069,7 +1087,7 @@ RPCを作成する場合は、いつでも `Server`、` Client`、または `Mul
 <a name="3.3.2"></a>
 <a name="bp-funcs-return"></a>
 <!-- https://answers.unrealengine.com/questions/139959/how-can-i-create-return-node.html -->
-#### 3.3.2 すべての関数にReturnノードが必須
+#### 3.3.2 すべての関数にReturnノードが必須 ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 すべての関数にReturnノードは必要です。例外はありません。
 
@@ -1082,7 +1100,7 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 <a name="3.3.3"></a> 
 <a name="bp-graphs-funcs-node-limit"></a> 
-#### 3.3.3 関数のノード数は50未満に抑えるべき
+#### 3.3.3 関数のノード数は50未満に抑えるべき ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 まず関数は50以上のノードを持つべきでありません。そのような大きな関数は、可読性と保守性のためさらに小さな関数に機能分割するべきです。
 
@@ -1096,22 +1114,38 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 * Function Entry 
 * Self 
 
+<a name="3.3.4"></a>
+<a name="bp-graphs-funcs-description"></a>
+#### 3.3.4 All Public Functions Should Have A Description ![#](https://img.shields.io/badge/lint-supported-green.svg)
+
+This rule applies more to public facing or marketplace blueprints, so that others can more easily navigate and consume your blueprint API.
+
+Simply, any function that has an access specificer of Public should have its description filled out. 
+
+<a name="3.3.5"></a>
+<a name="bp-graphs-funcs-plugin-category"></a>
+#### 3.3.5 All Custom Static Plugin `BlueprintCallable` Functions Must Be Categorized By Plugin Name ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+If your project includes a plugin that defines `static` `BlueprintCallable` functions, they should have their category set to the plugin's name or a subset category of the plugin's name.
+
+For example, `Zed Camera Interface` or `Zed Camera Interface | Image Capturing`.
+
 <a name="3.4"></a>
 <a name="bp-graphs"></a>
-### 3.4 Blueprintグラフ (Blueprint Graphs)
+### 3.4 Blueprintグラフ (Blueprint Graphs) ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 このセクションでは、すべてのBlueprintグラフに適用される事項について説明します。
 
 <a name="3.4.1"></a>
 <a name="bp-graphs-spaghetti"></a>
-#### 3.4.1 スパゲティをなくせ
+#### 3.4.1 スパゲティをなくせ ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 ワイヤーの始点と終点が明確になるように配置しましょう。グラフを理解するためにわざわざ頭の中でワイヤーをほどく必要はありません。以下のセクションでは、スパゲティを減らすことに紙面の多くを割いています。
 
 <a name="3.4.2"></a>
 <a name="bp-graphs-align-wires"></a>
 <!-- https://answers.unrealengine.com/questions/323566/unreal-engin-why-u-make-me-so-angry.html -->
-#### 3.4.2 ノードではなくワイヤーを整列すべき
+#### 3.4.2 ノードではなくワイヤーを整列すべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 いつでもノードではなくワイヤーを整列させてください。ノードのサイズとピン位置を常に制御することはできませんが、ノードの位置を制御しすることとそれによりワイヤーを制御することはいつでもできます。真っ直ぐなワイヤーのラインは、フローをわかりやすくします。凸凹に波打つワイヤーのラインはひどくわかりにくいです。BPノードを選択してStraigten Connectionsコマンドを使用することにより、ワイヤを真っ直ぐにすることができます。Hotkey: Q
 
@@ -1126,9 +1160,221 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 <a name="3.4.3"></a>
 <a name="bp-graphs-exec-first-class"></a>
-#### 3.4.3 白い実行ワイヤーを最優先にするべき
+#### 3.4.3 白い実行ワイヤーを最優先にするべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 直線状の白い実行ワイヤーを真っ直ぐにするか、なんらかのデータワイヤーを真っ直ぐにするかが選択肢として与えられたら、いつでも白い実行ワイヤーを真っ直ぐにするべきです。
+
+<a name="3.4.4"></a>
+<a name="bp-graphs-block-comments"></a>
+#### 3.4.4 Graphs Should Be Reasonably Commented ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+Blocks of nodes should be wrapped in comments that describe their higher-level behavior. While every function should be well named so that each individual node is easily readable and understandable, groups of nodes contributing to a purpose should have their purpose described in a comment block. If a function does not have many blocks of nodes and its clear that the nodes are serving a direct purpose in the function's goal, then they do not need to be commented as the function name and  description should suffice.
+
+<a name="3.4.5"></a>
+<a name="bp-graphs-cast-error-handling"></a>
+#### 3.4.5 Graphs Should Handle Casting Errors Where Appropriate ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+If a function or event assumes that a cast always succeeds, it should appropriately report a failure in logic if the cast fails. This lets others know why something that is 'supposed to work' doesn't. A function should also attempt a graceful recover after a failed cast if its known that the reference being casted could ever fail to be casted.
+
+This does not mean every cast node should have its failure handled. In many cases, especially events regarding things like collisions, it is expected that execution flow terminates on a failed cast quietly.
+
+<a name="3.4.6"></a>
+<a name="bp-graphs-dangling-nodes"></a>
+#### 3.4.6 Graphs Should Not Have Any Dangling / Loose / Dead Nodes ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+All nodes in all blueprint graphs must have a purpose. You should not leave dangling blueprint nodes around that have no purpose or are not executed.
+
+<a name="4"></a>
+<a name="Static Meshes"></a>
+<a name="s"></a>
+## 4. Static Meshes ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+
+This section will focus on Static Mesh assets and their internals.
+
+### Sections
+
+> 4.1 [UVs](#s-uvs)
+
+> 4.2 [LODs](#s-lods)
+
+> 4.3 [Modular Socketless Snapping](#s-modular-snapping)
+
+> 4.4 [Must Have Collision](#s-collision)
+
+> 4.5 [Correct Scale](#s-scaled)
+
+<a name="4.1"></a>
+<a name="s-uvs"></a>
+### 4.1 Static Mesh UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
+
+If Linter is reporting bad UVs and you can't seem to track it down, open the resulting `.log` file in your project's `Saved/Logs` folder for exact details as to why its failing. I am hoping to include these messages in the Lint report in the future.
+
+<a name="4.1.1"></a>
+<a name="s-uvs-no-missing"></a>
+#### 4.1.1 All Meshes Must Have UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
+
+Pretty simple. All meshes, regardless how they are to be used, should not be missing UVs.
+
+<a name="4.1.2"></a>
+<a name="s-uvs-no-overlapping"></a>
+#### 4.1.2 All Meshes Must Not Have Overlapping UVs for Lightmaps ![#](https://img.shields.io/badge/lint-supported-green.svg)
+
+Pretty simple. All meshes, regardless how they are to be used, should have valid non-overlapping UVs.
+
+<a name="4.2"></a>
+<a name="s-lods"></a>
+### 4.2 LODs Should Be Set Up Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+This is a subjective check on a per-project basis, but as a general rule any mesh that can be seen at varying distances should have proper LODs.
+
+<a name="4.3"></a>
+<a name="s-modular-snapping"></a>
+### 4.2 Modular Socketless Assets Should Snap To The Grid Cleanly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+This is a subjective check on a per-asset basis, however any modular socketless assets should snap together cleanly based on the project's grid settings.
+
+It is up to the project whether to snap based on a power of 2 grid or on a base 10 grid. However if you are authoring modular socketless assets for the marketplace, Epic's requirement is that they snap cleanly when the grid is set to 10 units or bigger.
+
+<a name="4.4"></a>
+<a name="s-collision"></a>
+### 4.4 All Meshes Must Have Collision ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+Regardless of whether an asset is going to be used for collision in a level, all meshes should have proper collision defined. This helps the engine with things such as bounds calculations, occlusion, and lighting. Collision should also be well-formed to the asset.
+
+<a name="4.5"></a>
+<a name="s-scaled"></a>
+### 4.5 All Meshes Should Be Scaled Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+This is a subjective check on a per-project basis, however all assets should be scaled correctly to their project. Level designers or blueprint authors should not have to tweak the scale of meshes to get them to confirm in the editor. Scaling meshes in the engine should be treated as a scale override, not a scale correction.
+
+<a name="5"></a>
+<a name="Particle Systems"></a>
+<a name="ps"></a>
+## 5. Particle Systems ![#](https://img.shields.io/badge/lint-supported-green.svg)
+
+This section will focus on Particle System assets and their internals.
+
+### Sections
+
+> 5.1 [Emitter Naming](#ps-naming)
+
+<a name="5.1"></a>
+<a name="ps-emitter-naming"></a>
+### 5.1 Emitter Naming ![#](https://img.shields.io/badge/lint-supported-green.svg)
+
+All emitters in a Particle System should be named something descriptive and not left to their default name "Particle Emitter".
+
+<a name="6"></a>
+<a name="Levels"></a>
+<a name="levels"></a>
+## 6. Levels / Maps ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+
+[See Terminology Note](#terms-level-map) regarding "levels" vs "maps".
+
+This section will focus on Level assets and their internals.
+
+### Sections
+
+> 6.1 [No Errors Or Warnings](#levels-no-errors-or-warnings)
+
+> 6.2 [Lighting Should Be Built](#levels-lighting-should-be-built)
+
+> 6.3 [No Player Visible Z Fighting](#evels-no-visible-z-fighting)
+
+> 6.4 [Marketplace Specific Rules](#evels-levels-mp-rules)
+
+<a name="6.1"></a>
+<a name="levels-no-errors-or-warnings"></a>
+### 6.1 No Errors Or Warnings ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+
+All levels should load with zero errors or warnings. If a level loads with any errors or warnings, they should be fixed immediately to prevent cascading issues.
+
+You can run a map check on an open level in the editor by using the console command "map check".
+
+Please note: Linter is even more strict on this than the editor is currently, and will catch load errors that the editor will resolve on its own.
+
+<a name="6.2"></a>
+<a name="levels-lighting-should-be-built"></a>
+### 6.2 Lighting Should Be Built ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+It is normal during development for levels to occasionaly not have lighting built. When doing a test/internal/shipping build or any build that is to be distributed however, lighting should always be built.
+
+<a name="6.3"></a>
+<a name="levels-no-visible-z-fighting"></a>
+### 6.3 No Player Visible Z Fighting ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+Levels should not have any [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) in all areas visible to the player. 
+
+<a name="6.4"></a>
+<a name="levels-mp-rules"></a>
+### 6.4 Marketplace Specific Rules ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+If a project is to be sold on the UE4 Marketplace, it must follow these rules.
+
+<a name="6.4.1"></a>
+<a name="levels-mp-rules-overview"></a>
+### 6.4.1 Overview Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+If your project contains assets that should be visualized or demoed, you must have a map within your project that contains the name "Overview".
+
+This overview map, if it is visualizing assets, should be set up according to [Epic's guidelines](http://help.epicgames.com/customer/en/portal/articles/2592186-marketplace-submission-guidelines-preparing-your-assets#Required%20Levels%20and%20Maps).
+
+For example, `InteractionComponent_Overview`.
+
+<a name="6.4.2"></a>
+<a name="levels-mp-rules-demo"></a>
+### 6.4.2 Demo Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+If your project contains assets that should be demoed or come with some sort of tutorial, you must have a map within your project that contains the name "Demo". This level should also contain documentation within it in some form that illustrates how to use your project. See Epic's Content Examples project for good examples on how to do this.
+
+If your project is a gameplay mechanic or other form of system as opposed to an art pack, this can be the same as your "Overview" map.
+
+For example, `InteractionComponent_Overview_Demo`, `ExplosionKit_Demo`.
+
+<a name="7"></a>
+<a name="textures"></a>
+## 7. Textures ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+This section will focus on Texture assets and their internals.
+
+### Sections
+
+> 7.1 [Dimensions Are Powers of 2](#textures-dimension)
+
+> 7.2 [Texture Density Should Be Uniform](#textures-dimension)
+
+> 7.3 [Textures Should Be No Bigger than 8192](#textures-max-size)
+
+> 7.4 [Correct Texture Groups](#textures-textures-group)
+
+<a name="7.1"></a>
+<a name="textures-dimensions"></a>
+### 7.1 Dimensions Are Powers of 2 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+All textures, except for UI textures, must have its dimensions in multiples of powers of 2. Textures do not have to be square.
+
+For example, `128x512`, `1024x1024`, `2048x1024`, `1024x2048`, `1x512`.
+
+<a name="7.2"></a>
+<a name="textures-density"></a>
+### 7.2 Texture Density Should Be Uniform ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+All textures should be of a size appropriate for their standard use case. Appropriate texture density varies from project to project, but all textures within that project should have a consistent density.
+
+For example, if a project's texture density is 8 pixel per 1 unit, a texture that is meant to be applied to a 100x100 unit cube should be 1024x1024, as that is the closest power of 2 that matches the project's texture density. 
+
+<a name="7.3"></a>
+<a name="textures-max-size"></a>
+### 7.3 Textures Should Be No Bigger than 8192 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+No texture should have a dimension that exceeds 8192 in size, unless you have a very explicit reason to do so. Often, using a texture this big is simply just a waste of resources.
+
+<a name="7.4"></a>
+<a name="textures-group"></a>
+### 7.4 Textures Should Be Grouped Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+Every texture has a Texture Group property used for LODing, and this should be set correctly based on its use. For example, all UI textures should belong in the UI texture group.
+
 
 ## Contributors
 
