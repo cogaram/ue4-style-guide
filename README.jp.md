@@ -656,19 +656,19 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 
 <a name="2.9"></a>
 <a name="structure-no-empty-folders"></a>
-### 2.9 No Empty Folders ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.9 空っぽのフォルダはダメです ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-There simply shouldn't be any empty folders. They clutter the content browser.
+単純に空っぽのフォルダは在るべきでないです。それらはコンテンツブラウザを混乱させます。
 
-If you find that the content browser has an empty folder you can't delete, you should perform the following:
-1. Be sure you're using source control.
-1. Immediately run Fix Up Redirectors on your project.
-1. Navigate to the folder on-disk and delete the assets inside.
-1. Close the editor.
-1. Make sure your source control state is in sync (i.e. if using Perforce, run a Reconcile Offline Work on your content directory)
-1. Open the editor. Confirm everything still works as expected. If it doesn't, revert, figure out what went wrong, and try again.
-1. Ensure the folder is now gone.
-1. Submit changes to source control.
+もしコンテンツブラウザに空フォルダは発見及び削除不可能であるなら、以下操作を行う必要があります:
+1. ソースコントロールを使用しているか確認します
+1. 即座にあなたのプロジェクトで、(( [Redirector](https://docs.unrealengine.com/latest/JPN/Engine/Basics/Redirectors/index.html) ))のFixUpを選択します。
+1. そのフォルダに移動して、アッセトを削除します
+1. Unreal Editorを閉じます
+1. ソースコントロールと同期をとります（ 例えば、PerforceでコンテンツディレクトリでのOffline作業でreconcileを実行するなど ）
+1. Unreal Editorを開きます。全てが期待動作することを確認します。もしだめなら、revertして、何故うまくいかなかったかを確認して、再挑戦します
+1. フォルダが消えたことを確認します
+1. ソースコントロールに登録します
 
 <a name="3"></a>
 <a name="bp"></a>
