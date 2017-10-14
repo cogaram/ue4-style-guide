@@ -106,14 +106,14 @@ Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネル
 UE4チームに参加するとき、最初にすべき質問の1つは「あなたたちはスタイルガイドを持っていますか？」です。 答えがノーなら、彼らのチームとして作業する能力について疑問を持たなければなりません。
 
 <a name="0.5"></a>
-### 0.5 Don't Break The Law
+### 0.5 法を破るな
 
-Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and behavior to a project, including but not limited to:
+Gamemakin LLC は弁護士では無いです。ですがプロジェクトへの不正な行動や振る舞いを導入しないでください。以下に限定されるものではありませんが:
 
-* Don't distribute content you don't have the rights to distribute
-* Don't infringe on someone else's copyrighted or trademark material
-* Don't steal content
-* Follow licensing restrictions on content, e.g. attribute when attributions are needed
+* 配布権を有さないコンテンツを配布するな
+* 他人の著作権及び商標権を害さないこと
+* コンテンツを盗むな
+* コンテンツのライセンス制限に従え。例えば. 帰属することが必要とされる属性の場合
 
 <a name="toc"></a>
 <a name="table-of-contents"></a>
