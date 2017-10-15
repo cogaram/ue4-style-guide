@@ -1116,19 +1116,21 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 <a name="3.3.4"></a>
 <a name="bp-graphs-funcs-description"></a>
-#### 3.3.4 All Public Functions Should Have A Description ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.3.4 全てのPublic関数には説明文	を記載するべき ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-This rule applies more to public facing or marketplace blueprints, so that others can more easily navigate and consume your blueprint API.
+本ルールは、一般公開されている又はマーケットプレイスのblueprintなど多数に適用される。そのため本ルールが守られていると、これの使用者はblueprint APIをより簡単に説明に案内されて使用することができます。
 
-Simply, any function that has an access specificer of Public should have its description filled out. 
+単純に、アクセス指定にがPublicを設定された関数は、その操作等について説明を十分に記載するべきです。
 
 <a name="3.3.5"></a>
 <a name="bp-graphs-funcs-plugin-category"></a>
-#### 3.3.5 All Custom Static Plugin `BlueprintCallable` Functions Must Be Categorized By Plugin Name ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.3.5 ((???)) すべてのカスタム静的プラグイン `BlueprintCallable`関数はプラグイン名でカテゴライズ(分類)されるべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-If your project includes a plugin that defines `static` `BlueprintCallable` functions, they should have their category set to the plugin's name or a subset category of the plugin's name.
+もしあなたのプロジェクトに `static` で `BlueprintCallable` の定義された関数がプラグイン等が含まれている場合、それらのカテゴリは、プラグイン名またはプラグイン名のサブセットカテゴリに設定する必要べきです。
 
-For example, `Zed Camera Interface` or `Zed Camera Interface | Image Capturing`.
+例として、 `Zed Camera Interface` や `Zed Camera Interface | Image Capturing`。
+
+(( [ゲームプレイ要素をブループリントに公開する](https://docs.unrealengine.com/latest/JPN/Engine/Blueprints/TechnicalGuide/ExtendingBlueprints/index.html) ))
 
 <a name="3.4"></a>
 <a name="bp-graphs"></a>
@@ -1166,22 +1168,28 @@ For example, `Zed Camera Interface` or `Zed Camera Interface | Image Capturing`.
 
 <a name="3.4.4"></a>
 <a name="bp-graphs-block-comments"></a>
-#### 3.4.4 Graphs Should Be Reasonably Commented ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.4 グラフには分かり易いコメントを書くべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+関連するノードの塊には、より高いレベルの振る舞いを記述するコメントにラップする必要があります。個々のノードを読みやすく理解しやすいように、すべての関数の名前を正しく指定する必要がありますが、目的に貢献するノードのグループは、その目的をコメントブロックに記述する必要があります。関数が多くのノードのブロックを持たず、ノードが関数の目的に直接的な目的を果たしていることが明らかであれば、関数名と説明で十分であるので、コメントする必要はありません。
 
 Blocks of nodes should be wrapped in comments that describe their higher-level behavior. While every function should be well named so that each individual node is easily readable and understandable, groups of nodes contributing to a purpose should have their purpose described in a comment block. If a function does not have many blocks of nodes and its clear that the nodes are serving a direct purpose in the function's goal, then they do not need to be commented as the function name and  description should suffice.
 
 <a name="3.4.5"></a>
 <a name="bp-graphs-cast-error-handling"></a>
-#### 3.4.5 Graphs Should Handle Casting Errors Where Appropriate ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.5 適切な場合にキャストエラーを処理するグラフGraphs Should Handle Casting Errors Where Appropriate ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
+関数またはイベントは、キャストが常に成功するとみなした場合、キャストが失敗した場合、ロジックの失敗を適切に報告する必要があります。これは他人に、なぜ「働くと思われる」ものがないのかを知ることができます。キャストされた参照がキャストに失敗する可能性があることが分かっている場合、関数は失敗したキャストの後でも正常な回復を試みる必要があります。
+
+これは、すべてのキャストノードがその障害を処理する必要があることを意味しません。多くの場合、特に衝突のような事象では、失敗したキャストで実行フローが静かに終了することが予想されます。
 If a function or event assumes that a cast always succeeds, it should appropriately report a failure in logic if the cast fails. This lets others know why something that is 'supposed to work' doesn't. A function should also attempt a graceful recover after a failed cast if its known that the reference being casted could ever fail to be casted.
 
 This does not mean every cast node should have its failure handled. In many cases, especially events regarding things like collisions, it is expected that execution flow terminates on a failed cast quietly.
 
 <a name="3.4.6"></a>
 <a name="bp-graphs-dangling-nodes"></a>
-#### 3.4.6 Graphs Should Not Have Any Dangling / Loose / Dead Nodes ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.6 グラフにダングリング/ルーズ/デッドノードは存在しないはずです Graphs Should Not Have Any Dangling / Loose / Dead Nodes ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
+すべてのBluePrintグラフのすべてのノードに目的がなければなりません。あなたは目的を持たないか、実行されていない周りにぶら下がった青写真のノードを残すべきではありません。
 All nodes in all blueprint graphs must have a purpose. You should not leave dangling blueprint nodes around that have no purpose or are not executed.
 
 <a name="4"></a>
@@ -1189,7 +1197,7 @@ All nodes in all blueprint graphs must have a purpose. You should not leave dang
 <a name="s"></a>
 ## 4. Static Meshes ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-This section will focus on Static Mesh assets and their internals.
+このセクションではStaticMeshアセット及びその詳細について説明を行います。
 
 ### Sections
 
@@ -1207,44 +1215,52 @@ This section will focus on Static Mesh assets and their internals.
 <a name="s-uvs"></a>
 ### 4.1 Static Mesh UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
+Linterが悪いUVを報告していて、それを追跡できないようなら、プロジェクトの `Saved / Logs`フォルダにある結果の` .log`ファイルを開いて、失敗した理由を正確に調べてください。私はこれらのメッセージをLintの報告書に将来的に含めることを望んでいます。
 If Linter is reporting bad UVs and you can't seem to track it down, open the resulting `.log` file in your project's `Saved/Logs` folder for exact details as to why its failing. I am hoping to include these messages in the Lint report in the future.
 
 <a name="4.1.1"></a>
 <a name="s-uvs-no-missing"></a>
 #### 4.1.1 All Meshes Must Have UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
+かなりシンプル。どのように使用するかにかかわらず、すべてのメッシュはUVを失ってはいけません。
 Pretty simple. All meshes, regardless how they are to be used, should not be missing UVs.
 
 <a name="4.1.2"></a>
 <a name="s-uvs-no-overlapping"></a>
 #### 4.1.2 All Meshes Must Not Have Overlapping UVs for Lightmaps ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
+かなりシンプル。どのように使用するかに関係なく、すべてのメッシュは、重複しない有効なUVを持つ必要があります。
 Pretty simple. All meshes, regardless how they are to be used, should have valid non-overlapping UVs.
 
 <a name="4.2"></a>
 <a name="s-lods"></a>
 ### 4.2 LODs Should Be Set Up Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
+これはプロジェクトごとの主観的なチェックですが、原則として、さまざまな距離で見ることができるメッシュは適切なLODを持つ必要があります。
 This is a subjective check on a per-project basis, but as a general rule any mesh that can be seen at varying distances should have proper LODs.
 
 <a name="4.3"></a>
 <a name="s-modular-snapping"></a>
 ### 4.2 Modular Socketless Assets Should Snap To The Grid Cleanly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
+これは資産ごとの主観的なチェックですが、モジュールレスのソケットレスアセットは、プロジェクトのグリッド設定に基づいてきれいにスナップする必要があります。
 This is a subjective check on a per-asset basis, however any modular socketless assets should snap together cleanly based on the project's grid settings.
 
+2グリッドの累乗に基づいてスナップするか、ベース10グリッドにスナップするかは、プロジェクトに依存します。しかし、市場でモジュールレスのソケットレスアセットを作成する場合、グリッドが10ユニット以上に設定されているときれいにスナップする必要があります。
 It is up to the project whether to snap based on a power of 2 grid or on a base 10 grid. However if you are authoring modular socketless assets for the marketplace, Epic's requirement is that they snap cleanly when the grid is set to 10 units or bigger.
 
 <a name="4.4"></a>
 <a name="s-collision"></a>
 ### 4.4 All Meshes Must Have Collision ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
+アセットがレベルでの衝突に使用されるかどうかに関わらず、すべてのメッシュに適切な衝突が定義されている必要があります。これは、境界計算、オクルージョン、ライティングなどのエンジンを助けます。衝突はまた、資産に対してうまく形成されるべきである。
 Regardless of whether an asset is going to be used for collision in a level, all meshes should have proper collision defined. This helps the engine with things such as bounds calculations, occlusion, and lighting. Collision should also be well-formed to the asset.
 
 <a name="4.5"></a>
 <a name="s-scaled"></a>
 ### 4.5 All Meshes Should Be Scaled Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
+これはプロジェクトごとの主観的なチェックですが、すべてのアセットはプロジェクトに正しくスケーリングされている必要があります。レベルデザイナーまたは設計図作成者は、エディターで確認するためにメッシュのスケールを調整する必要はありません。エンジンのスケーリングメッシュは、スケール補正ではなく、スケールのオーバーライドとして扱う必要があります。
 This is a subjective check on a per-project basis, however all assets should be scaled correctly to their project. Level designers or blueprint authors should not have to tweak the scale of meshes to get them to confirm in the editor. Scaling meshes in the engine should be treated as a scale override, not a scale correction.
 
 <a name="5"></a>
@@ -1252,6 +1268,7 @@ This is a subjective check on a per-project basis, however all assets should be 
 <a name="ps"></a>
 ## 5. Particle Systems ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
+このセクションではParticle Systemアセット及びその詳細について説明を行います。
 This section will focus on Particle System assets and their internals.
 
 ### Sections
