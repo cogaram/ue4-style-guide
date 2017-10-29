@@ -1174,14 +1174,11 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 <a name="3.4.5"></a>
 <a name="bp-graphs-cast-error-handling"></a>
-#### 3.4.5 適切な場合にキャストエラーを処理するグラフGraphs Should Handle Casting Errors Where Appropriate ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.5 グラフの適切な場所でキャストエラーを処理するべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-関数またはイベントは、キャストが常に成功するとみなした場合、キャストが失敗した場合、ロジックの失敗を適切に報告する必要があります。これは他人に、なぜ「働くと思われる」ものがないのかを知ることができます。キャストされた参照がキャストに失敗する可能性があることが分かっている場合、関数は失敗したキャストの後でも正常な回復を試みる必要があります。
+もし関数またはイベントのキャストが常に成功する前提の場合、キャストが失敗した場合にそのロジックの失敗を適切に報告するべきです。これは他者に何が起こったか、つまり「動作すると想定する」ことが失敗したことを知らせます。キャストされた参照が、キャストに失敗する可能性があることが分かっている場合、関数はキャストエラーの後でも正常な回復を試みるべきです。
 
-これは、すべてのキャストノードがその障害を処理する必要があることを意味しません。多くの場合、特に衝突のような事象では、失敗したキャストで実行フローが静かに終了することが予想されます。
-If a function or event assumes that a cast always succeeds, it should appropriately report a failure in logic if the cast fails. This lets others know why something that is 'supposed to work' doesn't. A function should also attempt a graceful recover after a failed cast if its known that the reference being casted could ever fail to be casted.
-
-This does not mean every cast node should have its failure handled. In many cases, especially events regarding things like collisions, it is expected that execution flow terminates on a failed cast quietly.
+これは、全てのキャストノードがそのエラー処理を行う必要があることを意味しません。多くの場合、特に衝突のような場合では、キャストエラーで実行フローが粛々とに終了されるでしょう。
 
 <a name="3.4.6"></a>
 <a name="bp-graphs-dangling-nodes"></a>
