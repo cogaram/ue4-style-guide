@@ -1182,10 +1182,9 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 <a name="3.4.6"></a>
 <a name="bp-graphs-dangling-nodes"></a>
-#### 3.4.6 グラフにダングリング/ルーズ/デッドノードは存在しないはずです Graphs Should Not Have Any Dangling / Loose / Dead Nodes ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.6 グラフにはぶら下がり(Dangling)/緩み(Loose)/非接続ノード(Dead Nodes)は保持させるべきでない ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-すべてのBluePrintグラフのすべてのノードに目的がなければなりません。あなたは目的を持たないか、実行されていない周りにぶら下がった青写真のノードを残すべきではありません。
-All nodes in all blueprint graphs must have a purpose. You should not leave dangling blueprint nodes around that have no purpose or are not executed.
+全てのBlueprintグラフの、全てのノードに目的が必須です。目的が無い、または実行されない周囲にぶら下がったBlueprintノードを残すべきないです。
 
 <a name="4"></a>
 <a name="Static Meshes"></a>
@@ -1193,7 +1192,6 @@ All nodes in all blueprint graphs must have a purpose. You should not leave dang
 ## 4. Static Meshes ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 このセクションではStaticMeshアセット及びその詳細について説明を行います。
-
 ### Sections
 
 > 4.1 [UVs](#s-uvs)
