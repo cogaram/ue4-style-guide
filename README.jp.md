@@ -1192,6 +1192,7 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 ## 4. Static Meshes ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 このセクションではStaticMeshアセット及びその詳細について説明を行います。
+
 ### Sections
 
 > 4.1 [UVs](#s-uvs)
@@ -1208,22 +1209,19 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 <a name="s-uvs"></a>
 ### 4.1 Static Mesh UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Linterが悪いUVを報告していて、それを追跡できないようなら、プロジェクトの `Saved / Logs`フォルダにある結果の` .log`ファイルを開いて、失敗した理由を正確に調べてください。私はこれらのメッセージをLintの報告書に将来的に含めることを望んでいます。
-If Linter is reporting bad UVs and you can't seem to track it down, open the resulting `.log` file in your project's `Saved/Logs` folder for exact details as to why its failing. I am hoping to include these messages in the Lint report in the future.
+もしLinterが不正UVをレポート出力していて、それで原因を追跡することが出来ないなら、プロジェクトの `Saved/Logs` フォルダにある結果の `.log` ファイルを開いて、失敗した理由を正確に調べてください。私はこれらのメッセージをLintのレポートに将来的に含めようと思っています。
 
 <a name="4.1.1"></a>
 <a name="s-uvs-no-missing"></a>
-#### 4.1.1 All Meshes Must Have UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 4.1.1 全てのメッシュはUVを持たなければならない ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-かなりシンプル。どのように使用するかにかかわらず、すべてのメッシュはUVを失ってはいけません。
-Pretty simple. All meshes, regardless how they are to be used, should not be missing UVs.
+ともて単純です。どう使用するにしても、全ててのメッシュはUVを失うべきでない。
 
 <a name="4.1.2"></a>
 <a name="s-uvs-no-overlapping"></a>
-#### 4.1.2 All Meshes Must Not Have Overlapping UVs for Lightmaps ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 4.1.2 全てのメッシュはLightmapsに用いるためUVを重ねてはいけない ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-かなりシンプル。どのように使用するかに関係なく、すべてのメッシュは、重複しない有効なUVを持つ必要があります。
-Pretty simple. All meshes, regardless how they are to be used, should have valid non-overlapping UVs.
+ともて単純です。どう使用するにしても、全てのメッシュは、重複しない有効なUVを持つべきです。
 
 <a name="4.2"></a>
 <a name="s-lods"></a>
