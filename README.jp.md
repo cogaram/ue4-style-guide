@@ -1170,9 +1170,7 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 <a name="bp-graphs-block-comments"></a>
 #### 3.4.4 グラフには分かり易いコメントを書くべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-関連するノードの塊には、より高いレベルの振る舞いを記述するコメントにラップする必要があります。個々のノードを読みやすく理解しやすいように、すべての関数の名前を正しく指定する必要がありますが、目的に貢献するノードのグループは、その目的をコメントブロックに記述する必要があります。関数が多くのノードのブロックを持たず、ノードが関数の目的に直接的な目的を果たしていることが明らかであれば、関数名と説明で十分であるので、コメントする必要はありません。
-
-Blocks of nodes should be wrapped in comments that describe their higher-level behavior. While every function should be well named so that each individual node is easily readable and understandable, groups of nodes contributing to a purpose should have their purpose described in a comment block. If a function does not have many blocks of nodes and its clear that the nodes are serving a direct purpose in the function's goal, then they do not need to be commented as the function name and  description should suffice.
+ノードブロックは、大まかな振る舞いについて記載したコメントノードで、それらを囲う必要があります。個々のノードを読み易くと理解しやすいくするため、すべての関数により良い命名を行う必要があり、目的を達するためのノードグループ群には、それの目的をコメントブロックとして記述するべきです。もし関数が多くのノードブロックをもたず、ノードが関数の目的を直接提供していることが明確であるなら、関数名とその説明で十分で、コメントは不要です。
 
 <a name="3.4.5"></a>
 <a name="bp-graphs-cast-error-handling"></a>
