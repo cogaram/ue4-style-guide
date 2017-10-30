@@ -1225,14 +1225,14 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 <a name="4.2"></a>
 <a name="s-lods"></a>
-### 4.2 LODs Should Be Set Up Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.2 LOD(Level of Details)は確りと設定するべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+(( [LOD の作成と使用](https://docs.unrealengine.com/latest/JPN/Engine/Content/Types/StaticMeshes/HowTo/LODs/index.html) ))
 
-これはプロジェクトごとの主観的なチェックですが、原則として、さまざまな距離で見ることができるメッシュは適切なLODを持つ必要があります。
-This is a subjective check on a per-project basis, but as a general rule any mesh that can be seen at varying distances should have proper LODs.
+プロジェクトごとの簡易な主観チェックですが、原則として、近距離から遠距離で表示されるメッシュには適切なLODを設定するべきです。
 
 <a name="4.3"></a>
 <a name="s-modular-snapping"></a>
-### 4.2 Modular Socketless Assets Should Snap To The Grid Cleanly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.3 Modular Socketless Assets Should Snap To The Grid Cleanly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 これは資産ごとの主観的なチェックですが、モジュールレスのソケットレスアセットは、プロジェクトのグリッド設定に基づいてきれいにスナップする必要があります。
 This is a subjective check on a per-asset basis, however any modular socketless assets should snap together cleanly based on the project's grid settings.
