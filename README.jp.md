@@ -1228,17 +1228,15 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 ### 4.2 LOD(Level of Details)は確りと設定するべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 (( [LOD の作成と使用](https://docs.unrealengine.com/latest/JPN/Engine/Content/Types/StaticMeshes/HowTo/LODs/index.html) ))
 
-プロジェクトごとの簡易な主観チェックですが、原則として、近距離から遠距離で表示されるメッシュには適切なLODを設定するべきです。
+プロジェクトごとの基本的な主観チェックですが、原則として、近距離から遠距離で表示されるメッシュには適切なLODを設定するべきです。
 
 <a name="4.3"></a>
 <a name="s-modular-snapping"></a>
-### 4.3 Modular Socketless Assets Should Snap To The Grid Cleanly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.3 ((??))モジュールのSocketlessアセットは、グリッドに綺麗にスナップされるべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-これは資産ごとの主観的なチェックですが、モジュールレスのソケットレスアセットは、プロジェクトのグリッド設定に基づいてきれいにスナップする必要があります。
-This is a subjective check on a per-asset basis, however any modular socketless assets should snap together cleanly based on the project's grid settings.
+アセットごとの基本的な主観チェックですが、モジュールのソケットレスアセットは、プロジェクトのグリッド設定に基づいてきれいにスナップするべきです。
 
-2グリッドの累乗に基づいてスナップするか、ベース10グリッドにスナップするかは、プロジェクトに依存します。しかし、市場でモジュールレスのソケットレスアセットを作成する場合、グリッドが10ユニット以上に設定されているときれいにスナップする必要があります。
-It is up to the project whether to snap based on a power of 2 grid or on a base 10 grid. However if you are authoring modular socketless assets for the marketplace, Epic's requirement is that they snap cleanly when the grid is set to 10 units or bigger.
+2の累乗のグリッドか、または10単位のグリッドにスナップするかは、プロジェクトしだいですが、しかしmarketplace用のモジュールのソケットレスアセットを作成する場合、Epic社の要件は、グリッドが10単位以上に設定されている場合に、きれいにスナップすることです。
 
 <a name="4.4"></a>
 <a name="s-collision"></a>
