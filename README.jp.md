@@ -1189,7 +1189,7 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 <a name="4"></a>
 <a name="Static Meshes"></a>
 <a name="s"></a>
-## 4. Static Meshes ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 4. 静的メッシュについて ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 このセクションではStaticMeshアセット及びその詳細について説明を行います。
 
@@ -1253,28 +1253,28 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 <a name="5"></a>
 <a name="Particle Systems"></a>
 <a name="ps"></a>
-## 5. Particle Systems ![#](https://img.shields.io/badge/lint-supported-green.svg)
+## 5. パーティクルシステムについて ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 このセクションではParticle Systemアセット及びその詳細について説明を行います。
-This section will focus on Particle System assets and their internals.
 
 ### Sections
 
-> 5.1 [Emitter Naming](#ps-naming)
+> 5.1 [エミット命名](#ps-naming)
 
 <a name="5.1"></a>
 <a name="ps-emitter-naming"></a>
-### 5.1 Emitter Naming ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 5.1 エミット命名 ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-All emitters in a Particle System should be named something descriptive and not left to their default name "Particle Emitter".
+パーティクルシステムの全ててのエミッタには、説明的な名前を付けて、デフォルトの "パーティクルエミッタ" にするべきでないです。
 
 <a name="6"></a>
 <a name="Levels"></a>
 <a name="levels"></a>
-## 6. Levels / Maps ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 6. LevelsとMapsについて ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 [See Terminology Note](#terms-level-map) regarding "levels" vs "maps".
 
+このセクションではLevelアセット及びその詳細について説明を行います。
 This section will focus on Level assets and their internals.
 
 ### Sections
