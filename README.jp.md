@@ -1240,10 +1240,9 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 <a name="4.4"></a>
 <a name="s-collision"></a>
-### 4.4 All Meshes Must Have Collision ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.4 全てのメッシュはコリジョン(衝突判定)を持たなければならない ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-アセットがレベルでの衝突に使用されるかどうかに関わらず、すべてのメッシュに適切な衝突が定義されている必要があります。これは、境界計算、オクルージョン、ライティングなどのエンジンを助けます。衝突はまた、資産に対してうまく形成されるべきである。
-Regardless of whether an asset is going to be used for collision in a level, all meshes should have proper collision defined. This helps the engine with things such as bounds calculations, occlusion, and lighting. Collision should also be well-formed to the asset.
+アセットがレベル中でコリジョンのために使用されるかどうかに関わらず、全てのメッシュには適切なコリジョンが設定されているべきです。これは境界計算やオクルージョン、ライティングなどの使用の際にUE4エンジンを援助します。コリジョンはまたアッセトに対して正格であるべきです。
 
 <a name="4.5"></a>
 <a name="s-scaled"></a>
