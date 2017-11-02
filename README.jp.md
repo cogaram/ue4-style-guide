@@ -1270,7 +1270,7 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 <a name="6"></a>
 <a name="Levels"></a>
 <a name="levels"></a>
-## 6. LevelsとMapsについて ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 6. Levels/Mapsについて ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 [See Terminology Note](#terms-level-map) regarding "levels" vs "maps".
 
@@ -1279,7 +1279,7 @@ This section will focus on Level assets and their internals.
 
 ### Sections
 
-> 6.1 [No Errors Or Warnings](#levels-no-errors-or-warnings)
+> 6.1 [エラーや警告を残さないこと](#levels-no-errors-or-warnings)
 
 > 6.2 [Lighting Should Be Built](#levels-lighting-should-be-built)
 
@@ -1289,13 +1289,13 @@ This section will focus on Level assets and their internals.
 
 <a name="6.1"></a>
 <a name="levels-no-errors-or-warnings"></a>
-### 6.1 No Errors Or Warnings ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 6.1 エラーや警告を残さないこと ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-All levels should load with zero errors or warnings. If a level loads with any errors or warnings, they should be fixed immediately to prevent cascading issues.
+全てのレベルは、エラーまたは警告がゼロ個でロードされるべきです。 Levelにエラーや警告が含まれている場合は、直ちに修正してカスケード問題を防ぐ必要があります。
 
-You can run a map check on an open level in the editor by using the console command "map check".
+コンソールより "map check" コマンドによって、エディタで開いているレベルのマップをチェックすることが出来ます。
 
-Please note: Linter is even more strict on this than the editor is currently, and will catch load errors that the editor will resolve on its own.
+注意：Linterは現在のエディタのチェックよりも厳密であり、((?)) エディタ自身で解決するロードエラーをキャッチします。
 
 <a name="6.2"></a>
 <a name="levels-lighting-should-be-built"></a>
