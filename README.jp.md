@@ -1246,10 +1246,9 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 <a name="4.5"></a>
 <a name="s-scaled"></a>
-### 4.5 All Meshes Should Be Scaled Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.5 全てのメッシュは正しくスケーリングするべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-これはプロジェクトごとの主観的なチェックですが、すべてのアセットはプロジェクトに正しくスケーリングされている必要があります。レベルデザイナーまたは設計図作成者は、エディターで確認するためにメッシュのスケールを調整する必要はありません。エンジンのスケーリングメッシュは、スケール補正ではなく、スケールのオーバーライドとして扱う必要があります。
-This is a subjective check on a per-project basis, however all assets should be scaled correctly to their project. Level designers or blueprint authors should not have to tweak the scale of meshes to get them to confirm in the editor. Scaling meshes in the engine should be treated as a scale override, not a scale correction.
+プロジェクトごとの基本的な主観的なチェックですが、すべてのアセットはプロジェクトに正しくスケーリングされている必要があります。レベルデザイナーまたはブループリント作者は、エディターで確認するためにメッシュのスケールを調整する必要はありません。((?))エンジンのスケーリングメッシュは、スケール補正ではなく、スケール上書きとして扱うべきです。
 
 <a name="5"></a>
 <a name="Particle Systems"></a>
