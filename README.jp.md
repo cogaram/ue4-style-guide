@@ -1337,47 +1337,47 @@ This section will focus on Level assets and their internals.
 
 <a name="7"></a>
 <a name="textures"></a>
-## 7. Textures ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+## 7. テクスチャ ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-This section will focus on Texture assets and their internals.
+このセクションではParticle Textureアセット及びその詳細について説明を行います。
 
 ### Sections
 
-> 7.1 [Dimensions Are Powers of 2](#textures-dimension)
+> 7.1 [寸法は2の累乗にすべき](#textures-dimension)
 
-> 7.2 [Texture Density Should Be Uniform](#textures-dimension)
+> 7.2 [テクスチャ密度は統一するべき](#textures-dimension)
 
-> 7.3 [Textures Should Be No Bigger than 8192](#textures-max-size)
+> 7.3 [テクスチャは8192より大きくするべきではない](#textures-max-size)
 
-> 7.4 [Correct Texture Groups](#textures-textures-group)
+> 7.4 [テクスチャは正しくグループ化するべき](#textures-textures-group)
 
 <a name="7.1"></a>
 <a name="textures-dimensions"></a>
-### 7.1 Dimensions Are Powers of 2 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.1 寸法は2の累乗にすべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All textures, except for UI textures, must have its dimensions in multiples of powers of 2. Textures do not have to be square.
+UIテクスチャを除く全てのテクスチャは、次元数が2の累乗でなければなりません。またテクスチャは正方形である必要はありません。
 
-For example, `128x512`, `1024x1024`, `2048x1024`, `1024x2048`, `1x512`.
+例えば, `128x512`, `1024x1024`, `2048x1024`, `1024x2048`, `1x512`.
 
 <a name="7.2"></a>
 <a name="textures-density"></a>
-### 7.2 Texture Density Should Be Uniform ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.2 テクスチャ密度(DPI)は統一するべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All textures should be of a size appropriate for their standard use case. Appropriate texture density varies from project to project, but all textures within that project should have a consistent density.
+すべてのテクスチャは、それらの標準的なユースケースに適したサイズにするべきです。 適切なテクスチャ密度はプロジェクトごとに異なりますが、そのプロジェクト内の全てのテクスチャは一貫した密度を持つべきです。
 
-For example, if a project's texture density is 8 pixel per 1 unit, a texture that is meant to be applied to a 100x100 unit cube should be 1024x1024, as that is the closest power of 2 that matches the project's texture density. 
+例えば、もしプロジェクトのテクスチャ密度が1単位あたり8ピクセルの場合、100x100単位の立方体に適用されるテクスチャは、プロジェクトのテクスチャ密度に最も近いのは2の累乗である1024x1024である必要があります。
 
 <a name="7.3"></a>
 <a name="textures-max-size"></a>
-### 7.3 Textures Should Be No Bigger than 8192 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.3 テクスチャは8K(8192)より大きくするべきではない ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-No texture should have a dimension that exceeds 8192 in size, unless you have a very explicit reason to do so. Often, using a texture this big is simply just a waste of resources.
+非常に明示的な理由がない限り、テクスチャのサイズは8192を超えてはいけません。 多くの場合、これを超えるサイズのテスクチャの使用は、単にリソースの無駄にすぎません。
 
 <a name="7.4"></a>
 <a name="textures-group"></a>
-### 7.4 Textures Should Be Grouped Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.4 テクスチャは正しくグループ化するべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-Every texture has a Texture Group property used for LODing, and this should be set correctly based on its use. For example, all UI textures should belong in the UI texture group.
+全てのテクスチャは、LODに使用されるTexture Groupプロパティを持っています。そしてそれは使用に基づいて正しく設定するべきです。 例えば、全てのUIテクスチャはUIテクスチャグループに属すべきです。
 
 
 ## Contributors
