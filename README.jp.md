@@ -1212,11 +1212,11 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 
 > 4.2 [LODs](#s-lods)
 
-> 4.3 [Modular Socketless Snapping](#s-modular-snapping)
+> 4.3 [モジュールのSocketlessはスナップされるべき](#s-modular-snapping)
 
-> 4.4 [Must Have Collision](#s-collision)
+> 4.4 [衝突判定(Collision)を持たなければならない](#s-collision)
 
-> 4.5 [Correct Scale](#s-scaled)
+> 4.5 [スケール補正(Correct Scale)](#s-scaled)
 
 <a name="4.1"></a>
 <a name="s-uvs"></a>
