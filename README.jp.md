@@ -1299,41 +1299,41 @@ This section will focus on Level assets and their internals.
 
 <a name="6.2"></a>
 <a name="levels-lighting-should-be-built"></a>
-### 6.2 Lighting Should Be Built ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.2 Lightingはビルドするべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-It is normal during development for levels to occasionaly not have lighting built. When doing a test/internal/shipping build or any build that is to be distributed however, lighting should always be built.
+開発中には、レベルで時折ライティングビルドをしていなかったりしますが、問題ないです。 けれどもそれらが配布物、テスト/内部/出荷(shipping)ビルドやその他のビルド、の場合には常にライティングビルドを実施するべきです。
 
 <a name="6.3"></a>
 <a name="levels-no-visible-z-fighting"></a>
-### 6.3 No Player Visible Z Fighting ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.3 プレイヤーからZ ファイティング(Fighting) を隠せ ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-Levels should not have any [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) in all areas visible to the player. 
+レベルは、プレイヤーに見える全ての領域で[z-fighting](https://en.wikipedia.org/wiki/Z-fighting)を無くすべきです。
 
 <a name="6.4"></a>
 <a name="levels-mp-rules"></a>
-### 6.4 Marketplace Specific Rules ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.4 マーケットプレイスでのルール ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-If a project is to be sold on the UE4 Marketplace, it must follow these rules.
+もしプロジェクトをUE4マーケットプレイスで販売する場合、以下のルールを守らなけれなりません。
 
 <a name="6.4.1"></a>
 <a name="levels-mp-rules-overview"></a>
-### 6.4.1 Overview Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.4.1 概要レベル ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-If your project contains assets that should be visualized or demoed, you must have a map within your project that contains the name "Overview".
+もしあなたのプロジェクトに、視覚化される、またはデモするべきアセットが含まれている場合は、プロジェクトに "Overview" という名前のマップの作成が必須です。
 
-This overview map, if it is visualizing assets, should be set up according to [Epic's guidelines](http://help.epicgames.com/customer/en/portal/articles/2592186-marketplace-submission-guidelines-preparing-your-assets#Required%20Levels%20and%20Maps).
+この概要(Overview)マップが、もしアセットを視覚化している[Epic's guidelines](http://help.epicgames.com/customer/en/portal/articles/2592186-marketplace-submission-guidelines-preparing-your-assets#Required%20Levels%20and%20Maps)に従って設定されるべきです。
 
-For example, `InteractionComponent_Overview`.
+例えば、`InteractionComponent_Overview`。
 
 <a name="6.4.2"></a>
 <a name="levels-mp-rules-demo"></a>
-### 6.4.2 Demo Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.4.2 デモレベル ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-If your project contains assets that should be demoed or come with some sort of tutorial, you must have a map within your project that contains the name "Demo". This level should also contain documentation within it in some form that illustrates how to use your project. See Epic's Content Examples project for good examples on how to do this.
+もしプロジェクトにデモする必要があるアセットが含まれている場合や、何らかのチュートリアルが必要な場合は、プロジェクト内に "Demo" という名前のマップの作成が必須です。 このレベルには、プロジェクト内の使用方法を示す形式のドキュメントも含まれている必要があります。 これを行う方法ついては、EpicのContent Examplesプロジェクトなどが良い例です。。
 
-If your project is a gameplay mechanic or other form of system as opposed to an art pack, this can be the same as your "Overview" map.
+あなたのプロジェクトが、アートパックではなくゲームプレイのメカニズムや他のシステムである場合、これは "Overview" マップと同じようにできます。
 
-For example, `InteractionComponent_Overview_Demo`, `ExplosionKit_Demo`.
+例えば `InteractionComponent_Overview_Demo`, `ExplosionKit_Demo`.
 
 <a name="7"></a>
 <a name="textures"></a>
