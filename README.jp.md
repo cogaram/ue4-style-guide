@@ -1272,20 +1272,19 @@ Blueprintコンパイラーは実行フローを追うことができ、Return�
 <a name="levels"></a>
 ## 6. Levels/Mapsについて ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
-[See Terminology Note](#terms-level-map) regarding "levels" vs "maps".
+[重要用語のLevels/Mapsを参照](#terms-level-map) "levels" 対 "maps" に関して
 
 このセクションではLevelアセット及びその詳細について説明を行います。
-This section will focus on Level assets and their internals.
 
 ### Sections
 
 > 6.1 [エラーや警告を残さないこと](#levels-no-errors-or-warnings)
 
-> 6.2 [Lighting Should Be Built](#levels-lighting-should-be-built)
+> 6.2 [ライティングビルドするべき](#levels-lighting-should-be-built)
 
-> 6.3 [No Player Visible Z Fighting](#evels-no-visible-z-fighting)
+> 6.3 [プレイヤーにＺファイティングを見せるな](#evels-no-visible-z-fighting)
 
-> 6.4 [Marketplace Specific Rules](#evels-levels-mp-rules)
+> 6.4 [マーケットプレイスの特殊ルール](#evels-levels-mp-rules)
 
 <a name="6.1"></a>
 <a name="levels-no-errors-or-warnings"></a>
@@ -1299,19 +1298,19 @@ This section will focus on Level assets and their internals.
 
 <a name="6.2"></a>
 <a name="levels-lighting-should-be-built"></a>
-### 6.2 Lightingはビルドするべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.2 ライティングビルドするべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 開発中には、レベルで時折ライティングビルドをしていなかったりしますが、問題ないです。 けれどもそれらが配布物、テスト/内部/出荷(shipping)ビルドやその他のビルド、の場合には常にライティングビルドを実施するべきです。
 
 <a name="6.3"></a>
 <a name="levels-no-visible-z-fighting"></a>
-### 6.3 プレイヤーからZ ファイティング(Fighting) を隠せ ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.3 プレイヤーにＺファイティング(Fighting) を見せるな ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 レベルは、プレイヤーに見える全ての領域で[z-fighting](https://en.wikipedia.org/wiki/Z-fighting)を無くすべきです。
 
 <a name="6.4"></a>
 <a name="levels-mp-rules"></a>
-### 6.4 マーケットプレイスでのルール ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.4 マーケットプレイスの特殊ルール ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 もしプロジェクトをUE4マーケットプレイスで販売する場合、以下のルールを守らなけれなりません。
 
