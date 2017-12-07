@@ -33,12 +33,12 @@ Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネル
 <a name="terms-level-map"></a>
 ##### Levels/Maps
 
-'map' という用語は、普通に人々が 'level' と呼んでいるものを一般に指し、どちらを使用しても同様の意味となります。この用語の歴史については[こちら](https://en.wikipedia.org/wiki/Level_(video_gaming))を参照してください。
+ゲームのワールドマップ(以下 'map') は、一般にUE4で 'level' と呼んでいるものを指していて、どちらの用語も多分同じ意味で使えます。この用語の歴史的経緯については[こちら](https://en.wikipedia.org/wiki/Level_(video_gaming))を参照してください。
 
 <a name="terms-cases"></a>
 ##### 記法(Cases)
 
-命名法にはいくつかのバリエーションがあります。 以下に一般的記法を幾つか紹介します:
+命名法にはいくつかのバリエーションがあります。 以下に一般的な記法を幾つか紹介します:
 
 > ###### PascalCase
 >
@@ -53,7 +53,7 @@ Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネル
 > 各単語は任意で大文字または小文字始まり、全ての単語間はアンダースコアで区切る。例： `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
 <a name="terms-var-prop"></a> 
-##### 変数/プロパティ (Variables / Properties)
+##### 変数/プロパティ(属性) (Variables / Properties)
 
 ほとんどのコンテキスト(文脈)において、 '変数' と 'プロパティ' は同じ意味で使われます。 ただし、両方が同一コンテキスト上で使用されている場合においてのみ、使用可能です：
 
@@ -61,11 +61,11 @@ Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネル
 ###### プロパティ (Properties)
 通常、クラス内で定義された変数を指します。 たとえば、`BP_Barrel` ブループリントクラスに `bExploded` 変数がある場合、 `bExploded` は `BP_Barrel` クラスのプロパティと呼ばれます。
 
-クラスのコンテキスト内で使用される場合は、前もって定義したデータにアクセスできることを示すためによく使用されます。
+クラスのコンテキスト内では、前もって定義したデータにアクセスできることを示すためによく使用されます。
 
 <a name="terms-variable"></a> 
 ###### 変数 (Variables)
-通常は、関数の引数または関数内のローカル変数などの、変数定義を指します。 
+通常は、関数の引数または関数内のローカル変数で定義された変数を指します。 
 
 クラスのコンテキスト内では、変数自身の定義とその変数が保持する何かについての議論を円滑にするために、よく使用されます。 
 
