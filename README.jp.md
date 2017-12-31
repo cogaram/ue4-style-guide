@@ -741,13 +741,13 @@ Mapファイルは信じられないほど特殊で、特にサブレベルや�
 <a name="bp-var-naming-nouns"></a>
 ##### 3.2.1.1 名詞 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-すべての非ブール変数名は、明確で明確で説明的な名詞でなければなりません。
+すべての非ブール変数への命名は明確で、明瞭で、説明的な名詞でなければなりません。
 
 <a name="3.2.1.2"></a>
 <a name="bp-var-naming-case"></a>
 ##### 3.2.1.2 PascalCase ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-すべての非ブール変数は [PascalCase](#terms-cases) の形式でなければなりません。
+すべての非ブール変数は [PascalCase](#terms-cases) の形式にするべきです。
 
 <a name="3.2.1.2e"></a>
 ###### 3.2.1.2e 例:
