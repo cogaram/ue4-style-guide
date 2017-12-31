@@ -800,7 +800,7 @@ Blueprintのすべての変数への参照は常にそのコンテキストを�
 <a name="3.2.1.5e"></a>
 ###### 3.2.1.5e 例:
 
-`BP_PlayerCharacter`というBlueprintを考えてみましょう。
+`BP_PlayerCharacter`という名前のBlueprintクラスについて考えてみましょう。
 
 **悪い場合**
 
