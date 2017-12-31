@@ -836,9 +836,9 @@ Atomicまたはプリミティブ変数は、ブール値、整数、浮動小�
 
 > Text変数をアトミックなものと見なすのではなく、密かにローカライゼーション機能を隠していますか？文字列のアトミックタイプは `Text`ではなく` String`です。
 
-Atomic変数の型名はその名前に含まれるべきではありません。
+Atomic変数は、それら変数名に型名を含むべきではありません。
 
-例： ` ScoreFloat`、 `FloatKills`、` DescriptionString` **ではなく** `Score`、` Kills`、 `Description` を使用します。
+例： `Score`、` Kills`、`Description` を使用します。` ScoreFloat`、 `FloatKills`、` DescriptionString` **ではなく** 
 
 このルールの唯一の例外は、変数が変数の型を持たない名前を使うのが読みにくい場合に、変数が '数えられる何か' を表していることです。
 
@@ -856,7 +856,7 @@ Atomic変数の型名はその名前に含まれるべきではありません�
 
 クラスが複雑な変数のインスタンスを所有している場合、つまり `BP_PlayerCharacter`が` BP_Hat`を所有している場合は、名前を変更することなく変数型として格納する必要があります。
 
-例： `` MyHat``、 `MyFlag`、` PlayerAbility` **ではなく** `Hat`、` Flag`、 `Ability` を使用します。
+例：`Hat`、` Flag`、 `Ability` を使用します。  `MyHat`、`MyFlag`、` PlayerAbility` **ではなく** 
 
 複雑な変数が表す値をクラスが所有していない場合は、変数型とともに名詞を使用する必要があります。
 
