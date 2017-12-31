@@ -28,7 +28,7 @@ Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネル
 * [Japanese Translation](https://github.com/akenatsu/ue4-style-guide/blob/master/README.jp.md) by akenatsu
 * [Chinese Translation](https://github.com/skylens-inc/ue4-style-guide/blob/master/README.md) by Beijing Skylens Tech.
 
-## 重要用語
+## 重要用語　
 
 <a name="terms-level-map"></a>
 ##### Levels/Maps
@@ -70,7 +70,7 @@ Gamemakin LLCは、Discordの http://discord.gamemak.in にpublicチャンネル
 クラスのコンテキスト内では、変数自身の定義とその変数が保持する何かについての議論を円滑にするために、よく使用されます。 
 
 <a name="0"></a>
-## 0. 原則
+## 0. 原則　
 
 これらの原則は [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/) に即しています。
 
@@ -117,7 +117,7 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 
 <a name="toc"></a>
 <a name="table-of-contents"></a>
-## 目次
+## 目次　
 
 > 1. [アセット命名規則](#anc)
 > 1. [コンテンツディレクトリ構成](#structure)
@@ -139,7 +139,7 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 
 <a name="base-asset-name"></a>
 <a name="1.1"></a>
-### 1.1 基本アセット名 - `Prefix_BaseAssetName_Variant_Suffix` ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 1.1 基本アセット名　 - `Prefix_BaseAssetName_Variant_Suffix` ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 すべてのアセットに _基本アセット名_ _(Base Asset Name)_ が必要です。基本アセット名は、関連するアセットの論理的なグループを表します。この論理グループの一部であるアセットは、 `Prefix_BaseAssetName_Variant_Suffix`(接頭辞にアセットタイプを、接尾辞に種類を)の標準に従うべきです。
 
@@ -156,7 +156,7 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 アセットバリアントの作成方法に応じて、バリアント名を連結することができます。たとえば、Arch Vizプロジェクトのフロアリングアセットを作成する場合は、`Flooring_Marble_01`, `Flooring_Maple_01`, `Flooring_Tile_Squares_01` などの連鎖バリアントを含むベース名 `Flooring` を使用する必要があります。
 
 <a name="1.1-examples"></a>
-#### 1.1 例
+#### 1.1 例　
 
 ##### 1.1e1 Bob((キャラクター、人物、動物など))
 
@@ -180,7 +180,7 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 
 <a name="asset-name-modifiers"></a>
 <a name="1.2"></a>
-### 1.2 アセット名修飾子　![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 1.2 アセット名修飾子　　![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 アセットの名前を付けるときは、これらのテーブルを使用してアセットの　[基本アセット名](#base-asset-name)　で使用する接頭辞(Prefix)と接尾辞(Suffix)を決定します。
 
@@ -230,6 +230,7 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 | Particle System         | PS_        |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
 
+
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
 #### 1.2.2 Animations ![#](https://img.shields.io/badge/lint-supported-green.svg)
@@ -275,8 +276,8 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 | Blueprint Function Library | BPFL_   |            |                                  |
 | Blueprint Interface     | BPI_       |            |                                  |
 | Blueprint Macro Library | BPML_      |            | 可能な限り、マクロライブラリは使わない。 |
-| Enumeration             | E          |            | アンダースコアを付けない。                   |
-| Structure               | F or S     |            | アンダースコアを付けない。                   |
+| Enumeration             | E          |            | アンダースコアを付けない。         |
+| Structure               | F or S     |            | アンダースコアを付けない。         |
 | Tutorial Blueprint      | TBP_       |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
 
@@ -310,7 +311,7 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 | Texture (Emissive)      | T_         | _E         |                                  |
 | Texture (Mask)          | T_         | _M         |                                  |
 | Texture (Specular)      | T_         | _S         |                                  |
-| Texture (Packed)        | T_         | _*         | 下記の注記 [packing](#anc-textures-packing) を参照 |
+| Texture (Packed)        | T_         | _*         | 下記の注記 [packing](#anc-textures-packing) を参照 　|
 | Texture Cube            | TC_        |            |                                  |
 | Media Texture           | MT_        |            |                                  |
 | Render Target           | RT_        |            |                                  |
@@ -386,8 +387,8 @@ Diffuse/AlbedoのアルファチャンネルにAlpha/Opacityマスクを含め�
 | Media Sound Wave        | MSW_       |            |                                  |
 | Reverb Effect           | Reverb_    |            |                                  |
 | Sound Attenuation       | ATT_       |            |                                  |
-| Sound Class             |            |            | 接頭辞/接尾辞を付けません。 SoundClassesフォルダ配下に置べき |
-| Sound Concurrency       |            | _SC        | SoundClassの後に名前付けるべき |
+| Sound Class             |            |            | 接頭辞/接尾辞を付けません。 SoundClassesフォルダ配下に置べき　 |
+| Sound Concurrency       |            | _SC        | SoundClassの後に名前付けるべき 　|
 | Sound Cue               | A_         | _Cue       |                                  |
 | Sound Mix               | Mix_       |            |                                  |
 | Sound Wave              | A_         |            |                                  |
@@ -419,6 +420,7 @@ Diffuse/AlbedoのアルファチャンネルにAlpha/Opacityマスクを含め�
 <a name="structure"></a>
 ## 2. コンテンツディレクトリの構成について ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
+
 アセット名と同様に重要なことに、プロジェクトのディレクトリ構造のスタイルも法律のように扱うべきです。 アセットの命名規則とコンテンツディレクトリ構造が両立しなければ、どちらかの違反は片手落ちとなり不要な混乱の原因となります。
 
 UE4プロジェクトのコンテンツレイアウトは幾つかの方法があります。 本ガイドのスタイルでは、アセットタイプのグループ化などの他の共通構造としてフォルダを使った方法の代わりに、特定のタイプのアセットを検索するために、コンテンツブラウザのフィルタリングと検索機能にもっと依存する構造を使用します。
@@ -427,7 +429,7 @@ UE4プロジェクトのコンテンツレイアウトは幾つかの方法が�
 
 
 <a name="2e1"><a>
-### 2e1 プロジェクトのコンテンツ構造の例
+### 2e1 プロジェクトのコンテンツ構造の例　
 <pre>
 |-- Content
     |-- <a href="#2.2">GenericShooter</a>
@@ -503,7 +505,7 @@ UE4プロジェクトのコンテンツレイアウトは幾つかの方法が�
 
 <a name="2.1"></a>
 <a name="structure-folder-names"><a>
-### 2.1  フォルダ名 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 2.1  フォルダ名　 ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
 
 以下はコンテンツディレクトリ構造での、任意のフォルダへの名前付けの共通ルールです。
 
