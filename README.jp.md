@@ -229,8 +229,7 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 | Texture                 | T_         | _?         | [Textures](#anc-textures) を参照   |
 | Particle System         | PS_        |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
-
-
+ 
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
 #### 1.2.2 Animations ![#](https://img.shields.io/badge/lint-supported-green.svg)
@@ -419,8 +418,7 @@ Diffuse/AlbedoのアルファチャンネルにAlpha/Opacityマスクを含め�
 <a name="2"></a>
 <a name="structure"></a>
 ## 2. コンテンツディレクトリの構成について ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
-
-
+ 
 アセット名と同様に重要なことに、プロジェクトのディレクトリ構造のスタイルも法律のように扱うべきです。 アセットの命名規則とコンテンツディレクトリ構造が両立しなければ、どちらかの違反は片手落ちとなり不要な混乱の原因となります。
 
 UE4プロジェクトのコンテンツレイアウトは幾つかの方法があります。 本ガイドのスタイルでは、アセットタイプのグループ化などの他の共通構造としてフォルダを使った方法の代わりに、特定のタイプのアセットを検索するために、コンテンツブラウザのフィルタリングと検索機能にもっと依存する構造を使用します。
