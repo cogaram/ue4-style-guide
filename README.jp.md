@@ -204,7 +204,7 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 
 > 1.2.9 [物理(Physics)](#anc-physics)
 
-> 1.2.10 [サウンド(Sound)](#anc-sound)
+> 1.2.10 [サウンド(Sound)](#anc-sounds)
 
 > 1.2.11 [UI(User Interface)](#anc-ui)
 
@@ -263,6 +263,8 @@ Gamemakin LLC は弁護士では無いです。ですが、どうぞプロジェ
 | Decorator               | BTDecorator_ |          |                                  |
 | Service                 | BTService_ |            |                                  |
 | Task                    | BTTask_    |            |                                  |
+| Environment Query       | EQS_       |            |                                  |
+| EnvQueryContext         | EQS_       | Context    |                                  |
 
 <a name="anc-bp"></a>
 <a name="1.2.4"></a>
@@ -1049,7 +1051,7 @@ C++では、変数にはアクセスレベルの概念があります。 Public�
 <a name="bp-funcs-naming-eventhandlers"></a>
 #### 3.3.1.4 イベントハンドラとディスパッチャは `On` で始まるべき ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-イベントハンドラや、イベントディスパッチなどの関数は、`On` で始まるべきで、続きは [動詞規則](#bp-funcs-naming-verbs) に従ってください。 ただし、過去のことであることがうまく読み取れる場合は、動詞を末尾に移動した方がよいかもしれません。
+イベントハンドラや、イベントディスパッチなどの関数は、`On` で始まるべきで、後は [動詞規則](#bp-funcs-naming-verbs) に従ってください。 ただし、過去刑であることがうまく読み取れる場合は、動詞を末尾に移動した方がよいかもしれません。
 
 単語 `On` の[連結語句](http://dictionary.cambridge.org/us/grammar/british-grammar/about-words-clauses-and-sentences/collocation)は、動詞規則に従うことが免除されます。
 
